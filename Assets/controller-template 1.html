@@ -6,10 +6,10 @@
   <style type=text/css>
   /* the style sheet dictates what our elements (buttons, backgrounds etc.) will look like. */
     #interact-button{
-        background-image: url("Button.png");
+        background-image: url("Test/Button.png");
         position: absolute;
         top: 20%;
-        left: 20%;
+        left: 10%;
         width: 80%;
         height: 60%;
         background-size: contain;
@@ -53,6 +53,7 @@
         App.prototype.sendMessageToScreen = function (msg) {
             console.log("button press");
             this.airconsole.message(AirConsole.SCREEN, { "action": msg });
+            this.airconsole.vibrate(100);
         }
     }
   </script>

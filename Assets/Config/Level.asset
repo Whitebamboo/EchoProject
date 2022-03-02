@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9fed890952e3a408e5973a23b517a1, type: 3}
+  m_Name: Level
+  m_EditorClassIdentifier: 
+  levelDescription: 
+  clothes:
+  - {fileID: 11400000, guid: 28249df80a2f19d4d8ad815f4b3f7d15, type: 2}
+  - {fileID: 11400000, guid: d45c199eb00d15740bd4bd42d951b6db, type: 2}
+  - {fileID: 11400000, guid: 2028b155304b8484592ef2a5f67ccf31, type: 2}
+  - {fileID: 11400000, guid: 7a740bebba215c84e838e83b1548c872, type: 2}
+  - {fileID: 11400000, guid: 179ee08152fee2a439d25a88a0eaac66, type: 2}
