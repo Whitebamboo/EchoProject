@@ -3,12 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : CSingletonMono<GameManager>
+public enum GameState
 {
-    public List<TutorialLevel> levels;
+    Tutorial,
+    Fantasy
+}
+
+public class GameManager : CSingletonMono<GameManager>
+{ 
+    [SerializeField]
+    List<TutorialLevel> levels;
 
     [HideInInspector]
     public bool IsConnectedAirconsole;
+
+    public GameState State;
 
     public int GetActivePlayersNumber()
     {
@@ -21,9 +30,26 @@ public class GameManager : CSingletonMono<GameManager>
 
         AirConsole.instance.onReady += OnReady;
         AirConsole.instance.onConnect += OnConnect;
-        AirConsole.instance.onDisconnect += OnDisconnect;
-       
+        AirConsole.instance.onDisconnect += OnDisconnect;       
     }
+
+    void Start()
+    {
+        SwitchState(GameState.Tutorial);        
+    }
+
+    void SwitchState(GameState state)
+    {
+        State = state;
+
+        switch (state)
+        {
+            case GameState.Tutorial:
+                UIManager.instance.CreateScreen<TutorialCanvas>();
+                break;
+        }
+    }
+
 
     //@param code airconsole connection code
     void OnReady(string code)
@@ -38,7 +64,6 @@ public class GameManager : CSingletonMono<GameManager>
 
     void OnDisconnect(int device_id)
     {
-        print("OnDisconnect: " + device_id);
         AirConsole.instance.SetActivePlayers();
     }
 

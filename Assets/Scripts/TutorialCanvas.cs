@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TutorialCanvas : MonoBehaviour
+public class TutorialCanvas : UIScreenBase
 {
     public Button startButton;
 
