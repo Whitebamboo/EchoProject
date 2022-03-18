@@ -11,6 +11,8 @@
     var airconsole = new AirConsole({"orientation": "landscape"});
     var vm = null;
 
+    var startConfirmed = false;
+
     function App() {
 
       /* JavaScript / Functionality. Add functions and evens here */
@@ -30,11 +32,15 @@
           console.log("button press");
           airconsole.message(AirConsole.SCREEN, { "action": msg });
           airconsole.vibrate(100);
-
-          if(msg == "confirm"){
-              document.getElementById("start-button").classList.add("deactive");
-          }
       };
+
+      App.prototype.startGameConfirm = function (msg) {
+          if(msg == "confirm" && !startConfirmed){
+              document.getElementById("start-button").classList.add("deactive");
+              airconsole.message(AirConsole.SCREEN, { "action": msg });
+              startConfirmed = true
+          }
+      }
 
       function interpretMessage(string){
           var messages = string.split(";");
@@ -83,13 +89,14 @@
     <!--<div id="interact-button" ontouchstart="window.app.sendMessageToScreen('interact')"></div>-->
 
     <div id="start" class="view default-view">
-      <div id = "start-button" class="Start-button" ontouchstart="window.app.sendMessageToScreen('confirm')"> Ready </div>
+      <div id = "start-button" class="Start-button" ontouchstart="window.app.startGameConfirm('confirm')"> Ready </div>
       <div id="Start-text"> Ready to save the planet? </div>
     </div>
   
     <div id="ingame" class="view">
       <div id="cloth-image"></div>
       <div id="cloth-text"></div>
+      <div id="tutorial-hint-text">Select the number to Rank:</div>
       <div class="Tutorial button-one" ontouchstart="window.app.sendMessageToScreen('1')"> 1 </div>
       <div class="Tutorial button-two" ontouchstart="window.app.sendMessageToScreen('2')"> 2 </div>
       <div class="Tutorial button-three" ontouchstart="window.app.sendMessageToScreen('3')"> 3 </div>

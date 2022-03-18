@@ -39,6 +39,6 @@ public class StartCanvas : UIScreenBase
     {
         connectPage.SetActive(false);
         introductionText.gameObject.SetActive(true);
-        introductionText.DOFade(0, 1f).From().OnComplete(() => introductionText.DOFade(0f, 1f).SetDelay(4f).OnComplete(() => callback.Invoke()));
+        introductionText.DOFade(0, 1f).From().OnComplete(() => introductionText.DOFade(0f, 1f).SetDelay(1f).OnComplete(() => callback.Invoke()));
     }
 }
