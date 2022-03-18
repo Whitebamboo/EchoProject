@@ -2,49 +2,54 @@
 <html>
 <head>
   <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <link rel="stylesheet" type="text/css" href="shared_styles.css">
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src="https://www.airconsole.com/api/airconsole-1.7.0.js"></script>
-  <style type=text/css>
-  /* the style sheet dictates what our elements (buttons, backgrounds etc.) will look like. */
-    #Tutorial-button{
-      background: #3B3B3B;
-      color: white;
-      font-family: Arial;
-      font-size: 14px;
-      padding: 5px 10px 5px 10px;
-      border: solid #1f1f1f 2px;
-      -webkit-border-radius: 11;
-      -moz-border-radius: 11;
-      border-radius: 6px;
-      width: 100%;
-      text-align: left;
-      box-sizing: border-box;
-    }
-
-    #cloth-image{
-        background-image: url("Tutorial/Cloth1.png");
-        position: absolute;
-        top: 30%;
-        left: 20%;
-        width: 60%;
-        height: 40%;
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-  </style>
+  <script type="text/javascript" src="../airconsole-view-manager.js"></script>
   
   <script type="text/javascript">
-
-    var airconsole;
+    var airconsole = new AirConsole({"orientation": "landscape"});
+    var vm = null;
 
     function App() {
 
       /* JavaScript / Functionality. Add functions and evens here */
-      this.airconsole = new AirConsole({"orientation": "portrait"});
 
-      this.airconsole.onMessage = function(from, data) {
-          console.log("onMessage", from, data);
-          document.getElementById("cloth-image").style.backgroundImage = "url(Tutorial/Cloth" + data + ".png)";
+      airconsole.onReady = function(code) {
+        vm = new AirConsoleViewManager(airconsole);
+        vm.controllersShow('Start');
       };
+
+      airconsole.onMessage = function(from, data) {
+          console.log("onMessage", from, data);
+          
+          interpretMessage(data);
+      };
+
+      App.prototype.sendMessageToScreen = function (msg) {
+          console.log("button press");
+          airconsole.message(AirConsole.SCREEN, { "action": msg });
+          airconsole.vibrate(100);
+
+          if(msg == "confirm"){
+              document.getElementById("start-button").classList.add("deactive");
+          }
+      };
+
+      function interpretMessage(string){
+          var messages = string.split(";");
+
+          switch(messages[0]){
+            case "Tutorial":
+              if(messages[1] == "Start"){
+                  vm.controllersShow("ingame");
+              }
+              else if(messages[1] == "Cloth"){
+                  document.getElementById("cloth-image").style.backgroundImage = "url(Tutorial/" + messages[2] + ".png)";
+                  document.getElementById("cloth-text").innerHTML = messages[3];
+              }
+          }
+      }
 
       /*
        * Here we are adding support for mouse events manually.
@@ -68,14 +73,7 @@
             element.setAttribute("onmouseup", ontouchend);
           }
         }
-      }
-
-      App.prototype.sendMessageToScreen = function (msg) {
-          console.log("button press");
-          this.airconsole.message(AirConsole.SCREEN, { "action": msg });
-          this.airconsole.vibrate(100);
-      };
-        
+      }     
     }
   </script>
 
@@ -83,11 +81,20 @@
 <body onload="window.app = new App()">
   <!-- Add your HTML elements here -->
     <!--<div id="interact-button" ontouchstart="window.app.sendMessageToScreen('interact')"></div>-->
-    <div id="Tutorial-button" ontouchstart="window.app.sendMessageToScreen('1')"> 1 </div>
-    <div id="Tutorial-button" ontouchstart="window.app.sendMessageToScreen('2')"> 2 </div>
-    <div id="Tutorial-button" ontouchstart="window.app.sendMessageToScreen('3')"> 3 </div>
-    <div id="Tutorial-button" ontouchstart="window.app.sendMessageToScreen('4')"> 4 </div>
-    <div id="Tutorial-button" ontouchstart="window.app.sendMessageToScreen('5')"> 5 </div>
-    <div id="cloth-image"></div>
+
+    <div id="start" class="view default-view">
+      <div id = "start-button" class="Start-button" ontouchstart="window.app.sendMessageToScreen('confirm')"> Ready </div>
+      <div id="Start-text"> Ready to save the planet? </div>
+    </div>
+  
+    <div id="ingame" class="view">
+      <div id="cloth-image"></div>
+      <div id="cloth-text"></div>
+      <div class="Tutorial button-one" ontouchstart="window.app.sendMessageToScreen('1')"> 1 </div>
+      <div class="Tutorial button-two" ontouchstart="window.app.sendMessageToScreen('2')"> 2 </div>
+      <div class="Tutorial button-three" ontouchstart="window.app.sendMessageToScreen('3')"> 3 </div>
+      <div class="Tutorial button-four" ontouchstart="window.app.sendMessageToScreen('4')"> 4 </div>
+    </div>
+
 </body>
 </html>

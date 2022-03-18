@@ -12,7 +12,7 @@ var AirConsoleViewManager = function(airconsole) {
     screen: null
   };
   this.class_start = 'default-view';
-  this.is_screen = airconsole.device_id === AirConsole.SCREEN;
+  this.is_screen = this.airconsole.getDeviceId() === AirConsole.SCREEN;
   this.setupViews_();
 };
 

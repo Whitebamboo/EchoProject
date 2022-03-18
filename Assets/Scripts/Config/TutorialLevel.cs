@@ -6,5 +6,12 @@ using UnityEngine;
 public class TutorialLevel : ScriptableObject
 {
     public string levelDescription;
-    public List<TutorialClothes> clothes;
+    public List<TutorialCloth> clothes;
+}
+
+[System.Serializable]
+public class TutorialCloth
+{
+    public Sprite image;
+    public string clothDescription;
 }

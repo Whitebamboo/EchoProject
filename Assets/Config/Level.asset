@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9fed890952e3a408e5973a23b517a1, type: 3}
   m_Name: Level
   m_EditorClassIdentifier: 
-  levelDescription: 
+  levelDescription: A long-last clothes means do not need to buy so many clothes
   clothes:
-  - {fileID: 11400000, guid: 28249df80a2f19d4d8ad815f4b3f7d15, type: 2}
-  - {fileID: 11400000, guid: d45c199eb00d15740bd4bd42d951b6db, type: 2}
-  - {fileID: 11400000, guid: 2028b155304b8484592ef2a5f67ccf31, type: 2}
-  - {fileID: 11400000, guid: 7a740bebba215c84e838e83b1548c872, type: 2}
-  - {fileID: 11400000, guid: 179ee08152fee2a439d25a88a0eaac66, type: 2}
+  - image: {fileID: 21300000, guid: 5918fba821c12c940bc59c79e9c2666d, type: 3}
+    clothDescription: Very fashion cloth, can only wear a couple of times
+  - image: {fileID: 21300000, guid: a2aaa2ad67d6daf4789dfa96c30c9631, type: 3}
+    clothDescription: This clothes seems in bad condition after wearing for 1 year
+  - image: {fileID: 21300000, guid: bb932c57f51f19d46b715ad7e3133ed4, type: 3}
+    clothDescription: Decent cloth that probably can last 5 years
+  - image: {fileID: 21300000, guid: 35f13273531514145bfd354e19ae0d50, type: 3}
+    clothDescription: This clothes has been worn for 10 years
