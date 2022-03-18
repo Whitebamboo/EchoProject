@@ -14,30 +14,47 @@ public class TutorialCanvas : UIScreenBase
     [SerializeField] 
     Image[] images;
 
-    TutorialLevel currLevel;
+    List<TutorialLevel> m_leves;
 
-    string[] selectList;
+    int m_currLevelIndex;
 
-    Dictionary<int, string> clothAssignment = new Dictionary<int, string>();
+    string[] m_selectList;
+
+    WeightedRandomGenerator<int> m_playerRandom;
+
+    Dictionary<int, string> m_clothAssignment = new Dictionary<int, string>();
 
     private void Awake()
     {
         AirConsole.instance.onMessage += OnMessage;
     }
 
-    public void LoadLevel(TutorialLevel level)
+    public void Setup(List<TutorialLevel> levels)
     {
-        currLevel = level;
-        levelDescription.text = level.levelDescription;
+        m_leves = levels;
+
+        LoadLevel(0);
+    }
+
+    public void LoadLevel(int levelIndex)
+    {
+        Debug.Assert(levelIndex >= 0 && levelIndex < m_leves.Count);
 
         int playersNumber = GameManager.instance.GetActivePlayersNumber();
-        selectList = new string[4];
+        m_selectList = new string[playersNumber];
+        m_clothAssignment.Clear();
+        ClearSprite();
+        ResetPlayerRandom(playersNumber);
+
+        m_currLevelIndex = levelIndex;
+        TutorialLevel levelData = m_leves[m_currLevelIndex];
+        levelDescription.text = levelData.levelDescription;
         for (int i = 0; i < playersNumber; i++)
         {
-            AirConsole.instance.Message(AirConsole.instance.ConvertPlayerNumberToDeviceId(i), 
-                "Tutorial;Cloth;" + currLevel.clothes[i].image.name + ";" + currLevel.clothes[i].clothDescription);
-            Debug.Log(AirConsole.instance.ConvertPlayerNumberToDeviceId(i));
-            clothAssignment.Add(AirConsole.instance.ConvertPlayerNumberToDeviceId(i), currLevel.clothes[i].image.name);
+            int playerIndex = m_playerRandom.GetRandomEntry();
+            AirConsole.instance.Message(AirConsole.instance.ConvertPlayerNumberToDeviceId(playerIndex),
+                string.Format("Tutorial;Cloth;{0};{1};{2}", levelIndex + 1, levelData.clothes[i].image.name, levelData.clothes[i].clothDescription));
+            m_clothAssignment.Add(AirConsole.instance.ConvertPlayerNumberToDeviceId(playerIndex), levelData.clothes[i].image.name);
         }
     }
 
@@ -47,59 +64,82 @@ public class TutorialCanvas : UIScreenBase
         if (data["action"] != null)
         {
             int input = int.Parse(data["action"].ToString());
-            RemoveSprite(clothAssignment[fromDeviceID]);
-            selectList[input-1] = clothAssignment[fromDeviceID];
-            UpdateSprite();
+            RemoveSprite(m_clothAssignment[fromDeviceID]);
+            m_selectList[input-1] = m_clothAssignment[fromDeviceID];
+            UpdateSprite(m_leves[m_currLevelIndex]);
 
             if(IsFilled())
             {
-                if(IsCorrect())
+                if(IsCorrect(m_leves[m_currLevelIndex]))
                 {
-                    Debug.Log("Correct");
+                    m_currLevelIndex++;
+                    if(m_currLevelIndex == m_leves.Count)
+                    {
+                        GameManager.instance.FinishTutorial();
+                        CloseScreen();
+                    }
+                    else
+                    {
+                        LoadLevel(++m_currLevelIndex);
+                    }
                 }
                 else
                 {
-                    for (int i = 0; i < selectList.Length; i++)
-                    {
-                        selectList[i] = "";
-                        images[i].sprite = null;
-                    }
+                    ClearSprite();
                 }
             }
+        }
+    }
+
+    void ResetPlayerRandom(int playerNum)
+    {
+        m_playerRandom = new WeightedRandomGenerator<int>("UniqueRandom");
+        for(int i = 0; i < playerNum; i++)
+        {
+            m_playerRandom.AddEntry(i, 1d / playerNum);
         }
     }
 
     void RemoveSprite(string name)
     {
-        for (int i = 0; i < selectList.Length; i++)
+        for (int i = 0; i < m_selectList.Length; i++)
         {
-            if (selectList[i] == name)
+            if (m_selectList[i] == name)
             {
-                selectList[i] = "";
+                m_selectList[i] = "";
                 images[i].sprite = null;
             }
         }
     }
 
-    void UpdateSprite()
+    void UpdateSprite(TutorialLevel level)
     {
-        for(int i = 0; i < selectList.Length; i++)
+        for(int i = 0; i < m_selectList.Length; i++)
         {
-            for(int j = 0; j < currLevel.clothes.Count; j++)
+            for(int j = 0; j < level.clothes.Count; j++)
             {
-                if (selectList[i] == currLevel.clothes[j].image.name)
+                if (m_selectList[i] == level.clothes[j].image.name)
                 {
-                    images[i].sprite = currLevel.clothes[j].image;
+                    images[i].sprite = level.clothes[j].image;
                 }
             }
         }
     }
 
+    void ClearSprite()
+    {
+        for (int i = 0; i < m_selectList.Length; i++)
+        {
+            m_selectList[i] = "";
+            images[i].sprite = null;
+        }
+    }
+
     bool IsFilled()
     {
-        for (int i = 0; i < selectList.Length; i++)
+        for (int i = 0; i < m_selectList.Length; i++)
         {
-            if (string.IsNullOrEmpty(selectList[i]))
+            if (string.IsNullOrEmpty(m_selectList[i]))
             {
                 return false;
             }
@@ -108,11 +148,11 @@ public class TutorialCanvas : UIScreenBase
         return true;
     }
 
-    bool IsCorrect()
+    bool IsCorrect(TutorialLevel level)
     {
-        for (int i = 0; i < selectList.Length; i++)
+        for (int i = 0; i < m_selectList.Length; i++)
         {
-            if (selectList[i] != currLevel.clothes[i].image.name)
+            if (m_selectList[i] != level.clothes[i].image.name)
             {
                 return false;
             }

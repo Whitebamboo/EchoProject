@@ -29,6 +29,11 @@ public class GameManager : CSingletonMono<GameManager>
         return AirConsole.instance.GetActivePlayerDeviceIds.Count;
     }
 
+    public void FinishTutorial()
+    {
+        SwitchState(GameState.Fantasy);
+    }
+
     protected override void Awake()
     {
         base.Awake();
@@ -85,7 +90,6 @@ public class GameManager : CSingletonMono<GameManager>
                         startCanvas.CloseScreen();
 
                         SwitchState(GameState.Tutorial);
-                        LoadTutorialLevel(0);
                     });
                 }
             }
@@ -108,24 +112,9 @@ public class GameManager : CSingletonMono<GameManager>
                 break;
             case GameState.Tutorial:
                 AirConsole.instance.Broadcast("Tutorial;Start");
-                UIManager.instance.CreateScreen<TutorialCanvas>();
+                TutorialCanvas canvas = UIManager.instance.CreateScreen<TutorialCanvas>();
+                canvas.Setup(levels);
                 break;
-        }
-    }
-
-    void LoadTutorialLevel(int level)
-    {
-        Debug.Log("Load level");
-        if(level < 0 || (level + 1) > levels.Count)
-        {
-            return;
-        }
-
-        TutorialCanvas tutorialCanvas = UIManager.instance.FindScreen<TutorialCanvas>();
-        if (tutorialCanvas != null)
-        {
-            Debug.Log("Load level");
-            tutorialCanvas.LoadLevel(levels[level]);
         }
     }
 

@@ -45,8 +45,8 @@
                   vm.controllersShow("ingame");
               }
               else if(messages[1] == "Cloth"){
-                  document.getElementById("cloth-image").style.backgroundImage = "url(Tutorial/" + messages[2] + ".png)";
-                  document.getElementById("cloth-text").innerHTML = messages[3];
+                  document.getElementById("cloth-image").style.backgroundImage = "url(Tutorial" + messages[2] + "/" + messages[3] + ".png)";
+                  document.getElementById("cloth-text").innerHTML = messages[4];
               }
           }
       }
