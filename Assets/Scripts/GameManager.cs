@@ -16,6 +16,9 @@ public class GameManager : CSingletonMono<GameManager>
     [SerializeField]
     List<TutorialLevel> levels;
 
+    [SerializeField]
+    PlayerController playerPerfab;
+
     [HideInInspector]
     public bool IsConnectedAirconsole;
 
@@ -47,7 +50,7 @@ public class GameManager : CSingletonMono<GameManager>
     //@param code airconsole connection code
     void OnReady(string code)
     {
-        IsConnectedAirconsole = true;
+        IsConnectedAirconsole = true;       
     }
 
     void OnConnect(int device_id)
@@ -74,7 +77,7 @@ public class GameManager : CSingletonMono<GameManager>
 
     void OnMessage(int fromDeviceID, JToken data)
     {
-        Debug.Log("message from " + fromDeviceID + ", data: " + data);
+        //Debug.Log("message from " + fromDeviceID + ", data: " + data);
         if (data["action"] != null && data["action"].ToString().Equals("confirm"))
         {
             StartCanvas startCanvas = UIManager.instance.FindScreen<StartCanvas>();
@@ -89,7 +92,7 @@ public class GameManager : CSingletonMono<GameManager>
                     {
                         startCanvas.CloseScreen();
 
-                        SwitchState(GameState.Tutorial);
+                        SwitchState(GameState.Fantasy);
                     });
                 }
             }
@@ -115,7 +118,21 @@ public class GameManager : CSingletonMono<GameManager>
                 TutorialCanvas canvas = UIManager.instance.CreateScreen<TutorialCanvas>();
                 canvas.Setup(levels);
                 break;
+            case GameState.Fantasy:
+                AirConsole.instance.Broadcast("Fantasy;Start");
+                InitFantasyPhrase();
+                break;
         }
+    }
+
+    void InitFantasyPhrase()
+    {
+        for(int i = 0; i < GetActivePlayersNumber(); i++)
+        {
+            PlayerController player = Instantiate(playerPerfab);
+            player.SetupPlayerData(i);
+            player.transform.position = new Vector3(i, 0.85f, 0);
+        }         
     }
 
     protected override void OnDestroy()

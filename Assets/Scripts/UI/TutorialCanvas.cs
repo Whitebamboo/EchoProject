@@ -80,7 +80,7 @@ public class TutorialCanvas : UIScreenBase
                     }
                     else
                     {
-                        LoadLevel(++m_currLevelIndex);
+                        LoadLevel(m_currLevelIndex);
                     }
                 }
                 else
