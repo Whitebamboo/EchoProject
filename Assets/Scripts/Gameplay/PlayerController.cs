@@ -6,10 +6,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    const float castRadius = 1f;
+
     [SerializeField] float playerSpeed = 5f;
     [SerializeField] float turnSpeed = 15f;
     [SerializeField] Transform itemRoot;
-    
+      
     CharacterController controller;
     Transform camTransform;
 
@@ -91,16 +93,47 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /**
+     *  return the nearest interactive object 
+     */
+    IIteractable GetNearestObject()
+    {
+        Collider[] hit = Physics.OverlapSphere(transform.position, castRadius, 1 << 6);
+
+        if(hit == null || hit.Length == 0)
+        {
+            return null;
+        }
+
+        IIteractable closeHit = null;
+        float minDistance = int.MaxValue;
+        foreach(Collider obj in hit)
+        {
+            float distance = Vector3.Distance(obj.transform.position, transform.position);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closeHit = obj.gameObject.GetComponent<IIteractable>();
+            }
+        }
+        return closeHit;
+    }
+
     void Interact()
     {
-        if(currInteractable != null)
+        currInteractable = GetNearestObject();
+
+        if (currInteractable != null)
         {
             currInteractable.OnInteract(this, currItem);
+            currInteractable = null;
         }
     }
 
     void Check()
     {
+        currInteractable = GetNearestObject();
+
         if (currInteractable != null)
         {
             ItemHolder holder;
@@ -113,9 +146,15 @@ public class PlayerController : MonoBehaviour
                 return;
             }
 
+            if(holder.GetItem() == null)
+            {
+                return;
+            }
+
             AirConsole.instance.Message(deviceId,
                 string.Format("Fantasy;Cloth;{0};{1}", holder.GetItem().data.clothImage.name, holder.GetItem().data.description));
         }
+        currInteractable = null;
     }
 
     void Update()
@@ -144,15 +183,15 @@ public class PlayerController : MonoBehaviour
     {
         IIteractable interactable = collision.gameObject.GetComponent<IIteractable>();
 
-        if (interactable != null)
-        {
-            currInteractable = interactable;
-        }
+        //if (interactable != null)
+        //{
+        //    currInteractable = interactable;
+        //}
     }
 
     void OnCollisionExit(Collision collision)
     {
-        currInteractable = null;
+        //currInteractable = null;
     }
 
     void OnDestroy()
@@ -162,5 +201,10 @@ public class PlayerController : MonoBehaviour
         {
             AirConsole.instance.onMessage -= OnMessage;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, castRadius);
     }
 }

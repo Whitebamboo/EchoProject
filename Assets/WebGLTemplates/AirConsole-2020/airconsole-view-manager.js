@@ -69,12 +69,13 @@ AirConsoleViewManager.prototype = {
   /**
    * Triggers a view change on all controllers
    * @param {String} view - The view id
-   * @param {Boolean} except_me - This controller will not change the view
+   * @param {boolean} only_me - only this controller change
    */
-  controllersShow: function(view, except_me) {
+  controllersShow: function(view, only_me) {
     if (!view) return;
     this.setState('ctrl_view', view);
-    if (!this.is_screen && !except_me) {
+
+    if (!this.is_screen, only_me) {
       this.show(view);
     }
   },
