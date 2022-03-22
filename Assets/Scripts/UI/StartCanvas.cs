@@ -15,7 +15,7 @@ public class StartCanvas : UIScreenBase
     TextMeshProUGUI connectedPlayerText;
 
     [SerializeField]
-    TextMeshProUGUI comfirmedPlayerText;
+    TextMeshProUGUI confirmedPlayerText;
 
     public TextMeshProUGUI introductionText;
 
@@ -32,13 +32,13 @@ public class StartCanvas : UIScreenBase
 
     public void SetConfirmedPlayer(int number)
     {
-        comfirmedPlayerText.text = "Confirmed Players: " + number;
+        confirmedPlayerText.text = "Confirmed Players: " + number;
     }
 
     public void StartGame(Action callback)
     {
         connectPage.SetActive(false);
         introductionText.gameObject.SetActive(true);
-        introductionText.DOFade(0, 1f).From().OnComplete(() => introductionText.DOFade(0f, 1f).SetDelay(1f).OnComplete(() => callback.Invoke()));
+        introductionText.DOFade(0, 1f).From().OnComplete(() => introductionText.DOFade(0f, 1f).SetDelay(3f).OnComplete(() => callback.Invoke()));
     }
 }

@@ -25,7 +25,7 @@ public class GameManager : CSingletonMono<GameManager>
     public GameState State;
 
     //Start state variable
-    int comfirmedPlayer;
+    int confirmedPlayer;
 
     public int GetActivePlayersNumber()
     {
@@ -83,10 +83,10 @@ public class GameManager : CSingletonMono<GameManager>
             StartCanvas startCanvas = UIManager.instance.FindScreen<StartCanvas>();
             if (startCanvas != null)
             {
-                comfirmedPlayer++;
-                startCanvas.SetConfirmedPlayer(comfirmedPlayer);
+                confirmedPlayer++;
+                startCanvas.SetConfirmedPlayer(confirmedPlayer);
 
-                if(comfirmedPlayer == GetActivePlayersNumber())
+                if(confirmedPlayer == GetActivePlayersNumber())
                 {
                     startCanvas.StartGame(() =>
                     {

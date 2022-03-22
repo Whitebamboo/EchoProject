@@ -103,7 +103,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You are going to cllaborate with your teamates and rank the clothes
+  m_text: Collaborate with your teammates to organize clothes based on different
+    attributes...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -184,7 +185,7 @@ GameObject:
   - component: {fileID: 3792483818855130658}
   - component: {fileID: 3792483818855130659}
   m_Layer: 5
-  m_Name: ComfirmedText
+  m_Name: ConfirmedText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -423,7 +424,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   connectPage: {fileID: 2635556354735690418}
   connectedPlayerText: {fileID: 3792483819937784364}
-  comfirmedPlayerText: {fileID: 3792483818855130659}
+  confirmedPlayerText: {fileID: 3792483818855130659}
   introductionText: {fileID: 1914527827549953726}
 --- !u!1 &3792483819937784362
 GameObject:
@@ -699,7 +700,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Waiting all player connect and confirm
+  m_text: Waiting for all players to connect and confirm...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
