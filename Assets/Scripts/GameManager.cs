@@ -92,7 +92,7 @@ public class GameManager : CSingletonMono<GameManager>
                     {
                         startCanvas.CloseScreen();
 
-                        SwitchState(GameState.Tutorial);
+                        SwitchState(GameState.Fantasy);
                     });
                 }
             }
@@ -121,6 +121,7 @@ public class GameManager : CSingletonMono<GameManager>
             case GameState.Fantasy:
                 AirConsole.instance.Broadcast("Fantasy;Start");
                 InitFantasyPhrase();
+                CustomerManager.instance.StartGame();
                 break;
         }
     }
