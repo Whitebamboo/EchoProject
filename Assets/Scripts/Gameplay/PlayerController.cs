@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
     float horizontal; //Horizontal Input
     float vertical; //Vertical Input
 
-    IIteractable currInteractable;
     Item currItem;
 
     void Awake()
@@ -121,29 +120,25 @@ public class PlayerController : MonoBehaviour
 
     void Interact()
     {
-        currInteractable = GetNearestObject();
+        IIteractable currInteractable = GetNearestObject();
 
         if (currInteractable != null)
         {
+            Debug.Log("get something");
             currInteractable.OnInteract(this, currItem);
-            currInteractable = null;
         }
     }
 
     void Check()
     {
-        currInteractable = GetNearestObject();
+        IIteractable currInteractable = GetNearestObject();
 
         if (currInteractable != null)
         {
-            ItemHolder holder;
+            ItemHolder holder = null;
             if (currInteractable is ItemHolder)
             {
                 holder = (ItemHolder)currInteractable;
-            }
-            else
-            {
-                return;
             }
 
             if(holder.GetItem() == null)
@@ -154,7 +149,6 @@ public class PlayerController : MonoBehaviour
             AirConsole.instance.Message(deviceId,
                 string.Format("Fantasy;Cloth;{0};{1}", holder.GetItem().data.clothImage.name, holder.GetItem().data.description));
         }
-        currInteractable = null;
     }
 
     void Update()
@@ -182,16 +176,11 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         IIteractable interactable = collision.gameObject.GetComponent<IIteractable>();
-
-        //if (interactable != null)
-        //{
-        //    currInteractable = interactable;
-        //}
     }
 
     void OnCollisionExit(Collision collision)
     {
-        //currInteractable = null;
+        
     }
 
     void OnDestroy()
