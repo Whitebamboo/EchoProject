@@ -32,6 +32,15 @@ public class CustomerController : MonoBehaviour, IIteractable
         });
     }
 
+    void GotExitPoint()
+    {
+        transform.DOLookAt(CustomerManager.instance.ExitPoint, 0.5f);
+        transform.DOMove(CustomerManager.instance.ExitPoint, 2f).OnComplete(()=> {
+            EventBus.Broadcast(EventTypes.CustomerLeft);
+            Destroy(this.gameObject);
+        });
+    }
+
     bool ItemMatch(ItemData item, out FulfillItem matchedItem)
     {
         foreach(FulfillItem fulfillItem in m_data.items)
@@ -54,8 +63,7 @@ public class CustomerController : MonoBehaviour, IIteractable
         {
             if (ItemMatch(item.data, out FulfillItem matchedItem))
             {
-                transform.DOMove(CustomerManager.instance.ExitPoint, 2f);
-                transform.DOLookAt(CustomerManager.instance.ExitPoint, 0.5f);
+                GotExitPoint();
                 player.SetItem(null);
 
                 DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();

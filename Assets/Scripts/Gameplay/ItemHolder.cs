@@ -9,19 +9,11 @@ public class ItemHolder : MonoBehaviour, IIteractable
 
     public GameObject holderRoot;
 
-    public ItemData data;
-
     public bool IsHoldingTtem => m_item != null;
 
     void Start()
     {
-        if(data != null)
-        {
-            GameObject newItem = new GameObject();
-            Cloth c = newItem.AddComponent<Cloth>();
-            c.SetupData(data);
-            AssignItem(c);
-        }
+        CustomerManager.instance.AddHolders(this);
     }
 
     public void OnInteract(PlayerController player, Item item)
@@ -39,6 +31,17 @@ public class ItemHolder : MonoBehaviour, IIteractable
         }
     }
 
+    public void AddItemData(ItemData data)
+    {
+        if (data != null)
+        {
+            GameObject newItem = new GameObject();
+            Cloth c = newItem.AddComponent<Cloth>();
+            c.SetupData(data);
+            AssignItem(c);
+        }
+    }
+    
     void AssignItem(Item item)
     {
         m_item = item;

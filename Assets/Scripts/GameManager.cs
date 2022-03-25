@@ -14,7 +14,7 @@ public enum GameState
 public class GameManager : CSingletonMono<GameManager>
 { 
     [SerializeField]
-    List<TutorialLevel> levels;
+    List<TutorialLevel> tutorialLevels;
 
     [SerializeField]
     PlayerController playerPerfab;
@@ -116,12 +116,11 @@ public class GameManager : CSingletonMono<GameManager>
             case GameState.Tutorial:
                 AirConsole.instance.Broadcast("Tutorial;Start");
                 TutorialCanvas canvas = UIManager.instance.CreateScreen<TutorialCanvas>();
-                canvas.Setup(levels);
+                canvas.Setup(tutorialLevels);
                 break;
             case GameState.Fantasy:
                 AirConsole.instance.Broadcast("Fantasy;Start");
                 InitFantasyPhrase();
-                CustomerManager.instance.StartGame();
                 break;
         }
     }
@@ -133,7 +132,9 @@ public class GameManager : CSingletonMono<GameManager>
             PlayerController player = Instantiate(playerPerfab);
             player.SetupPlayerData(i);
             player.transform.position = new Vector3(i, 0.85f, 0);
-        }         
+        }
+
+        CustomerManager.instance.StartLevel();
     }
 
     protected override void OnDestroy()

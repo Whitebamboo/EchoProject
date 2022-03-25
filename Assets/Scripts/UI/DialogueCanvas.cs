@@ -7,16 +7,22 @@ public class DialogueCanvas : UIScreenBase
 {
     [SerializeField] TextMeshProUGUI dialogText;
 
+    public float displayTime = 5f;
+
+    float timer;
+
+    private void Update()
+    {
+        timer -= Time.deltaTime;
+        if(timer <= 0)
+        {
+            CloseScreen();
+        }
+    }
+
     public void SetUp(string text)
     {
         dialogText.text = text;
-        StartCoroutine(Close());
-    }
-
-    IEnumerator Close()
-    {
-        yield return new WaitForSeconds(5f);
-
-        CloseScreen();
+        timer = displayTime;
     }
 }

@@ -12,13 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9fed890952e3a408e5973a23b517a1, type: 3}
   m_Name: Level 2
   m_EditorClassIdentifier: 
-  levelDescription: Tutorial 2
+  levelTitle: 'Level 2: How durable are your clothes?'
+  levelDescription: Which clothing is long-lasting and durable?
+  lowExtentTitle: Not durable
+  highExtentTitle: Very durable
   clothes:
-  - image: {fileID: 21300000, guid: 5918fba821c12c940bc59c79e9c2666d, type: 3}
-    clothDescription: Tutorial 2 1
-  - image: {fileID: 21300000, guid: a2aaa2ad67d6daf4789dfa96c30c9631, type: 3}
-    clothDescription: Tutorial 2 2
-  - image: {fileID: 21300000, guid: bb932c57f51f19d46b715ad7e3133ed4, type: 3}
-    clothDescription: Tutorial 2 3
-  - image: {fileID: 21300000, guid: 35f13273531514145bfd354e19ae0d50, type: 3}
-    clothDescription: Tutorial 2 4
+  - image: {fileID: 21300000, guid: 545de0bb2c7619049860e8c98dcdfc40, type: 3}
+    clothDescription: This shirt was owned for 3 months and was thrown away in the
+      trash.
+  - image: {fileID: 21300000, guid: 3cdbac9572700aa4ea4e108c617a4f21, type: 3}
+    clothDescription: This shirt was owned for 3 years and was thrown away in the
+      trash.
+  - image: {fileID: 21300000, guid: 99f20f7c08f1939438801a236695c055, type: 3}
+    clothDescription: 'This shirt was owned for 2 years and was given to a fabric
+      recycling facility. '
+  - image: {fileID: 21300000, guid: 19fa8caa98f3c0948b5fd3ba2a80bef7, type: 3}
+    clothDescription: This shirt was owned for 2.5 years and was able to be resold
+      at a thrift store.

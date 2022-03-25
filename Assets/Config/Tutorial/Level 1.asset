@@ -12,18 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9fed890952e3a408e5973a23b517a1, type: 3}
   m_Name: Level 1
   m_EditorClassIdentifier: 
-  levelDescription: Clothes with higher durability can be worn more and last longer
-    than clothes with low durability
+  levelTitle: 'Level1: How recyclable are your clothes?'
+  levelDescription: 'We need labels to figure out what materials the clothing is
+    made of in order to recycle them. '
+  lowExtentTitle: Not recyclable
+  highExtentTitle: 'Very recyclable '
   clothes:
-  - image: {fileID: 21300000, guid: 5918fba821c12c940bc59c79e9c2666d, type: 3}
-    clothDescription: Wearing this garment more than a couple times before it is
-      worn out is extremely unlikely.
-  - image: {fileID: 21300000, guid: a2aaa2ad67d6daf4789dfa96c30c9631, type: 3}
-    clothDescription: This garment is completely worn out after 2 years of minimal
-      use.
-  - image: {fileID: 21300000, guid: bb932c57f51f19d46b715ad7e3133ed4, type: 3}
-    clothDescription: After about 1 year of heavy wear, this garment shows some signs
-      of aging.
-  - image: {fileID: 21300000, guid: 35f13273531514145bfd354e19ae0d50, type: 3}
-    clothDescription: This garment is still holding up after 10 years of regular
-      wear.
+  - image: {fileID: 21300000, guid: 294901be352c88d45b1ec92edbfadc44, type: 3}
+    clothDescription: This shirt no longer has a label to check the material content.
+  - image: {fileID: 21300000, guid: 7bd49a9ce879f0943836d82d20023b3d, type: 3}
+    clothDescription: This shirt has one label but gives vague details about the
+      exact material content.
+  - image: {fileID: 21300000, guid: 7bdc0f558785edd4089450095b3297fc, type: 3}
+    clothDescription: This shirt has a label that describes the material content
+      and how to wash and care for it.
+  - image: {fileID: 21300000, guid: 36ece130517506f43b07f5e51010427e, type: 3}
+    clothDescription: This shirt has a label that describes the material content
+      and how to properly recycle those materials.

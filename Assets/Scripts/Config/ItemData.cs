@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public enum ClothColor
@@ -30,6 +31,39 @@ public class ItemData : ScriptableObject
     public int year;
     public int month;
     public List<MaterialProperty> properties;
+
+    public override string ToString()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        sb.Append("Color: ");
+        sb.Append(color.ToString());
+        sb.Append("<br>");
+
+        if(properties.Count == 0)
+        {
+            sb.Append("No Label");
+        }
+        else
+        {
+            sb.Append("Material:");
+            foreach (MaterialProperty material in properties)
+            {
+                sb.Append(material.material.ToString());
+                sb.Append(" ");
+                sb.Append(material.percentage.ToString());
+                sb.Append("%<br>");
+            }
+        }
+
+        if(year != 0)
+        {
+            sb.Append("Durability: ");
+            sb.Append("This cloth can be worn for " + year + " years");
+        }
+
+        return sb.ToString();
+    }
 }
 
 [System.Serializable]

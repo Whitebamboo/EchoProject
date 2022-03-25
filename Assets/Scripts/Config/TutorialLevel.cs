@@ -5,7 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Data", menuName = "Config/Tutorial Level")]
 public class TutorialLevel : ScriptableObject
 {
+    public string levelTitle;
     public string levelDescription;
+    public string lowExtentTitle;
+    public string highExtentTitle;
     public List<TutorialCloth> clothes;
 }
 

@@ -8,11 +8,12 @@ using TMPro;
 
 public class TutorialCanvas : UIScreenBase
 {
-    [SerializeField]
-    TextMeshProUGUI levelDescription;
-
-    [SerializeField] 
-    Image[] images;
+    [SerializeField] TextMeshProUGUI levelTitle;
+    [SerializeField] TextMeshProUGUI levelDescription;
+    [SerializeField] TextMeshProUGUI lowExtentText;
+    [SerializeField] TextMeshProUGUI highExtentText;
+    [SerializeField] Image[] displayImageHolder;
+    [SerializeField] Sprite[] colorSprites; //0 green 1 yellow 2 red 3 blue
 
     List<TutorialLevel> m_leves;
 
@@ -49,6 +50,9 @@ public class TutorialCanvas : UIScreenBase
         m_currLevelIndex = levelIndex;
         TutorialLevel levelData = m_leves[m_currLevelIndex];
         levelDescription.text = levelData.levelDescription;
+        levelTitle.text = levelData.levelTitle;
+        lowExtentText.text = levelData.lowExtentTitle;
+        highExtentText.text = levelData.highExtentTitle;
         for (int i = 0; i < playersNumber; i++)
         {
             int playerIndex = m_playerRandom.GetRandomEntry();
@@ -107,7 +111,7 @@ public class TutorialCanvas : UIScreenBase
             if (m_selectList[i] == name)
             {
                 m_selectList[i] = "";
-                images[i].sprite = null;
+                displayImageHolder[i].sprite = null;
             }
         }
     }
@@ -116,13 +120,27 @@ public class TutorialCanvas : UIScreenBase
     {
         for(int i = 0; i < m_selectList.Length; i++)
         {
-            for(int j = 0; j < level.clothes.Count; j++)
+            displayImageHolder[i].gameObject.SetActive(true);
+            if (m_selectList[i].Contains("green"))
             {
-                if (m_selectList[i] == level.clothes[j].image.name)
-                {
-                    images[i].sprite = level.clothes[j].image;
-                }
+                displayImageHolder[i].sprite = colorSprites[0];
             }
+            else if(m_selectList[i].Contains("yellow"))
+            {
+                displayImageHolder[i].sprite = colorSprites[1];
+            }
+            else if (m_selectList[i].Contains("red"))
+            {
+                displayImageHolder[i].sprite = colorSprites[2];
+            }
+            else if (m_selectList[i].Contains("blue"))
+            {
+                displayImageHolder[i].sprite = colorSprites[3];
+            }
+            else
+            {
+                displayImageHolder[i].gameObject.SetActive(false);
+            }       
         }
     }
 
@@ -131,7 +149,8 @@ public class TutorialCanvas : UIScreenBase
         for (int i = 0; i < m_selectList.Length; i++)
         {
             m_selectList[i] = "";
-            images[i].sprite = null;
+            displayImageHolder[i].sprite = null;
+            displayImageHolder[i].gameObject.SetActive(false);
         }
     }
 

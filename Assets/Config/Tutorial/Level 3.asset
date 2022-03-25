@@ -12,13 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9fed890952e3a408e5973a23b517a1, type: 3}
   m_Name: Level 3
   m_EditorClassIdentifier: 
-  levelDescription: Tutorial 3
+  levelTitle: 'Level 3: Are your clothes able to be sorted before the recycling process?'
+  levelDescription: Clothing needs to be separated into categories by different materials
+    before it can be properly recycled. Learn about conventional, organic, and recycled
+    cotton and polyester in your fabric guide book.
+  lowExtentTitle: Hard to be sorted
+  highExtentTitle: Easily sortable
   clothes:
-  - image: {fileID: 21300000, guid: 5918fba821c12c940bc59c79e9c2666d, type: 3}
-    clothDescription: 'Tutorial 3 1 '
-  - image: {fileID: 21300000, guid: a2aaa2ad67d6daf4789dfa96c30c9631, type: 3}
-    clothDescription: Tutorial 3 2
-  - image: {fileID: 21300000, guid: bb932c57f51f19d46b715ad7e3133ed4, type: 3}
-    clothDescription: Tutorial 3 3
-  - image: {fileID: 21300000, guid: 35f13273531514145bfd354e19ae0d50, type: 3}
-    clothDescription: Tutorial 3 4
+  - image: {fileID: 21300000, guid: c2a53a355c9b9e64f8e3d429394c694d, type: 3}
+    clothDescription: "This shirt\u2019s blend is 80% cotton, 15% polyester, and
+      5% nylon."
+  - image: {fileID: 21300000, guid: 5e8e6b3ce8922b641a77e45c3de49188, type: 3}
+    clothDescription: "This shirt\u2019s blend is 80% organic cotton and 20% polyester. "
+  - image: {fileID: 21300000, guid: ddcfbb2ad6a202847b5c7394ef90407d, type: 3}
+    clothDescription: "This shirt\u2019s blend is 100% cotton. "
+  - image: {fileID: 21300000, guid: a471810674fb53245a752e47bda1415a, type: 3}
+    clothDescription: "This shirt\u2019s blend is 80% recycled cotton and 20% organic
+      cotton. "

@@ -87,9 +87,10 @@ body {
 }
 .button-back{
   position: absolute;
-  right: 5%;
-  top: 5%;
-  transform: translate(-50%, -50%);
+  right: 1%;
+  top: 10%;
+  transform: translate(-10%, -50%);
+  padding: 20px 30px 20px 30px;
 }
 
 #cloth-image{
@@ -129,6 +130,15 @@ body {
   left: 45%;
   width: 50%;
   text-align: center;
+  font-size: 18px;
+}
+
+#fantasy-cloth-text{
+  position: absolute;
+  top: 35%;
+  left: 52%;
+  width: 50%;
+  text-align: left;
   font-size: 18px;
 }
 
