@@ -233,4 +233,16 @@ body {
   text-align: center;
 }
 
+.fantasy-interact{
+  position: absolute;
+  top: 20%;
+  left: 55%;
+}
+
+.fantasy-check{
+  position: absolute;
+  top: 50%;
+  left: 55%;
+}
+
 

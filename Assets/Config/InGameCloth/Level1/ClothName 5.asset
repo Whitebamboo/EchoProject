@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780fa66faccbfd641986162e282e5f89, type: 3}
   m_Name: ClothName 5
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5006855490928857326, guid: 8aec0fce215b08d4c961e689624c8321, type: 3}
-  clothImage: {fileID: 21300000, guid: 294901be352c88d45b1ec92edbfadc44, type: 3}
+  prefab: {fileID: 919132149155446097, guid: e7cdefbd8ad4dd4409a1a97673500959, type: 3}
+  clothImage: {fileID: 21300000, guid: 79dd1698d1754014b838126c7acfcd92, type: 3}
   color: 2
   description: Something
   year: 0

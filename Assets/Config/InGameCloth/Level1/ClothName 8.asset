@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780fa66faccbfd641986162e282e5f89, type: 3}
   m_Name: ClothName 8
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5006855490928857326, guid: ad9f36073b757af4d96babbc30ab2863, type: 3}
+  prefab: {fileID: 919132149155446097, guid: e1acb7ffc8cab8142923aa4bf6f65ee5, type: 3}
   clothImage: {fileID: 21300000, guid: e3efa9a02a524a847a8293505aa1edf5, type: 3}
   color: 0
   description: Something

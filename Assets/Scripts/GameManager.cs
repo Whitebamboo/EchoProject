@@ -13,11 +13,14 @@ public enum GameState
 
 public class GameManager : CSingletonMono<GameManager>
 { 
-    [SerializeField]
+    [SerializeField] 
     List<TutorialLevel> tutorialLevels;
 
     [SerializeField]
     PlayerController playerPerfab;
+
+    [SerializeField]
+    List<Vector3> playerPositions;
 
     [HideInInspector]
     public bool IsConnectedAirconsole;
@@ -92,7 +95,7 @@ public class GameManager : CSingletonMono<GameManager>
                     {
                         startCanvas.CloseScreen();
 
-                        SwitchState(GameState.Tutorial);
+                        SwitchState(GameState.Fantasy);
                     });
                 }
             }
@@ -131,7 +134,7 @@ public class GameManager : CSingletonMono<GameManager>
         {
             PlayerController player = Instantiate(playerPerfab);
             player.SetupPlayerData(i);
-            player.transform.position = new Vector3(i, 0.85f, 0);
+            player.transform.position = playerPositions[i];
         }
 
         CustomerManager.instance.StartLevel();
@@ -145,6 +148,15 @@ public class GameManager : CSingletonMono<GameManager>
         if (AirConsole.instance != null)
         {
             AirConsole.instance.onReady -= OnReady;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        foreach(Vector3 position in playerPositions)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(position, 1);
         }
     }
 }
