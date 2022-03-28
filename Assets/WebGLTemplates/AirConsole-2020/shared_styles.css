@@ -53,60 +53,69 @@ body {
 }
 
 .Tutorial-confirm-button{
-  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  background: #336600;
+  background-image: -webkit-linear-gradient(top, #336600, #99cc99);
+  background-image: -moz-linear-gradient(top, #336600, #99cc99);
+  background-image: -ms-linear-gradient(top, #336600, #99cc99);
+  background-image: -o-linear-gradient(top, #336600, #99cc99);
+  background-image: linear-gradient(to bottom, #336600, #99cc99);
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
-  padding: 20px 37px 20px 37px;
+  padding: 8px 25px 8px 25px;
   text-decoration: none;
   text-align: center;
   transform-origin: center center;
   position: absolute;
-  bottom: 0%;
-  right: 0%;
+  bottom: 3%;
+  right: 40%;
   /*transform: translate(-50%, -50%);*/
 }
 
 .Tutorial{
-  -webkit-border-radius: 12;
-  -moz-border-radius: 12;
-  border-radius: 12px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
   font-family: Arial;
   color: #ffffff;
   font-size: 20px;
-  background: #2d91d4;
-  padding: 27px 32px 27px 32px;
+  background: none;
+  padding: 16px;
   text-decoration: none;
   text-align: center;
+  border: 4px solid black;
 }
 
 .button-one{
   position: absolute;
-  top: 30%;
-  left: 55%;
+  top: 67%;
+  left: 20%;
+  border-radius: 50%;
+  border-color: #336600;
 }
 .button-two{
   position: absolute;
-  top: 30%;
-  left: 70%;
+  top: 67%;
+  left: 35%;
+  border-radius: 50%;
+  border-color: #336600;
 }
 .button-three{
   position: absolute;
-  top: 55%;
-  left: 55%;
+  top: 67%;
+  left: 50%;
+  border-radius: 50%;
+  border-color: #336600;
 }
 .button-four{
   position: absolute;
-  top: 55%;
-  left: 70%;
+  top: 67%;
+  left: 65%;
+  border-radius: 50%;
+  border-color: #336600;
 }
 .button-back{
   position: absolute;
@@ -116,22 +125,45 @@ body {
   padding: 20px 30px 20px 30px;
 }
 
-#cloth-image{
-    background-image: url("Tutorial/Cloth1.png");
+#bg-image{
+    background-image: url("UI/DiscriptionBg.png");
     position: absolute;
-    top: 20%;
-    left: 20%;
-    width: 40%;
-    height: 40%;
+    top: 10%;
+    left: 10%;
+    width: 85%;
+    height: 85%;
     background-size: contain;
     background-repeat: no-repeat;
 }
 
+#lable-image{
+    background-image: url("UI/Label.png");
+    position: absolute;
+    top: 18%;
+    left: 45%;
+    width: 45%;
+    height: 45%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#cloth-image{
+    background-image: url("Tutorial/Cloth1.png");
+    position: absolute;
+    top: 2%;
+    left: 15%;
+    width: 60%;
+    height: 60%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
 #fantasy-image{
   background-image: url("Fantasy/Cloth1.png");
   position: absolute;
-  top: 20%;
-  left: 20%;
+  top: 5%;
+  left: 15%;
   width: 40%;
   height: 40%;
   background-size: contain;
@@ -140,20 +172,22 @@ body {
 
 #cloth-text{
   position: absolute;
-  top: 65%;
-  left: 5%;
-  width: 50%;
-  text-align: center;
+  top: 23%;
+  left: 50%;
+  width: 40%;
+  text-align: left;
   font-size: 18px;
+  color: #336600;
 }
 
 #tutorial-hint-text{
   position: absolute;
-  top: 20%;
-  left: 45%;
+  top: 60%;
+  left: 23%;
   width: 50%;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
+  color: #336600;
 }
 
 #fantasy-cloth-text{
