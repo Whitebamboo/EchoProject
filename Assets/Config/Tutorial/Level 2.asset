@@ -16,6 +16,10 @@ MonoBehaviour:
   levelDescription: Which clothing is long-lasting and durable?
   lowExtentTitle: Not durable
   highExtentTitle: Very durable
+  winDescription: 'All of your clothes can be recycled, so take them to a fabric
+    recycling facility instead of throwing them out in the trash. '
+  loseDescription: 'The life of clothing can be extended if they are able to go to
+    thrift stores after using them. '
   clothes:
   - image: {fileID: 21300000, guid: 545de0bb2c7619049860e8c98dcdfc40, type: 3}
     clothDescription: This shirt was owned for 3 months and was thrown away in the

@@ -1003,12 +1003,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7377df74dcca8824e824274e9519e647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelTitle: {fileID: 0}
   levelDescription: {fileID: 0}
-  images:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  lowExtentText: {fileID: 0}
+  highExtentText: {fileID: 0}
+  displayImageHolder: []
+  colorSprites: []
+  selectionComfirm: []
 --- !u!1 &1846904612542987632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,7 +1511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &642486229045727347
 RectTransform:
   m_ObjectHideFlags: 0

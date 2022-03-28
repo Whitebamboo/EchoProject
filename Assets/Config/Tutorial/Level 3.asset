@@ -18,6 +18,11 @@ MonoBehaviour:
     cotton and polyester in your fabric guide book.
   lowExtentTitle: Hard to be sorted
   highExtentTitle: Easily sortable
+  winDescription: "Different types of materials need to be sorted before the clothing
+    is recycled, so it\u2019s hard for blended fabrics to be properly recycled. "
+  loseDescription: 'If you look at the content label on your clothes, you''re likely
+    to find that it''s made with blended materials like cotton and polyester, which
+    are difficult to separate into a category. '
   clothes:
   - image: {fileID: 21300000, guid: c2a53a355c9b9e64f8e3d429394c694d, type: 3}
     clothDescription: "This shirt\u2019s blend is 80% cotton, 15% polyester, and

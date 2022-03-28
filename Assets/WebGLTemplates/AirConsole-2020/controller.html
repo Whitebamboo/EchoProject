@@ -16,6 +16,7 @@
     var vm = null;
 
     var startConfirmed = false;
+    var tutorialSelectionConfirmed = false;
 
     function App() {
 
@@ -70,6 +71,14 @@
               startConfirmed = true
           }
       }
+      
+      App.prototype.tutorialSelectionConfirm = function (msg) {
+          if(msg == "confirm" && !tutorialSelectionConfirmed){
+              //document.getElementById("tutorial-confirm-button").classList.add("deactive");
+              airconsole.message(AirConsole.SCREEN, { "action": msg });
+              startConfirmed = true
+          }
+      }
 
       App.prototype.changeToFantasy = function () {
           vm.controllersShow('fantasy', true);
@@ -84,6 +93,7 @@
                   vm.controllersShow("ingame", true);
               }
               else if(messages[1] == "Cloth"){
+                  tutorialSelectionConfirmed = false;
                   document.getElementById("cloth-image").style.backgroundImage = "url(Tutorial" + messages[2] + "/" + messages[3] + ".png)";
                   document.getElementById("cloth-text").innerHTML = messages[4];
               }
@@ -94,6 +104,7 @@
               }
               else if(messages[1] == "Cloth"){
                   vm.controllersShow("checking", true);
+                  //document.getElementById("tutorial-confirm-button").classList.remove("deactive");
                   document.getElementById("fantasy-image").style.backgroundImage = "url(Fantasy/" + messages[2] + ".png)";
                   document.getElementById("fantasy-cloth-text").innerHTML = messages[3];
               }
@@ -136,7 +147,7 @@
 
     <div id="start" class="view default-view">
       <div id = "start-button" class="Start-button" ontouchstart="window.app.startGameConfirm('confirm')"> Ready </div>
-      <div id="Start-text"> Ready to save the planet? </div>
+      <div id ="Start-text"> Ready to save the planet? </div>
     </div>
   
     <div id="ingame" class="view">
@@ -147,6 +158,7 @@
       <div class="Tutorial button-two" ontouchstart="window.app.sendMessageToScreen('2')"> 2 </div>
       <div class="Tutorial button-three" ontouchstart="window.app.sendMessageToScreen('3')"> 3 </div>
       <div class="Tutorial button-four" ontouchstart="window.app.sendMessageToScreen('4')"> 4 </div>
+      <div id = "tutorial-confirm-button" class="Tutorial-confirm-button" ontouchstart="window.app.tutorialSelectionConfirm('confirm')"> Confirm </div>
     </div>
 
     <div id="fantasy" class="view">

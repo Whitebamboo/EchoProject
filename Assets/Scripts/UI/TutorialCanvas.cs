@@ -14,6 +14,10 @@ public class TutorialCanvas : UIScreenBase
     [SerializeField] TextMeshProUGUI highExtentText;
     [SerializeField] Image[] displayImageHolder;
     [SerializeField] Sprite[] colorSprites; //0 green 1 yellow 2 red 3 blue
+    [SerializeField] GameObject[] selectionComfirm;
+    [SerializeField] GameObject progressPage;
+    [SerializeField] TextMeshProUGUI progressTitle;
+    [SerializeField] TextMeshProUGUI progressDescription;
 
     List<TutorialLevel> m_leves;
 
@@ -45,6 +49,7 @@ public class TutorialCanvas : UIScreenBase
         m_selectList = new string[playersNumber];
         m_clothAssignment.Clear();
         ClearSprite();
+        ClearSelection();
         ResetPlayerRandom(playersNumber);
 
         m_currLevelIndex = levelIndex;
@@ -65,34 +70,105 @@ public class TutorialCanvas : UIScreenBase
     void OnMessage(int fromDeviceID, JToken data)
     {
         Debug.Log("message from " + fromDeviceID + ", data: " + data);
-        if (data["action"] != null)
-        {
-            int input = int.Parse(data["action"].ToString());
-            RemoveSprite(m_clothAssignment[fromDeviceID]);
-            m_selectList[input-1] = m_clothAssignment[fromDeviceID];
-            UpdateSprite(m_leves[m_currLevelIndex]);
 
-            if(IsFilled())
+        if(data["action"] != null && data["action"].ToString().Equals("confirm"))
+        {
+            int index = GetSelectionIndex(fromDeviceID);
+            if(index == -1)
             {
-                if(IsCorrect(m_leves[m_currLevelIndex]))
+                return;
+            }
+
+            selectionComfirm[index].SetActive(true);
+
+            if (IsFilled() && IsAllComfirmed())
+            {
+                if (IsCorrect(m_leves[m_currLevelIndex]))
                 {
                     m_currLevelIndex++;
-                    if(m_currLevelIndex == m_leves.Count)
+                    if (m_currLevelIndex == m_leves.Count)
                     {
                         GameManager.instance.FinishTutorial();
                         CloseScreen();
                     }
                     else
                     {
-                        LoadLevel(m_currLevelIndex);
+                        StartCoroutine(CorrectSelection());
                     }
                 }
                 else
                 {
-                    ClearSprite();
+                    StartCoroutine(WrongSelection());
                 }
             }
+
+            return;
         }
+
+        if (data["action"] != null)
+        {
+            int index = GetSelectionIndex(fromDeviceID);
+            int input = int.Parse(data["action"].ToString());
+
+            if (index != -1 && IsConfirmed(index))
+            {
+                return;
+            }
+
+            if (IsConfirmed(input-1))
+            {
+                return;
+            }
+
+            RemoveSprite(m_clothAssignment[fromDeviceID]);
+            m_selectList[input-1] = m_clothAssignment[fromDeviceID];
+            UpdateSprite();
+        }
+    }
+
+    IEnumerator WrongSelection()
+    {
+        ClearSprite();
+        ClearSelection();
+        progressPage.SetActive(true);
+        progressTitle.text = "Wrong";
+        progressDescription.text = m_leves[m_currLevelIndex].loseDescription;
+
+        yield return new WaitForSeconds(5f);
+
+        progressPage.SetActive(false);
+    }
+
+    IEnumerator CorrectSelection()
+    {
+        progressPage.SetActive(true);
+        progressTitle.text = "Congratulation";
+        progressDescription.text = m_leves[m_currLevelIndex - 1].winDescription;
+
+        yield return new WaitForSeconds(5f);
+
+        progressPage.SetActive(false);
+        LoadLevel(m_currLevelIndex);
+    }
+
+    int GetSelectionIndex(int fromDeviceID)
+    {
+        string assignedCloth = m_clothAssignment[fromDeviceID];
+
+        for(int i = 0; i < m_selectList.Length; i++)
+        {
+            if(m_selectList[i] == assignedCloth)
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    bool IsConfirmed(int index)
+    {
+        return selectionComfirm[index].activeSelf;
     }
 
     void ResetPlayerRandom(int playerNum)
@@ -116,7 +192,7 @@ public class TutorialCanvas : UIScreenBase
         }
     }
 
-    void UpdateSprite(TutorialLevel level)
+    void UpdateSprite()
     {
         for(int i = 0; i < m_selectList.Length; i++)
         {
@@ -154,6 +230,14 @@ public class TutorialCanvas : UIScreenBase
         }
     }
 
+    void ClearSelection()
+    {
+        for(int i = 0; i < selectionComfirm.Length; i++)
+        {
+            selectionComfirm[i].SetActive(false);
+        }
+    }
+
     bool IsFilled()
     {
         for (int i = 0; i < m_selectList.Length; i++)
@@ -164,6 +248,18 @@ public class TutorialCanvas : UIScreenBase
             }
         }
 
+        return true;
+    }
+
+    bool IsAllComfirmed()
+    {
+        for (int i = 0; i < selectionComfirm.Length; i++)
+        {
+            if(!selectionComfirm[i].activeSelf)
+            {
+                return false;
+            }
+        }
         return true;
     }
 

@@ -9,6 +9,8 @@ public class TutorialLevel : ScriptableObject
     public string levelDescription;
     public string lowExtentTitle;
     public string highExtentTitle;
+    public string winDescription;
+    public string loseDescription;
     public List<TutorialCloth> clothes;
 }
 
