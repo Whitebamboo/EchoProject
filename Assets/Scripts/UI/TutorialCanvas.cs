@@ -136,6 +136,7 @@ public class TutorialCanvas : UIScreenBase
 
         yield return new WaitForSeconds(5f);
 
+        AirConsole.instance.Broadcast("Tutorial;Hint;"+ m_leves[m_currLevelIndex].loseDescription);
 
         progressPage.SetActive(false);
     }

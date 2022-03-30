@@ -245,4 +245,24 @@ body {
   left: 55%;
 }
 
+.button-hint{
+  position: absolute;
+  right: 1%;
+  top: 10%;
+  transform: translate(-40%, 500%);
+  padding: 10px 20px 10px 20px;
+}
 
+#hint-text{
+  position: absolute;
+  top: 30%;
+  width: 80%;
+  text-align: center;
+  font-size: 25px;
+  transform: translateX(10%);
+}
+
+.disabled{
+    display: none;
+    visibility: hidden;
+}
