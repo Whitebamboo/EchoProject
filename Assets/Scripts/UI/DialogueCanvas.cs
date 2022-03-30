@@ -7,7 +7,7 @@ public class DialogueCanvas : UIScreenBase
 {
     [SerializeField] TextMeshProUGUI dialogText;
 
-    public float displayTime = 5f;
+    public float displayTime = 10f;
 
     float timer;
 

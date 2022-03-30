@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
             }
 
             AirConsole.instance.Message(deviceId,
-                string.Format("Fantasy;Cloth;{0};{1}", holder.GetItem().data.clothImage.name, holder.GetItem().data.ToString()));
+                string.Format("Fantasy;Cloth;{0};{1}", holder.GetItem().data.clothImage.name.Replace(" ",""), holder.GetItem().data.ToString()));
         }
     }
 

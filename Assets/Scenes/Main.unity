@@ -190,7 +190,6 @@ MonoBehaviour:
   customerPrefab: {fileID: 4379085672052021296, guid: f9aea358a01b09e4bb408da57a4ed71c, type: 3}
   fantasyLevels:
   - {fileID: 11400000, guid: 7adbcde07663939489e89037ffb87e2f, type: 2}
-  - {fileID: 11400000, guid: 4f8019369474e174a97500bf7fd31ee4, type: 2}
 --- !u!4 &60365319
 Transform:
   m_ObjectHideFlags: 0
@@ -5017,13 +5016,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132358036}
-  m_LocalRotation: {x: 0.43938082, y: -0, z: -0, w: 0.89830095}
-  m_LocalPosition: {x: 0.000000003629843, y: 25, z: -17}
+  m_LocalRotation: {x: 0.41043863, y: -0, z: -0, w: 0.9118882}
+  m_LocalPosition: {x: 0.000000003629843, y: 24.37, z: -19.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 52.129, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 48.465, y: 0, z: 0}
 --- !u!114 &2132358040
 MonoBehaviour:
   m_ObjectHideFlags: 0

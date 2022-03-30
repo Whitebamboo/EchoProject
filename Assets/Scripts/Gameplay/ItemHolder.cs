@@ -42,7 +42,8 @@ public class ItemHolder : MonoBehaviour, IIteractable
 
         FollowUICanvas canvas = UIManager.instance.FindScreen<FollowUICanvas>();
         popupHint = canvas.GenerateClothPopup(holderRoot.transform);
-        popupHint.SetText(m_item.data.GetPopupDescription());
+        popupHint.SetImage(m_item.data.clothImage);
+        // popupHint.SetText(m_item.data.GetPopupDescription());
     }
 
     public void OnHideHint()

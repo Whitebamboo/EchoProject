@@ -117,7 +117,8 @@
               else if(messages[1] == "Cloth"){
                   vm.controllersShow("checking", true);
                   //document.getElementById("tutorial-confirm-button").classList.remove("deactive");
-                  document.getElementById("fantasy-image").style.backgroundImage = "url(Fantasy/" + messages[2] + ".png)";
+                  //document.getElementById("fantasy-image").style.backgroundImage = "url(Fantasy/" + messages[2] + ".PNG)";
+                  document.getElementById("fantasy-image").style.backgroundImage = "url(Fantasy/" + messages[2] + ".PNG)";
                   document.getElementById("fantasy-cloth-text").innerHTML = messages[3];
               }
               break;
@@ -191,7 +192,6 @@
     <div id="checking" class="view">
         <div class="interact button-back" ontouchstart="window.app.changeToFantasy()"> back </div>
         <div id="fantasy-image"></div>
-        <div id="tutorial-hint-text">Following are the description:</div>
         <div id="fantasy-cloth-text"></div>
     </div>
 

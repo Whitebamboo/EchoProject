@@ -73,8 +73,12 @@ public class CustomerController : MonoBehaviour, IIteractable
             else
             {
                 DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
-                canvas.SetUp(matchedItem.notMatchResponse);
+                canvas.SetUp(m_data.notMatchResponse);
             }
+        }else
+        {
+            DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
+            canvas.SetUp(m_data.request);
         }
     }
 

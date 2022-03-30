@@ -11,20 +11,34 @@ public enum ClothColor
     Yellow,
     Pink,
     Purple,
+    Blue,
+    Navy_Blue,
+    White,
+    Red,
+    Christmas_Red,
+    Bright_Red,
+    Orange,
+    Orange_Coral,
+    Lavender,
+    Black,
+    Grey
 }
 
 public enum ClothMaterial
 {
     Cotton,
+    Conventional_Cotton,
     Organic_Cotton,
     Recycled_Cotton,
     Modal,
     Polyester,
+    Recycled_Polyester,
     Spandex,
     Nylon,
     Silk,
-    Line,
-
+    Linen,
+    Acrylic,
+    Wool
 }
 
 [CreateAssetMenu(fileName = "Item", menuName = "Config/In game cloth")]
@@ -32,7 +46,7 @@ public class ItemData : ScriptableObject
 {
     public GameObject prefab;
     public Sprite clothImage;
-    public ClothColor color;
+    public List<ClothColor> color;
     public string description;
     public int year;
     public int month;
