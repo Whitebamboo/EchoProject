@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Customer1-1
   m_EditorClassIdentifier: 
   customerName: 
-  request: Hi! I am looking for a yellow dress that is made of cotton. The more eco-friendlier,
+  request: Hi! I am looking for a yellow dress that is made of cotton. The more eco-friendly,
     the better!
   items:
   - data: {fileID: 11400000, guid: 09a22d946f7636043b596aaf7ea87a2b, type: 2}
     score: 10
-    response: Thanks a lot! This is what I want
+    response: Thanks a lot! This is what I want.

@@ -131,10 +131,11 @@ public class TutorialCanvas : UIScreenBase
         ClearSprite();
         ClearSelection();
         progressPage.SetActive(true);
-        progressTitle.text = "Wrong";
+        progressTitle.text = "Try Again!";
         progressDescription.text = m_leves[m_currLevelIndex].loseDescription;
 
         yield return new WaitForSeconds(5f);
+
 
         progressPage.SetActive(false);
     }
@@ -142,7 +143,7 @@ public class TutorialCanvas : UIScreenBase
     IEnumerator CorrectSelection()
     {
         progressPage.SetActive(true);
-        progressTitle.text = "Congratulation";
+        progressTitle.text = "Congratulations!";
         progressDescription.text = m_leves[m_currLevelIndex - 1].winDescription;
 
         yield return new WaitForSeconds(5f);
