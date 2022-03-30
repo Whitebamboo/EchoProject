@@ -67,13 +67,13 @@ public class CustomerController : MonoBehaviour, IIteractable
                 player.SetItem(null);
 
                 DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
-                canvas.SetUp(matchedItem.response);
+                canvas.SetUp(matchedItem.matchResponse);
                 AssignItem(item);
             }
             else
             {
                 DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
-                canvas.SetUp("This is not I want!");
+                canvas.SetUp(matchedItem.notMatchResponse);
             }
         }
     }
@@ -82,5 +82,15 @@ public class CustomerController : MonoBehaviour, IIteractable
     {
         item.transform.parent = holderRoot.transform;
         item.transform.localPosition = Vector3.zero;
+    }
+
+    public void OnShowHint()
+    {
+        //not implement
+    }
+
+    public void OnHideHint()
+    {
+        //not implement
     }
 }

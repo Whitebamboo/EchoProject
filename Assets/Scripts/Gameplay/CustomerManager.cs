@@ -90,6 +90,11 @@ public class CustomerManager : CSingletonMono<CustomerManager>
 
         for(int i = 0; i < holders.Count; i++)
         {
+            if(i >= items.Count)
+            {
+                break;
+            }
+
             holders[i].AddItemData(items[i]);
         }
     }

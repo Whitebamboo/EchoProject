@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float playerSpeed = 5f;
     [SerializeField] float turnSpeed = 15f;
     [SerializeField] Transform itemRoot;
+    [SerializeField] GameObject[] models;
       
     CharacterController controller;
     Transform camTransform;
@@ -27,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     Item currItem;
 
+    IIteractable currInteractable;
+
     void Awake()
     {
         AirConsole.instance.onMessage += OnMessage;
@@ -39,6 +42,9 @@ public class PlayerController : MonoBehaviour
     {
         this.playerId = playerId;
         this.deviceId = AirConsole.instance.ConvertPlayerNumberToDeviceId(playerId);
+
+        GameObject modelView = Instantiate(models[playerId], transform);
+        modelView.transform.localPosition = new Vector3(0, -0.88f, 0);
     }
 
     public void SetItem(Item item)
@@ -52,6 +58,8 @@ public class PlayerController : MonoBehaviour
         currItem = item;
         item.transform.parent = itemRoot;
         item.transform.localPosition = Vector3.zero;
+        item.transform.localEulerAngles = Vector3.zero;
+        item.transform.localScale = Vector3.one;
     }
 
     void OnMessage(int fromDeviceID, JToken data)
@@ -65,6 +73,8 @@ public class PlayerController : MonoBehaviour
         {
             if (data["joystick_left"]["position"] != null)
             {
+                isMoving = true;
+
                 horizontal = float.Parse(data["joystick_left"]["position"]["x"].ToString());
                 vertical = float.Parse(data["joystick_left"]["position"]["y"].ToString()) * -1;
             }
@@ -140,6 +150,10 @@ public class PlayerController : MonoBehaviour
             {
                 holder = (ItemHolder)currInteractable;
             }
+            else
+            {
+                return;
+            }
 
             if(holder.GetItem() == null)
             {
@@ -153,12 +167,37 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        movement = camTransform.right * horizontal *playerSpeed * Time.deltaTime + camForward * vertical * playerSpeed * Time.deltaTime;
+        movement = camTransform.right * horizontal * playerSpeed * Time.deltaTime + camForward * vertical * playerSpeed * Time.deltaTime;
         controller.Move(movement);
 
         if(horizontal != 0 || vertical != 0)
         {
             Rotating(horizontal, vertical);
+        }
+
+        if (isMoving)
+        {
+            SearchingAround();
+        }
+    }
+
+    void SearchingAround()
+    {
+        IIteractable obj = GetNearestObject();
+
+        if(currInteractable != obj)
+        {
+            if(currInteractable != null)
+            {
+                currInteractable.OnHideHint();
+            }
+
+            currInteractable = obj;
+
+            if (currInteractable != null)
+            {
+                currInteractable.OnShowHint();
+            }
         }
     }
 
@@ -171,16 +210,6 @@ public class PlayerController : MonoBehaviour
         Quaternion targetRotation = Quaternion.LookRotation(targetDir, Vector3.up);
 
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, turnSpeed * Time.deltaTime);
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        IIteractable interactable = collision.gameObject.GetComponent<IIteractable>();
-    }
-
-    void OnCollisionExit(Collision collision)
-    {
-        
     }
 
     void OnDestroy()

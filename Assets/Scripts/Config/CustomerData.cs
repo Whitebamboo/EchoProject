@@ -15,5 +15,6 @@ public class FulfillItem
 {
     public ItemData data;
     public float score;
-    public string response;
+    public string matchResponse;
+    public string notMatchResponse;
 }
