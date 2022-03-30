@@ -10,16 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 780fa66faccbfd641986162e282e5f89, type: 3}
-  m_Name: ClothName 4
+  m_Name: RackItem 2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 919132149155446097, guid: e1acb7ffc8cab8142923aa4bf6f65ee5, type: 3}
-  clothImage: {fileID: 21300000, guid: 35d384453621ebb438ff2116404f9c08, type: 3}
-  color: 0
+  prefab: {fileID: 919132149155446097, guid: e7cdefbd8ad4dd4409a1a97673500959, type: 3}
+  clothImage: {fileID: 21300000, guid: 9eeed8cc4c30b5147ac0ecd406a819db, type: 3}
+  color: 2
   description: Something
   year: 2
   month: 0
-  properties:
-  - material: 5
-    percentage: 0
-  - material: 3
-    percentage: 0
+  properties: []

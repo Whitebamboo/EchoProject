@@ -122,6 +122,7 @@ public class GameManager : CSingletonMono<GameManager>
                 canvas.Setup(tutorialLevels);
                 break;
             case GameState.Fantasy:
+                UIManager.instance.CreateScreen<FollowUICanvas>();
                 AirConsole.instance.Broadcast("Fantasy;Start");
                 InitFantasyPhrase();
                 break;

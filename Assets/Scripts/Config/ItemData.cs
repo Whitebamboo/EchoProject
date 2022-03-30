@@ -5,20 +5,26 @@ using UnityEngine;
 
 public enum ClothColor
 {
+    Bady_Yellow,
+    Sunflower_Yellow,
+    Medallion_Yellow,
     Yellow,
     Pink,
-    Purple
+    Purple,
 }
 
 public enum ClothMaterial
 {
-    Contton,
-    Organic_Contton,
-    Recycled_Contton,
+    Cotton,
+    Organic_Cotton,
+    Recycled_Cotton,
+    Modal,
     Polyester,
     Spandex,
     Nylon,
     Silk,
+    Line,
+
 }
 
 [CreateAssetMenu(fileName = "Item", menuName = "Config/In game cloth")]
@@ -49,7 +55,7 @@ public class ItemData : ScriptableObject
             sb.Append("Material:");
             foreach (MaterialProperty material in properties)
             {
-                sb.Append(material.material.ToString());
+                sb.Append(material.material.ToString().Replace("_"," "));
                 sb.Append(" ");
                 sb.Append(material.percentage.ToString());
                 sb.Append("%<br>");
@@ -57,6 +63,34 @@ public class ItemData : ScriptableObject
         }
 
         if(year != 0)
+        {
+            sb.Append("Durability: ");
+            sb.Append("This cloth can be worn for " + year + " years");
+        }
+
+        return sb.ToString();
+    }
+
+    public string GetPopupDescription()
+    {
+        StringBuilder sb = new StringBuilder();
+
+        if (properties.Count == 0)
+        {
+            sb.Append("No Label\n");
+        }
+        else
+        {
+            sb.Append("Material:\n");
+            foreach (MaterialProperty material in properties)
+            {
+                sb.Append(material.material.ToString().Replace("_", " "));
+                sb.Append(" ");
+                sb.Append(material.percentage.ToString() + "%" + "\n");
+            }
+        }
+
+        if (year != 0)
         {
             sb.Append("Durability: ");
             sb.Append("This cloth can be worn for " + year + " years");

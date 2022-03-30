@@ -5,4 +5,8 @@ using UnityEngine;
 public interface IIteractable
 {
     void OnInteract(PlayerController player, Item item = null);
+
+    void OnShowHint();
+
+    void OnHideHint();
 }

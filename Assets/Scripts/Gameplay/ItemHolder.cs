@@ -11,6 +11,8 @@ public class ItemHolder : MonoBehaviour, IIteractable
 
     public bool IsHoldingTtem => m_item != null;
 
+    private ClothPopup popupHint;
+
     void Start()
     {
         CustomerManager.instance.AddHolders(this);
@@ -28,6 +30,26 @@ public class ItemHolder : MonoBehaviour, IIteractable
         {
             player.SetItem(m_item);
             m_item = null;
+        }
+    }
+
+    public void OnShowHint()
+    {
+        if(m_item == null)
+        {
+            return;
+        }
+
+        FollowUICanvas canvas = UIManager.instance.FindScreen<FollowUICanvas>();
+        popupHint = canvas.GenerateClothPopup(holderRoot.transform);
+        popupHint.SetText(m_item.data.GetPopupDescription());
+    }
+
+    public void OnHideHint()
+    {
+        if(popupHint != null)
+        {
+            Destroy(popupHint.gameObject);
         }
     }
 
@@ -55,4 +77,5 @@ public class ItemHolder : MonoBehaviour, IIteractable
         item.transform.localEulerAngles = Vector3.zero;
         item.transform.localScale = Vector3.one;
     }
+
 }
