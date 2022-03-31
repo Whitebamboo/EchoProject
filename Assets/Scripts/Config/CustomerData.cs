@@ -5,9 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Customer", menuName = "Config/Customer data")]
 public class CustomerData : ScriptableObject
 {
-    public string customerName;
+    public Sprite image;
     public string request;
     public List<FulfillItem> items;
+    public string notMatchResponse;
 }
 
 [System.Serializable]
@@ -16,5 +17,4 @@ public class FulfillItem
     public ItemData data;
     public float score;
     public string matchResponse;
-    public string notMatchResponse;
 }

@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: Customer1-2
   m_EditorClassIdentifier: 
   customerName: 
-  request: Looking for a pick cloth
+  request: "Hey! I\u2019d like something with some pops of color today. If it could
+    be an eco-friendly option too, that\u2019s a plus!"
   items:
-  - data: {fileID: 11400000, guid: be0dbe749b2b77b4698733d05402a588, type: 2}
+  - data: {fileID: 11400000, guid: 1b1df71c03125e94ab2502a1723fc0dd, type: 2}
     score: 10
-    response: Thanks a lot! This is what I want
+    matchResponse: Thanks!
+  notMatchResponse: Sorry. This is not I want.

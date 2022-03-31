@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 780fa66faccbfd641986162e282e5f89, type: 3}
+  m_Name: RackItem 5
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 919132149155446097, guid: 57459a2194926af4981067d841927f54, type: 3}
+  clothImage: {fileID: 21300000, guid: 20a2d00f9b459e14ab74e150f4ccf625, type: 3}
+  color: 060000000700000008000000
+  description: 
+  year: 0
+  month: 1
+  properties:
+  - material: 4
+    percentage: 100

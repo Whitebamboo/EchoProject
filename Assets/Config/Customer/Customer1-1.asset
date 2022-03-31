@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Customer1-1
   m_EditorClassIdentifier: 
   customerName: 
-  request: Hi! I am looking for a yellow dress that is made of cotton. The more eco-friendly,
-    the better!
+  request: "Hi! I\u2019m looking for a yellow top today. Any design is fine, just
+    make sure it\u2019s solid yellow! Oh, and I\u2019ve also been trying to shop
+    more eco-friendly lately, so please keep that in mind!"
   items:
-  - data: {fileID: 11400000, guid: 09a22d946f7636043b596aaf7ea87a2b, type: 2}
+  - data: {fileID: 11400000, guid: 3eb660f070a35594f99731a7ba1dcdd0, type: 2}
     score: 10
-    response: Thanks a lot! This is what I want.
+    matchResponse: Thanks!
+  notMatchResponse: Sorry. This is not I want.

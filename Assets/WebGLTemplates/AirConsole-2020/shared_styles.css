@@ -164,10 +164,9 @@ body {
 
 
 #fantasy-image{
-  background-image: url("Fantasy/Cloth1.png");
   position: absolute;
-  top: 5%;
-  left: 15%;
+  top: 30%;
+  left: 10%;
   width: 40%;
   height: 40%;
   background-size: contain;
@@ -197,7 +196,7 @@ body {
 #fantasy-cloth-text{
   position: absolute;
   top: 35%;
-  left: 52%;
+  left: 42%;
   width: 50%;
   text-align: left;
   font-size: 18px;
