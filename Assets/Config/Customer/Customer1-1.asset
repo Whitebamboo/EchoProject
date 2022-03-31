@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 408e29de3f87db749af8f04f7132d633, type: 3}
   m_Name: Customer1-1
   m_EditorClassIdentifier: 
-  customerName: 
+  image: {fileID: 0}
   request: "Hi! I\u2019m looking for a yellow top today. Any design is fine, just
     make sure it\u2019s solid yellow! Oh, and I\u2019ve also been trying to shop
     more eco-friendly lately, so please keep that in mind!"
   items:
   - data: {fileID: 11400000, guid: 3eb660f070a35594f99731a7ba1dcdd0, type: 2}
     score: 10
-    matchResponse: Thanks!
-  notMatchResponse: Sorry. This is not I want.
+    matchResponse: 'This yellow linen shirt is perfect and easy to recycle! Thanks
+      so much!  '
+  notMatchResponse: "This isn\u2019t quite the color I wanted\u2026 Can you find
+    something else? "

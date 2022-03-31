@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 408e29de3f87db749af8f04f7132d633, type: 3}
   m_Name: Customer1-3
   m_EditorClassIdentifier: 
-  customerName: 
+  image: {fileID: 0}
   request: "Hello! I need a red button down shirt, but am also trying to be more
     environmentally conscious\u2026 Do you have any eco-friendly options?"
   items:
   - data: {fileID: 11400000, guid: 2ab28b42d9119234ca785d2406464287, type: 2}
     score: 10
-    matchResponse: Thanks!
-  notMatchResponse: Sorry. This is not I want.
+    matchResponse: 'This red button down is just what I was looking for! And the
+      materials make it easily recyclable too. Thanks a lot! '
+  notMatchResponse: "I would really prefer the color be red\u2026 Can you please
+    check for something in that color?"
