@@ -8,6 +8,7 @@ public class CustomerData : ScriptableObject
     public Sprite image;
     public string request;
     public List<FulfillItem> items;
+    public List<FulfillItem> closeItems;
     public string notMatchResponse;
 }
 

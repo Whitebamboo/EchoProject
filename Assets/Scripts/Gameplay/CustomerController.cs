@@ -60,6 +60,21 @@ public class CustomerController : MonoBehaviour, IIteractable
             }
         }
 
+        DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
+        foreach (FulfillItem fulfillItem in m_data.closeItems)
+        {
+            if (fulfillItem.data == item)
+            {
+                matchedItem = fulfillItem;              
+                canvas.SetUp(fulfillItem.matchResponse);
+
+                return false;
+            }
+        }
+
+        canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
+        canvas.SetUp(m_data.notMatchResponse);
+
         matchedItem = null;
         return false;
     }
@@ -77,11 +92,6 @@ public class CustomerController : MonoBehaviour, IIteractable
                 DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
                 canvas.SetUp(matchedItem.matchResponse);
                 AssignItem(item);
-            }
-            else
-            {
-                DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
-                canvas.SetUp(m_data.notMatchResponse);
             }
         }else
         {

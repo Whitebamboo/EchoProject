@@ -79,6 +79,12 @@ public class ItemData : ScriptableObject
             }
         }
 
+        if(!string.IsNullOrEmpty(description))
+        {
+            sb.Append(description);
+            sb.Append("<br>");
+        }
+
         sb.Append("Durability: ");
         if (year > 0)
         {

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780fa66faccbfd641986162e282e5f89, type: 3}
   m_Name: RackItem 21
   m_EditorClassIdentifier: 
-  prefab: {fileID: 919132149155446097, guid: e7cdefbd8ad4dd4409a1a97673500959, type: 3}
+  prefab: {fileID: 919132149155446097, guid: ddc69caa276e39746ae60e0d96aa07e4, type: 3}
   clothImage: {fileID: 21300000, guid: 27f3ade0e2a170b4e9ad9e91732b302e, type: 3}
   color: 05000000
   description: 

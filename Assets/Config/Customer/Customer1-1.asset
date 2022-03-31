@@ -21,5 +21,18 @@ MonoBehaviour:
     score: 10
     matchResponse: 'This yellow linen shirt is perfect and easy to recycle! Thanks
       so much!  '
+  closeItems:
+  - data: {fileID: 11400000, guid: 545f6121e082fb7448f439c7d584bd6c, type: 2}
+    score: 0
+    matchResponse: "This color is nice but\u2026 is there anything that isn\u2019t
+      made with blended synthetics? "
+  - data: {fileID: 11400000, guid: f57fbeffbd5da9048aeebcc7c797c1c1, type: 2}
+    score: 0
+    matchResponse: "This color is nice but\u2026 is there anything that isn\u2019t
+      made with blended synthetics? "
+  - data: {fileID: 11400000, guid: 56caf59805fb99249800fe41203e3636, type: 2}
+    score: 0
+    matchResponse: "This color is nice but\u2026 is there anything that isn\u2019t
+      made with blended synthetics? "
   notMatchResponse: "This isn\u2019t quite the color I wanted\u2026 Can you find
     something else? "
