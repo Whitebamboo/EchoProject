@@ -35,7 +35,7 @@ public class ItemHolder : MonoBehaviour, IIteractable
 
     public void OnShowHint()
     {
-        if(m_item == null)
+        if(m_item == null || popupHint != null)
         {
             return;
         }
