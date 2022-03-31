@@ -85,16 +85,7 @@ public class TutorialCanvas : UIScreenBase
             {
                 if (IsCorrect(m_leves[m_currLevelIndex]))
                 {
-                    m_currLevelIndex++;
-                    if (m_currLevelIndex == m_leves.Count)
-                    {
-                        GameManager.instance.FinishTutorial();
-                        CloseScreen();
-                    }
-                    else
-                    {
-                        StartCoroutine(CorrectSelection());
-                    }
+                    StartCoroutine(CorrectSelection());
                 }
                 else
                 {
@@ -144,13 +135,21 @@ public class TutorialCanvas : UIScreenBase
     IEnumerator CorrectSelection()
     {
         progressPage.SetActive(true);
-        progressTitle.text = "Congratulations!";
-        progressDescription.text = m_leves[m_currLevelIndex - 1].winDescription;
+        progressTitle.text = "Congratulations!\nYou put the garments\nin the correct order!";
+        progressDescription.text = m_leves[m_currLevelIndex].winDescription;
 
-        yield return new WaitForSeconds(5f);
-
-        progressPage.SetActive(false);
-        LoadLevel(m_currLevelIndex);
+        yield return new WaitForSeconds(8f);
+        m_currLevelIndex++;
+        if (m_currLevelIndex == m_leves.Count)
+        {
+            GameManager.instance.FinishTutorial();
+            CloseScreen();
+        }
+        else
+        {
+            progressPage.SetActive(false);
+            LoadLevel(m_currLevelIndex);
+        }
     }
 
     int GetSelectionIndex(int fromDeviceID)
