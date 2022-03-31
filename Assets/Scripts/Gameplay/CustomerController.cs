@@ -9,6 +9,8 @@ public class CustomerController : MonoBehaviour, IIteractable
 
     CustomerData m_data;
 
+    CustomerPopup m_popup;
+
     public void SetupData(CustomerData data)
     {
         m_data = data;
@@ -29,11 +31,17 @@ public class CustomerController : MonoBehaviour, IIteractable
         transform.DOLookAt(CustomerManager.instance.WaitPoint, 0.5f);
         transform.DOMove(CustomerManager.instance.WaitPoint, 5f).OnComplete(()=> {
             transform.DORotate(Vector3.zero, 0.5f);
+            FollowUICanvas canvas = UIManager.instance.FindScreen<FollowUICanvas>();
+            m_popup = canvas.GenerateCustomerPopup(transform);
         });
     }
 
     void GotExitPoint()
     {
+        if (m_popup != null)
+        {
+            Destroy(m_popup.gameObject);
+        }
         transform.DOLookAt(CustomerManager.instance.ExitPoint, 0.5f);
         transform.DOMove(CustomerManager.instance.ExitPoint, 2f).OnComplete(()=> {
             EventBus.Broadcast(EventTypes.CustomerLeft);
@@ -90,11 +98,11 @@ public class CustomerController : MonoBehaviour, IIteractable
 
     public void OnShowHint()
     {
-        //not implement
+
     }
 
     public void OnHideHint()
     {
-        //not implement
+
     }
 }
