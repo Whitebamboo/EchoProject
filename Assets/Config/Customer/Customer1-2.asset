@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 408e29de3f87db749af8f04f7132d633, type: 3}
   m_Name: Customer1-2
   m_EditorClassIdentifier: 
-  customerName: 
+  image: {fileID: 0}
   request: "Hey! I\u2019d like something with some pops of color today. If it could
     be an eco-friendly option too, that\u2019s a plus!"
   items:
   - data: {fileID: 11400000, guid: 1b1df71c03125e94ab2502a1723fc0dd, type: 2}
     score: 10
-    matchResponse: Thanks!
-  notMatchResponse: Sorry. This is not I want.
+    matchResponse: 'This two-toned yellow and white shirt is great! Thank you for
+      finding it for me! '
+  notMatchResponse: I was hoping for something multicolored, not solid. Can you look
+    again?
