@@ -16,8 +16,9 @@ MonoBehaviour:
   levelDescription: Which clothing is long-lasting and durable?
   lowExtentTitle: Not durable
   highExtentTitle: Very durable
-  winDescription: 'All of your clothes can be recycled, so take them to a fabric
-    recycling facility instead of throwing them out in the trash. '
+  winDescription: Instead of just throwing away your clothes when you are done with
+    them, try taking your clothes to a fabric recycling facility or thrift store
+    so that you can extend the lifespan of those clothes.
   loseDescription: 'The life of clothing can be extended if they are able to go to
     thrift stores after using them. '
   clothes:
