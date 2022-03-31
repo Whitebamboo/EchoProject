@@ -113,3 +113,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clothPopup: {fileID: 3756692741967143761, guid: 795cd97fb4c436e41969500742db2ffa, type: 3}
+  customerPopup: {fileID: 8930179074881833319, guid: 23c15742a2fd393499855b83a3e5985c, type: 3}
