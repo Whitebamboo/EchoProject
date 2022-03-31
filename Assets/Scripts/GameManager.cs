@@ -127,6 +127,7 @@ public class GameManager : CSingletonMono<GameManager>
                 UIManager.instance.CreateScreen<FollowUICanvas>();
                 UIManager.instance.CreateScreen<FantasyIntroCanvas>();
                 AirConsole.instance.Broadcast("Fantasy;Intro");
+                MusicManager.instance.PlayPhrase2();
                 InitFantasyPhrase();
                 break;
         }
