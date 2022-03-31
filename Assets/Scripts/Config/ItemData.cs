@@ -57,7 +57,10 @@ public class ItemData : ScriptableObject
         StringBuilder sb = new StringBuilder();
 
         sb.Append("Color: ");
-        sb.Append(color.ToString());
+        foreach(ClothColor c in color)
+        {
+            sb.Append(c.ToString().Replace("_", " ") + ", ");
+        }      
         sb.Append("<br>");
 
         if(properties.Count == 0)
@@ -66,20 +69,24 @@ public class ItemData : ScriptableObject
         }
         else
         {
-            sb.Append("Material:");
+            sb.Append("Material: ");
             foreach (MaterialProperty material in properties)
             {
-                sb.Append(material.material.ToString().Replace("_"," "));
-                sb.Append(" ");
                 sb.Append(material.percentage.ToString());
-                sb.Append("%<br>");
+                sb.Append("% ");
+                sb.Append(material.material.ToString().Replace("_", " "));
+                sb.Append(" <br>");
             }
         }
 
-        if(year != 0)
+        sb.Append("Durability: ");
+        if (year > 0)
         {
-            sb.Append("Durability: ");
-            sb.Append("This cloth can be worn for " + year + " years");
+            sb.Append("Worn for " + year + " years");
+        }
+        else
+        {
+            sb.Append("Worn for less than 1 year.");
         }
 
         return sb.ToString();

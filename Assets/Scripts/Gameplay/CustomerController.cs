@@ -20,8 +20,8 @@ public class CustomerController : MonoBehaviour, IIteractable
     void GotoEnterPoint()
     {
         transform.DOMove(CustomerManager.instance.EnterPoint, 2f).OnComplete(()=> {
-            DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
-            canvas.SetUp(m_data.request);
+            //DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
+            //canvas.SetUp(m_data.request);
             GotoWaitPoint();
         });
     }
