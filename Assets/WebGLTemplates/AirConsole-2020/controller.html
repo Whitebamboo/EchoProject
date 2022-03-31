@@ -111,7 +111,10 @@
 
               break;
             case "Fantasy":
-              if(messages[1] == "Start"){
+              if(messages[1] == "Intro"){
+                  vm.controllersShow("fantasy-intro", true);
+              }
+              else if(messages[1] == "Start"){
                   vm.controllersShow("fantasy", true);
               }
               else if(messages[1] == "Cloth"){
@@ -177,6 +180,10 @@
         <div id="show-hint-button" class="interact button-hint" ontouchstart="window.app.changeToHint()"> Hint </div>
 
     </div>
+
+    <div id="fantasy-intro" class="view">
+      <div id="start-button" class="Start-button" ontouchstart="window.app.sendMessageToScreen('next')"> Next </div>
+  </div>
 
     <div id="fantasy" class="view">
         <div id="joystick_left" class="joystick">

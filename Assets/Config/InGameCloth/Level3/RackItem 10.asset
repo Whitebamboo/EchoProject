@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780fa66faccbfd641986162e282e5f89, type: 3}
   m_Name: RackItem 10
   m_EditorClassIdentifier: 
-  prefab: {fileID: 919132149155446097, guid: efb5a3b5a66e9ef4bbbd58f8a0140597, type: 3}
+  prefab: {fileID: 919132149155446097, guid: a0dd70a7ac8777645b91c5a7964635fd, type: 3}
   clothImage: {fileID: 21300000, guid: 824ae501ab757474485a56820ea074f2, type: 3}
   color: 0a000000
   description: '*This clothing item has buttons'

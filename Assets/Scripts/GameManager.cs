@@ -96,7 +96,7 @@ public class GameManager : CSingletonMono<GameManager>
                         startCanvas.CloseScreen();
 
                         //SwitchState(GameState.Fantasy);
-                        SwitchState(GameState.Tutorial);
+                        SwitchState(GameState.Fantasy);
 
                     });
                 }
@@ -125,7 +125,8 @@ public class GameManager : CSingletonMono<GameManager>
                 break;
             case GameState.Fantasy:
                 UIManager.instance.CreateScreen<FollowUICanvas>();
-                AirConsole.instance.Broadcast("Fantasy;Start");
+                UIManager.instance.CreateScreen<FantasyIntroCanvas>();
+                AirConsole.instance.Broadcast("Fantasy;Intro");
                 InitFantasyPhrase();
                 break;
         }
