@@ -12,13 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9fed890952e3a408e5973a23b517a1, type: 3}
   m_Name: Level 4
   m_EditorClassIdentifier: 
-  levelDescription: Tutorial 4
+  levelTitle: 'Level 4: How hard is it to sort your clothes based only on appearance?'
+  levelDescription: All these garments are made of the same type of fabric. How do
+    their different appearances affect their sortability?
+  lowExtentTitle: Hard to be sorted
+  highExtentTitle: Easily sortable
+  winDescription: By grouping based on color, the need for re-dying can be eliminated
+    in the recycled process. If there are fewer colors in your clothes, they are
+    easier to recycle.
+  loseDescription: The more elements (colors, zippers, buttons) that exist in a garment,
+    the more effort it takes to sort the garment when preparing it for recycling.
   clothes:
-  - image: {fileID: 21300000, guid: 5918fba821c12c940bc59c79e9c2666d, type: 3}
-    clothDescription: Tutorial 4 1
-  - image: {fileID: 21300000, guid: a2aaa2ad67d6daf4789dfa96c30c9631, type: 3}
-    clothDescription: Tutorial 4 2
-  - image: {fileID: 21300000, guid: bb932c57f51f19d46b715ad7e3133ed4, type: 3}
-    clothDescription: Tutorial 4 3
-  - image: {fileID: 21300000, guid: 35f13273531514145bfd354e19ae0d50, type: 3}
-    clothDescription: Tutorial 4 4
+  - image: {fileID: 21300000, guid: 44dfe7128507a0945aaf69f94f3b2415, type: 3}
+    clothDescription: This is a multicolored long sleeve shirt.
+  - image: {fileID: 21300000, guid: cfcf51480b10fe8408ef0f98a07fda4b, type: 3}
+    clothDescription: This is a multicolored jacket with buttons and zippers.
+  - image: {fileID: 21300000, guid: 9244510d1c3d924478a04efee01a08ca, type: 3}
+    clothDescription: This is a solid green t-shirt.
+  - image: {fileID: 21300000, guid: e6b015c8a5d191642970b6085dee0e0e, type: 3}
+    clothDescription: This is a plain white t-shirt.
