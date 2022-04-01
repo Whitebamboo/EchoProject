@@ -15,10 +15,10 @@ MonoBehaviour:
   levelTitle: 'Level 4: How hard is it to sort your clothes based only on appearance?'
   levelDescription: All these garments are made of the same type of fabric. How do
     their different appearances affect their sortability?
-  lowExtentTitle: Hard to sort
-  highExtentTitle: Easy to sort
+  lowExtentTitle: Hard to Sort
+  highExtentTitle: Easy to Sort
   winDescription: By grouping based on color, the need for re-dying can be eliminated
-    in the recycled process. If there are fewer colors in your clothes, they are
+    in the recycling process. If there are fewer colors in your clothes, they are
     easier to recycle.
   loseDescription: The more elements (colors, zippers, buttons) that exist in a garment,
     the more effort it takes to sort the garment when preparing it for recycling.
