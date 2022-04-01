@@ -97,7 +97,7 @@ public class GameManager : CSingletonMono<GameManager>
                         startCanvas.CloseScreen();
 
                         //SwitchState(GameState.Fantasy);
-                        SwitchState(GameState.Fantasy);
+                        SwitchState(GameState.Tutorial);
 
                     });
                 }
