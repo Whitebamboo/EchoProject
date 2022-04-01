@@ -3,12 +3,16 @@ using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class FantasyIntroCanvas : UIScreenBase
 {
     [SerializeField] GameObject[] pages;
+    [SerializeField] TextMeshProUGUI confirmedText;
 
     int currIndex;
+
+    int confirmed;
 
     private void Awake()
     {
@@ -21,7 +25,15 @@ public class FantasyIntroCanvas : UIScreenBase
 
         if (data["action"] != null && data["action"].ToString().Equals("next"))
         {
-            NextPage();
+            confirmed++;
+            confirmedText.text = "Confirmed: " + confirmed + "/" + GameManager.instance.GetActivePlayersNumber().ToString();
+
+            if(confirmed == GameManager.instance.GetActivePlayersNumber())
+            {
+                NextPage();
+                confirmed = 0;
+                confirmedText.text = "Confirmed: " + confirmed + "/" + GameManager.instance.GetActivePlayersNumber().ToString();
+            }    
         }
     }
 
