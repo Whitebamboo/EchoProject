@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RackItem 9
   m_EditorClassIdentifier: 
   prefab: {fileID: 919132149155446097, guid: e336afd91c490af4791da8d5847a3462, type: 3}
-  clothImage: {fileID: 21300000, guid: 824ae501ab757474485a56820ea074f2, type: 3}
+  clothImage: {fileID: 21300000, guid: 532e076c80f782046bdb9d016686e108, type: 3}
   color: 0900000008000000
   description: '*This clothing item has buttons'
   year: 4
