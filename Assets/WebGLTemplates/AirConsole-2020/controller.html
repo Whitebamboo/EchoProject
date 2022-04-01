@@ -102,9 +102,9 @@
                   document.getElementById("show-hint-button").classList.add("disabled");
                   document.getElementById("cloth-image").style.backgroundImage = "url(Tutorial" + messages[2] + "/" + messages[3] + ".png)";
                   document.getElementById("cloth-text").innerHTML = messages[4];
-				  document.getElementById("low-extent-text").innerHTML = messages[5];
-				  document.getElementById("high-extent-text").innerHTML = messages[6];
-				  
+				          document.getElementById("low-extent-text").innerHTML = messages[5];
+				          document.getElementById("high-extent-text").innerHTML = messages[6];
+                  document.getElementById("tutorial-hint-text").innerHTML = messages[7];	  
               }
               else if (messages[1] == "Hint") {
                   console.log("Show Hint Button");
@@ -166,7 +166,8 @@
 
     <div id="start" class="view default-view">
         <div id="start-button" class="Start-button" ontouchstart="window.app.startGameConfirm('confirm')"> I'm Ready </div>
-        <div id="Start-text"> Are you ready to begin? </div>
+        <div id="Start-title">  Gen-Z Eco Shop Staff Training! </div>
+        <div id="Start-text"> Before you officially begin working at the Gen-Z Eco-Shop, we have a training program you need to complete. Each of you will receive a different clothing item. Share the information about your item to your team members and then rank the clothing items based on how sustainable they are. </div>
     </div>
 
     <div id="ingame" class="view">

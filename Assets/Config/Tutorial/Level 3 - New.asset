@@ -27,7 +27,7 @@ MonoBehaviour:
   - image: {fileID: 21300000, guid: e7e5b7b1f768069408f4641273801558, type: 3}
     clothDescription: This is a multicolored jacket with buttons and zippers. The
       jacket blend is 80% cotton, 20% polyester.
-  - image: {fileID: 21300000, guid: 2282a098d883cdc4d8f0a37ae8670864, type: 3}
+  - image: {fileID: 21300000, guid: 5dceb84f6d1758d4a8f0f8de218fc4f1, type: 3}
     clothDescription: This is a solid colored jacket with buttons and zippers. The
       jacket blend is 80% cotton and 20% polyester.
   - image: {fileID: 21300000, guid: 6313687b720c692478490104cf7ad90a, type: 3}

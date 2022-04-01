@@ -64,7 +64,8 @@ public class TutorialCanvas : UIScreenBase
         {
             int playerIndex = m_playerRandom.GetRandomEntry();
             AirConsole.instance.Message(AirConsole.instance.ConvertPlayerNumberToDeviceId(playerIndex),
-                string.Format("Tutorial;Cloth;{0};{1};{2};{3};{4}", levelIndex + 1, levelData.clothes[i].image.name, levelData.clothes[i].clothDescription, lowExtentText.text, highExtentText.text));
+                string.Format("Tutorial;Cloth;{0};{1};{2};{3};{4};{5}", levelIndex + 1, levelData.clothes[i].image.name, levelData.clothes[i].clothDescription, 
+                lowExtentText.text, highExtentText.text, levelData.levelTitle));
             m_clothAssignment.Add(AirConsole.instance.ConvertPlayerNumberToDeviceId(playerIndex), levelData.clothes[i].image.name);
         }
     }
