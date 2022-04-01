@@ -89,14 +89,15 @@ public class GameManager : CSingletonMono<GameManager>
                 confirmedPlayer++;
                 startCanvas.SetConfirmedPlayer(confirmedPlayer);
 
-                if(confirmedPlayer == GetActivePlayersNumber())
+                //hack: hard coded 4
+                if(confirmedPlayer == 4)
                 {
                     startCanvas.StartGame(() =>
                     {
                         startCanvas.CloseScreen();
 
                         //SwitchState(GameState.Fantasy);
-                        SwitchState(GameState.Fantasy);
+                        SwitchState(GameState.Tutorial);
 
                     });
                 }

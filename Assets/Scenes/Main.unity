@@ -399,8 +399,7 @@ MonoBehaviour:
   tutorialLevels:
   - {fileID: 11400000, guid: 2e3c166769f9bf74ea7dff10ff949bf3, type: 2}
   - {fileID: 11400000, guid: 679f076b2ac4f0748b22d93c89856cca, type: 2}
-  - {fileID: 11400000, guid: e54c5f18a984f544abf8312e0d61a99f, type: 2}
-  - {fileID: 11400000, guid: 3e175b4ac5343b54b9ab00866368ef04, type: 2}
+  - {fileID: 11400000, guid: f5835e378b7bcb143acb390c8aa4a0d8, type: 2}
   playerPerfab: {fileID: 6209545490593951367, guid: 1bfd433470426194c9831ef89ece5308, type: 3}
   playerPositions:
   - {x: -6.91, y: 0.85, z: -2.45}
