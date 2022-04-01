@@ -16,8 +16,8 @@ MonoBehaviour:
   levelDescription: Garments must be separated into different materials before they
     can be recycled. Learn about different types of cotton and polyester in your
     fabric guide book.
-  lowExtentTitle: Hard to sort
-  highExtentTitle: Easy to sort
+  lowExtentTitle: Hard to Sort
+  highExtentTitle: Easy to Sort
   winDescription: Clothing made from blended fabrics takes more time and effort to
     be properly recycled than those made from only one type of material.
   loseDescription: If you look at the content label on your clothes, you might find

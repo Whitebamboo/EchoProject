@@ -19,5 +19,5 @@ MonoBehaviour:
   year: 3
   month: 0
   properties:
-  - material: 8
+  - material: 10
     percentage: 100

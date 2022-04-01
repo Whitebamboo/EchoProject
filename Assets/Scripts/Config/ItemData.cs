@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum ClothColor
 {
-    Bady_Yellow,
+    Baby_Yellow,
     Sunflower_Yellow,
     Medallion_Yellow,
     Yellow,
