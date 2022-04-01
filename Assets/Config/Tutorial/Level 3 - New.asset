@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd9fed890952e3a408e5973a23b517a1, type: 3}
+  m_Name: Level 3 - New
+  m_EditorClassIdentifier: 
+  levelTitle: 'Level 3: How easy are these items to sort before the recycling process? '
+  levelDescription: This level is a bit tricky. Use the fabric guide book and your
+    best knowledge to rank these items.
+  lowExtentTitle: Hard to Sort
+  highExtentTitle: Easy to Sort
+  winDescription: Remember that clothes made with different blends and contain elements
+    like zippers and buttons require a more complex sorting process, making them
+    less eco-friendly.
+  loseDescription: The more elements (blends, colors, zippers, buttons) that exist
+    in a garment, the more effort it takes to sort the garment when preparing it
+    for recycling.
+  clothes:
+  - image: {fileID: 21300000, guid: e7e5b7b1f768069408f4641273801558, type: 3}
+    clothDescription: This is a multicolored jacket with buttons and zippers. The
+      jacket blend is 80% cotton, 20% polyester.
+  - image: {fileID: 21300000, guid: 2282a098d883cdc4d8f0a37ae8670864, type: 3}
+    clothDescription: This is a solid colored jacket with buttons and zippers. The
+      jacket blend is 80% cotton and 20% polyester.
+  - image: {fileID: 21300000, guid: 6313687b720c692478490104cf7ad90a, type: 3}
+    clothDescription: This is a solid green t-shirt. The blend is 100% organic cotton.
+  - image: {fileID: 21300000, guid: 4f22a0c100300f348a79705475510d60, type: 3}
+    clothDescription: This is a plain white long sleeve shirt. The blend is 80% recycled
+      cotton and 20% organic cotton.
