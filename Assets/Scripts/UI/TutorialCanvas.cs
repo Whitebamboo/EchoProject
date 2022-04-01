@@ -29,6 +29,8 @@ public class TutorialCanvas : UIScreenBase
 
     Dictionary<int, string> m_clothAssignment = new Dictionary<int, string>();
 
+    bool inLevelTransition;
+
     private void Awake()
     {
         AirConsole.instance.onMessage += OnMessage;
@@ -73,6 +75,11 @@ public class TutorialCanvas : UIScreenBase
 
         if(data["action"] != null && data["action"].ToString().Equals("confirm"))
         {
+            if(inLevelTransition)
+            {
+                return;
+            }
+
             int index = GetSelectionIndex(fromDeviceID);
             if(index == -1)
             {
@@ -124,12 +131,14 @@ public class TutorialCanvas : UIScreenBase
         progressPage.SetActive(true);
         progressTitle.text = "Try Again!";
         progressDescription.text = m_leves[m_currLevelIndex].loseDescription;
+        inLevelTransition = true;
 
         yield return new WaitForSeconds(5f);
 
         AirConsole.instance.Broadcast("Tutorial;Hint;"+ m_leves[m_currLevelIndex].loseDescription);
 
         progressPage.SetActive(false);
+        inLevelTransition = false;
     }
 
     IEnumerator CorrectSelection()
@@ -137,6 +146,7 @@ public class TutorialCanvas : UIScreenBase
         progressPage.SetActive(true);
         progressTitle.text = "Congratulations!\nYou put the garments\nin the correct order!";
         progressDescription.text = m_leves[m_currLevelIndex].winDescription;
+        inLevelTransition = true;
 
         yield return new WaitForSeconds(8f);
         m_currLevelIndex++;
@@ -150,6 +160,7 @@ public class TutorialCanvas : UIScreenBase
             progressPage.SetActive(false);
             LoadLevel(m_currLevelIndex);
         }
+        inLevelTransition = false;
     }
 
     int GetSelectionIndex(int fromDeviceID)

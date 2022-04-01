@@ -780,6 +780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ba4ab063c037047acca62c5968cd44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanBeReset: 1
   source: {fileID: 309670998}
   phrase1: {fileID: 8300000, guid: 5dccf4d447028ce4bbea024bbfe52348, type: 3}
   phrase2: {fileID: 8300000, guid: 988b10a0bf67f1c498e87ef1acfcc02d, type: 3}
