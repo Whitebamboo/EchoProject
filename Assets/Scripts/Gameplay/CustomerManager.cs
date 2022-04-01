@@ -1,3 +1,4 @@
+using NDream.AirConsole;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -47,6 +48,7 @@ public class CustomerManager : CSingletonMono<CustomerManager>
         {
             Debug.Log("Game finished");
             UIManager.instance.CreateScreen<EndCanvas>();
+            AirConsole.instance.Broadcast("Fantasy;Intro");
             return;
         }
 

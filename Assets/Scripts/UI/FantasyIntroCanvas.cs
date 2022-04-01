@@ -55,4 +55,13 @@ public class FantasyIntroCanvas : UIScreenBase
 
         pages[currIndex].SetActive(true);
     }
+
+    void OnDestroy()
+    {
+        // unregister events
+        if (AirConsole.instance != null)
+        {
+            AirConsole.instance.onMessage -= OnMessage;
+        }
+    }
 }
