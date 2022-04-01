@@ -265,6 +265,26 @@ body {
   transform: translateX(10%);
 }
 
+#low-extent-text{
+	position: absolute;
+  top: 72%;
+  left: 5%;
+  width: 10%;
+  text-align: center;
+  font-size: 16px;
+  color: #000000;
+}
+
+#high-extent-text{
+	position: absolute;
+  top: 72%;
+  left: 80%;
+  width: 10%;
+  text-align: center;
+  font-size: 16px;
+  color: #000000;
+}
+
 .disabled{
     display: none;
     visibility: hidden;
