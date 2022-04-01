@@ -180,7 +180,7 @@
         <div class="Tutorial button-three" ontouchstart="window.app.sendMessageToScreen('3')"> 2 </div>
         <div class="Tutorial button-four" ontouchstart="window.app.sendMessageToScreen('4')"> 1 </div>
         <div id="tutorial-confirm-button" class="Tutorial-confirm-button" ontouchstart="window.app.tutorialSelectionConfirm('confirm')"> Confirm </div>
-        <div id="show-hint-button" class="interact button-hint" ontouchstart="window.app.changeToHint()"> Hint </div>
+        <div id="show-hint-button" class="Tutorial-confirm-button button-hint" ontouchstart="window.app.changeToHint()"> Get Hint </div>
 		<div id="low-extent-text"> Low Text Here</div>
 		<div id="high-extent-text"> High Text Here</div>
     </div>
@@ -201,13 +201,13 @@
 
 
     <div id="checking" class="view">
-        <div class="interact button-back" ontouchstart="window.app.changeToFantasy()"> back </div>
+        <div class="interact button-back" ontouchstart="window.app.changeToFantasy()"> Back </div>
         <div id="fantasy-image"></div>
         <div id="fantasy-cloth-text"></div>
     </div>
 
     <div id="hint" class="view">
-        <div class="interact button-hint" ontouchstart="window.app.changeToTutorial()"> Back </div>
+        <div class="Tutorial-confirm-button button-back-hint" ontouchstart="window.app.changeToTutorial()"> Return </div>
         <div id="hint-text"> Hint Text Here</div>
     </div>
 

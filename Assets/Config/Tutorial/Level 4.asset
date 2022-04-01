@@ -23,11 +23,11 @@ MonoBehaviour:
   loseDescription: The more elements (colors, zippers, buttons) that exist in a garment,
     the more effort it takes to sort the garment when preparing it for recycling.
   clothes:
-  - image: {fileID: 21300000, guid: 5dceb84f6d1758d4a8f0f8de218fc4f1, type: 3}
+  - image: {fileID: 21300000, guid: e7e5b7b1f768069408f4641273801558, type: 3}
     clothDescription: This is a multicolored jacket with buttons and zippers.
   - image: {fileID: 21300000, guid: 2282a098d883cdc4d8f0a37ae8670864, type: 3}
     clothDescription: This is a multicolored long sleeve shirt.
-  - image: {fileID: 21300000, guid: 1ec9c56ade552ad46b9b673d8012a4b8, type: 3}
+  - image: {fileID: 21300000, guid: 6313687b720c692478490104cf7ad90a, type: 3}
     clothDescription: This is a solid green t-shirt.
   - image: {fileID: 21300000, guid: 4f22a0c100300f348a79705475510d60, type: 3}
     clothDescription: This is a plain white long sleeve shirt.
