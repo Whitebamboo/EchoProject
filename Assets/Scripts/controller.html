@@ -75,18 +75,16 @@
           if(msg == "confirm" && !tutorialSelectionConfirmed){
               //document.getElementById("tutorial-confirm-button").classList.add("deactive");
               airconsole.message(AirConsole.SCREEN, { "action": msg });
-              //tutorialSelectionConfirmed = true
+              startConfirmed = true
           }
       }
 
       App.prototype.changeToFantasy = function () {
           vm.controllersShow('fantasy', true);
       }
-
       App.prototype.changeToTutorial = function () {
           vm.controllersShow('ingame', true);
       }
-
       App.prototype.changeToHint = function () {
           vm.controllersShow('hint', true);
       }
@@ -102,11 +100,11 @@
               else if (messages[1] == "Cloth") {
                   tutorialSelectionConfirmed = false;
                   document.getElementById("show-hint-button").classList.add("disabled");
-                  document.getElementById("tutorial-confirm-button").classList.remove("deactive");
                   document.getElementById("cloth-image").style.backgroundImage = "url(Tutorial" + messages[2] + "/" + messages[3] + ".png)";
                   document.getElementById("cloth-text").innerHTML = messages[4];
-				          document.getElementById("low-extent-text").innerHTML = messages[5];
-				          document.getElementById("high-extent-text").innerHTML = messages[6];	  
+				  document.getElementById("low-extent-text").innerHTML = messages[5];
+				  document.getElementById("high-extent-text").innerHTML = messages[6];
+				  
               }
               else if (messages[1] == "Hint") {
                   console.log("Show Hint Button");
@@ -182,14 +180,14 @@
         <div class="Tutorial button-three" ontouchstart="window.app.sendMessageToScreen('3')"> 2 </div>
         <div class="Tutorial button-four" ontouchstart="window.app.sendMessageToScreen('4')"> 1 </div>
         <div id="tutorial-confirm-button" class="Tutorial-confirm-button" ontouchstart="window.app.tutorialSelectionConfirm('confirm')"> Confirm </div>
-        <div id="show-hint-button" class="interact button-hint" ontouchstart="window.app.changeToHint()"> Hint </div>
-		    <div id="low-extent-text"> Low Text Here</div>
-		    <div id="high-extent-text"> High Text Here</div>
+        <div id="show-hint-button" class="Tutorial-confirm-button button-hint" ontouchstart="window.app.changeToHint()"> Get Hint </div>
+		<div id="low-extent-text"> Low Text Here</div>
+		<div id="high-extent-text"> High Text Here</div>
     </div>
 
     <div id="fantasy-intro" class="view">
-        <div id="start-button" class="Start-button" ontouchstart="window.app.sendMessageToScreen('next')"> Next </div>
-    </div>
+      <div id="start-button" class="Start-button" ontouchstart="window.app.sendMessageToScreen('next')"> Next </div>
+  </div>
 
     <div id="fantasy" class="view">
         <div id="joystick_left" class="joystick">
@@ -203,13 +201,13 @@
 
 
     <div id="checking" class="view">
-        <div class="interact button-back" ontouchstart="window.app.changeToFantasy()"> back </div>
+        <div class="interact button-back" ontouchstart="window.app.changeToFantasy()"> Back </div>
         <div id="fantasy-image"></div>
         <div id="fantasy-cloth-text"></div>
     </div>
 
     <div id="hint" class="view">
-        <div class="interact button-hint" ontouchstart="window.app.changeToTutorial()"> Back </div>
+        <div class="Tutorial-confirm-button button-back-hint" ontouchstart="window.app.changeToTutorial()"> Return </div>
         <div id="hint-text"> Hint Text Here</div>
     </div>
 

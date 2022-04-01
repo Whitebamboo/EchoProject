@@ -15,7 +15,7 @@ MonoBehaviour:
   prefab: {fileID: 919132149155446097, guid: 46a03823af311214ab0137b3112ace1b, type: 3}
   clothImage: {fileID: 21300000, guid: 27f3ade0e2a170b4e9ad9e91732b302e, type: 3}
   color: 10000000
-  description: Something
+  description: 
   year: 5
   month: 0
   properties:

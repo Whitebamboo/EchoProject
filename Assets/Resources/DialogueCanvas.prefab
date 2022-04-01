@@ -324,4 +324,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogText: {fileID: 2006252475849526710}
-  displayTime: 5
+  displayTime: 8
