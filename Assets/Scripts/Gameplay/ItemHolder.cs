@@ -20,7 +20,13 @@ public class ItemHolder : MonoBehaviour, IIteractable
 
     public void OnInteract(PlayerController player, Item item)
     {
-        Debug.Log("Interact");     
+        Debug.Log("Interact");
+        
+        if(m_item != null && item != null)
+        {
+            return;
+        }
+
         if(item != null)
         {
             AssignItem(item);
