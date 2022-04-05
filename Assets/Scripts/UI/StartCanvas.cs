@@ -10,25 +10,15 @@ using Newtonsoft.Json.Linq;
 
 public class StartCanvas : UIScreenBase
 {
-    [SerializeField]
-    GameObject connectPage;
-
-    [SerializeField]
-    TextMeshProUGUI connectedPlayerText;
-
-    [SerializeField]
-    TextMeshProUGUI confirmedPlayerText;
-
-    public TextMeshProUGUI introductionText;
-
-    [SerializeField] GameObject[] pages;
-    [SerializeField] TextMeshProUGUI confirmedText;
+    [SerializeField] GameObject connectPage;
     [SerializeField] GameObject introPage;
+    [SerializeField] TextMeshProUGUI connectedPlayerText;
+    [SerializeField] TextMeshProUGUI confirmedPlayerText;
+    [SerializeField] TextMeshProUGUI confirmedText;
+    [SerializeField] GameObject[] pages;
 
     int currIndex;
-
     int confirmed;
-
     Action m_callback;
 
     private void Awake()
@@ -36,12 +26,26 @@ public class StartCanvas : UIScreenBase
         SetConnectedPlayer(0);
         SetConfirmedPlayer(0);
 
-        AirConsole.instance.onReady += OnReady;      
+        AirConsole.instance.onReady += OnReady;
+        AirConsole.instance.onConnect += OnConnect;
+        AirConsole.instance.onDisconnect += OnDisconnect;
     }
 
     void OnReady(string code)
     {
         AirConsole.instance.onMessage += OnMessage;
+    }
+
+    void OnConnect(int device_id)
+    {
+        AirConsole.instance.SetActivePlayers();
+        SetConnectedPlayer(AirConsole.instance.GetActivePlayerDeviceIds.Count);
+    }
+
+    void OnDisconnect(int device_id)
+    {
+        AirConsole.instance.SetActivePlayers();
+        SetConnectedPlayer(AirConsole.instance.GetActivePlayerDeviceIds.Count);
     }
 
     public void SetConnectedPlayer(int number)
@@ -56,12 +60,10 @@ public class StartCanvas : UIScreenBase
 
     public void StartGame(Action callback)
     {
+        AirConsole.instance.Broadcast("Fantasy;Intro");
         connectPage.SetActive(false);
         introPage.SetActive(true);
         m_callback = callback;
-        AirConsole.instance.Broadcast("Fantasy;Intro");
-        //introductionText.gameObject.SetActive(true);
-        //introductionText.DOFade(0, 1f).From().OnComplete(() => introductionText.DOFade(0f, 1f).SetDelay(3f).OnComplete(() => callback.Invoke()));
     }
 
     void OnMessage(int fromDeviceID, JToken data)

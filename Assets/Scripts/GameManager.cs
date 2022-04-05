@@ -45,8 +45,6 @@ public class GameManager : CSingletonMono<GameManager>
         base.Awake();
 
         AirConsole.instance.onReady += OnReady;
-        AirConsole.instance.onConnect += OnConnect;
-        AirConsole.instance.onDisconnect += OnDisconnect;
         AirConsole.instance.onMessage += OnMessage;
     }
 
@@ -56,31 +54,9 @@ public class GameManager : CSingletonMono<GameManager>
         IsConnectedAirconsole = true;       
     }
 
-    void OnConnect(int device_id)
-    {
-        AirConsole.instance.SetActivePlayers();
-
-        StartCanvas startCanvas = UIManager.instance.FindScreen<StartCanvas>();
-        if(startCanvas!=null)
-        {
-            startCanvas.SetConnectedPlayer(GetActivePlayersNumber());
-        }
-    }
-
-    void OnDisconnect(int device_id)
-    {
-        AirConsole.instance.SetActivePlayers();
-
-        StartCanvas startCanvas = UIManager.instance.FindScreen<StartCanvas>();
-        if (startCanvas != null)
-        {
-            startCanvas.SetConnectedPlayer(GetActivePlayersNumber());
-        }
-    }
-
     void OnMessage(int fromDeviceID, JToken data)
     {
-        //Debug.Log("message from " + fromDeviceID + ", data: " + data);
+        //Game ready to satart
         if (data["action"] != null && data["action"].ToString().Equals("confirm"))
         {
             StartCanvas startCanvas = UIManager.instance.FindScreen<StartCanvas>();
@@ -97,7 +73,7 @@ public class GameManager : CSingletonMono<GameManager>
                         startCanvas.CloseScreen();
 
                         //SwitchState(GameState.Fantasy);
-                        SwitchState(GameState.Tutorial);
+                        SwitchState(GameState.Fantasy);
 
                     });
                 }
@@ -154,6 +130,7 @@ public class GameManager : CSingletonMono<GameManager>
         if (AirConsole.instance != null)
         {
             AirConsole.instance.onReady -= OnReady;
+            AirConsole.instance.onMessage -= OnMessage;
         }
     }
 

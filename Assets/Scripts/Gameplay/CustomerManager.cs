@@ -13,9 +13,7 @@ public class CustomerManager : CSingletonMono<CustomerManager>
     [SerializeField] List<FantasyLevel> fantasyLevels;
 
     public Vector3 EnterPoint => enterPoint;
-
     public Vector3 WaitPoint => waitPoint;
-
     public Vector3 ExitPoint => exitPoint;
 
     List<ItemHolder> holders = new List<ItemHolder>();
