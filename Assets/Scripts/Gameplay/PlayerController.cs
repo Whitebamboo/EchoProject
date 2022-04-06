@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] GameObject[] models;
       
     CharacterController controller;
+    Animator animator;
     Transform camTransform;
 
     bool isMoving;
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
         GameObject modelView = Instantiate(models[playerId], transform);
         modelView.transform.localPosition = new Vector3(0, -0.88f, 0);
+        animator = modelView.GetComponent<Animator>();
     }
 
     public void SetItem(Item item)
@@ -74,6 +76,7 @@ public class PlayerController : MonoBehaviour
             if (data["joystick_left"]["position"] != null)
             {
                 isMoving = true;
+                animator.SetBool("Walking", true);
 
                 horizontal = float.Parse(data["joystick_left"]["position"]["x"].ToString());
                 vertical = float.Parse(data["joystick_left"]["position"]["y"].ToString()) * -1;
@@ -87,6 +90,7 @@ public class PlayerController : MonoBehaviour
                     movement = Vector3.zero;
                     horizontal = 0;
                     vertical = 0;
+                    animator.SetBool("Walking", false);
                 }
             }
         }
