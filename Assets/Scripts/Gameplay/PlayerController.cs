@@ -51,9 +51,11 @@ public class PlayerController : MonoBehaviour
 
     public void SetItem(Item item)
     {
-        if(item == null)
+        FantasyIngameCanvas canvas = UIManager.instance.FindScreen<FantasyIngameCanvas>();
+        if (item == null)
         {
             currItem = null;
+            canvas.DisableClothDesc(playerId);
             return;
         }
 
@@ -62,6 +64,8 @@ public class PlayerController : MonoBehaviour
         item.transform.localPosition = Vector3.zero;
         item.transform.localEulerAngles = Vector3.zero;
         item.transform.localScale = Vector3.one;
+
+        canvas.ShowClothDesc(playerId, item.data);
     }
 
     void OnMessage(int fromDeviceID, JToken data)

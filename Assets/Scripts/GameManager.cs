@@ -22,6 +22,9 @@ public class GameManager : CSingletonMono<GameManager>
     [SerializeField]
     List<Vector3> playerPositions;
 
+    [SerializeField]
+    List<Color> playerColor;
+
     [HideInInspector]
     public bool IsConnectedAirconsole;
 
@@ -33,6 +36,17 @@ public class GameManager : CSingletonMono<GameManager>
     public int GetActivePlayersNumber()
     {
         return AirConsole.instance.GetActivePlayerDeviceIds.Count;
+    }
+
+    public Color GetPlayerColor(int index)
+    {
+        if(index < 0 || index > GetActivePlayersNumber()-1)
+        {
+            Debug.LogError("Index out of bound");
+            return Color.white;
+        }
+
+        return playerColor[index];
     }
 
     public void FinishTutorial()
@@ -103,6 +117,7 @@ public class GameManager : CSingletonMono<GameManager>
             case GameState.Fantasy:
                 UIManager.instance.CreateScreen<FollowUICanvas>();
                 UIManager.instance.CreateScreen<FantasyIntroCanvas>();
+                UIManager.instance.CreateScreen<FantasyIngameCanvas>();
                 AirConsole.instance.Broadcast("Fantasy;Intro");
                 MusicManager.instance.PlayPhrase2();
                 InitFantasyPhrase();

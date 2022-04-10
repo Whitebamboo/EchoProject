@@ -41,23 +41,23 @@ public class ItemHolder : MonoBehaviour, IIteractable
 
     public void OnShowHint()
     {
-        if(m_item == null || popupHint != null)
-        {
-            return;
-        }
+        //if(m_item == null || popupHint != null)
+        //{
+        //    return;
+        //}
 
-        FollowUICanvas canvas = UIManager.instance.FindScreen<FollowUICanvas>();
-        popupHint = canvas.GenerateClothPopup(holderRoot.transform);
-        popupHint.SetImage(m_item.data.clothImage);
+        //FollowUICanvas canvas = UIManager.instance.FindScreen<FollowUICanvas>();
+        //popupHint = canvas.GenerateClothPopup(holderRoot.transform);
+        //popupHint.SetImage(m_item.data.clothImage);
         // popupHint.SetText(m_item.data.GetPopupDescription());
     }
 
     public void OnHideHint()
     {
-        if(popupHint != null)
-        {
-            Destroy(popupHint.gameObject);
-        }
+        //if(popupHint != null)
+        //{
+        //    Destroy(popupHint.gameObject);
+        //}
     }
 
     public void AddItemData(ItemData data)

@@ -20,8 +20,6 @@ public class CustomerController : MonoBehaviour, IIteractable
     void GotoEnterPoint()
     {
         transform.DOMove(CustomerManager.instance.EnterPoint, 2f).OnComplete(()=> {
-            //DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
-            //canvas.SetUp(m_data.request);
             GotoWaitPoint();
         });
     }
@@ -47,6 +45,9 @@ public class CustomerController : MonoBehaviour, IIteractable
             EventBus.Broadcast(EventTypes.CustomerLeft);
             Destroy(this.gameObject);
         });
+
+        DialogueCanvas canvas = UIManager.instance.FindScreen<DialogueCanvas>();
+        canvas.CloseScreen();
     }
 
     bool ItemMatch(ItemData item, out FulfillItem matchedItem)
@@ -85,18 +86,18 @@ public class CustomerController : MonoBehaviour, IIteractable
         if (item != null)
         {
             if (ItemMatch(item.data, out FulfillItem matchedItem))
-            {
-                GotExitPoint();
+            {          
                 player.SetItem(null);
 
                 DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
-                canvas.SetUp(matchedItem.matchResponse);
+                canvas.SetUp(matchedItem.matchResponse, GotExitPoint);
                 AssignItem(item);
             }
         }else
         {
             DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
             canvas.SetUp(m_data.request);
+            m_popup.SetText(m_data.request);
         }
     }
 
