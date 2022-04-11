@@ -568,6 +568,7 @@ MonoBehaviour:
   tutorialLevels: []
   playerPerfab: {fileID: 6209545490593951367, guid: 1bfd433470426194c9831ef89ece5308, type: 3}
   playerPositions: []
+  playerColor: []
   IsConnectedAirconsole: 0
   State: 0
 --- !u!1001 &174889436
@@ -2371,7 +2372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &747237305
 Transform:
   m_ObjectHideFlags: 0
@@ -4479,7 +4480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6209545490593951417, guid: 1bfd433470426194c9831ef89ece5308, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bfd433470426194c9831ef89ece5308, type: 3}
@@ -4498,7 +4499,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1587661383
 Transform:
   m_ObjectHideFlags: 0
