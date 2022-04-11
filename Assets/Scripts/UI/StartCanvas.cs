@@ -16,15 +16,18 @@ public class StartCanvas : UIScreenBase
     [SerializeField] TextMeshProUGUI confirmedPlayerText;
     [SerializeField] TextMeshProUGUI confirmedText;
     [SerializeField] GameObject[] pages;
+    [SerializeField] GameObject[] playerReady;
 
     int currIndex;
     int confirmed;
-    Action m_callback;
+
+    //Start state variable
+    int confirmedPlayer;
 
     private void Awake()
     {
-        SetConnectedPlayer(0);
-        SetConfirmedPlayer(0);
+        //SetConnectedPlayer(0);
+        //SetConfirmedPlayer(0);
 
         AirConsole.instance.onReady += OnReady;
         AirConsole.instance.onConnect += OnConnect;
@@ -48,22 +51,25 @@ public class StartCanvas : UIScreenBase
         SetConnectedPlayer(AirConsole.instance.GetActivePlayerDeviceIds.Count);
     }
 
-    public void SetConnectedPlayer(int number)
+    public void SetConnectedPlayer(int playerId)
     {
-        connectedPlayerText.text = "Connected Players: " + number;
+        playerReady[playerId-1].SetActive(true);
+        Image icon = playerReady[playerId-1].transform.Find("Icon").GetComponent<Image>();
+        icon.color = GameManager.instance.GetPlayerColor(playerId - 1);
     }
 
-    public void SetConfirmedPlayer(int number)
+    public void SetConfirmedPlayer(int playerId)
     {
-        confirmedPlayerText.text = "Confirmed Players: " + number;
+        playerReady[playerId].transform.Find("Check").gameObject.SetActive(true);
+        Image check = playerReady[playerId].transform.Find("Check").GetComponent<Image>();
+        check.color = GameManager.instance.GetPlayerColor(playerId);
     }
 
-    public void StartGame(Action callback)
+    public void StartGame()
     {
         AirConsole.instance.Broadcast("Fantasy;Intro");
         connectPage.SetActive(false);
         introPage.SetActive(true);
-        m_callback = callback;
     }
 
     void OnMessage(int fromDeviceID, JToken data)
@@ -82,6 +88,18 @@ public class StartCanvas : UIScreenBase
                 confirmedText.text = "Confirmed: " + confirmed + "/" + GameManager.instance.GetActivePlayersNumber().ToString();
             }
         }
+
+        //Game ready to start
+        if (data["action"] != null && data["action"].ToString().Equals("confirm"))
+        {
+            confirmedPlayer++;
+            SetConfirmedPlayer(AirConsole.instance.ConvertDeviceIdToPlayerNumber(fromDeviceID));
+
+            if (confirmedPlayer == 4)
+            {
+                StartGame();
+            }
+        }
     }
 
     public void NextPage()
@@ -90,8 +108,8 @@ public class StartCanvas : UIScreenBase
 
         if (currIndex >= pages.Length)
         {
+            GameManager.instance.SwitchState(GameState.Fantasy);
             CloseScreen();
-            m_callback.Invoke();
             return;
         }
 

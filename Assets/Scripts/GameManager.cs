@@ -30,8 +30,6 @@ public class GameManager : CSingletonMono<GameManager>
 
     public GameState State;
 
-    //Start state variable
-    int confirmedPlayer;
 
     public int GetActivePlayersNumber()
     {
@@ -70,29 +68,7 @@ public class GameManager : CSingletonMono<GameManager>
 
     void OnMessage(int fromDeviceID, JToken data)
     {
-        //Game ready to satart
-        if (data["action"] != null && data["action"].ToString().Equals("confirm"))
-        {
-            StartCanvas startCanvas = UIManager.instance.FindScreen<StartCanvas>();
-            if (startCanvas != null)
-            {
-                confirmedPlayer++;
-                startCanvas.SetConfirmedPlayer(confirmedPlayer);
 
-                //hack: hard coded 4
-                if(confirmedPlayer == 4)
-                {
-                    startCanvas.StartGame(() =>
-                    {
-                        startCanvas.CloseScreen();
-
-                        //SwitchState(GameState.Fantasy);
-                        SwitchState(GameState.Fantasy);
-
-                    });
-                }
-            }
-        }
     }
 
     void Start()
@@ -100,7 +76,7 @@ public class GameManager : CSingletonMono<GameManager>
         SwitchState(GameState.Start);
     }
 
-    void SwitchState(GameState state)
+    public void SwitchState(GameState state)
     {
         State = state;
 

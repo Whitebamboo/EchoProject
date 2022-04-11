@@ -25,14 +25,13 @@ public class FantasyIngameCanvas : UIScreenBase
         clothUI[playerIndex].SetDesc(GameManager.instance.GetPlayerColor(playerIndex), data.clothImage, data.ToString());
 
         RectTransform rTrans = clothUI[playerIndex].GetComponent<RectTransform>();
-        float startPoint = rTrans.anchoredPosition.y;
-        rTrans.DOAnchorPosY(showPos, 1f);
+        rTrans.anchoredPosition = new Vector2(rTrans.anchoredPosition.x, showPos);
     }
 
     public void DisableClothDesc(int playerIndex)
     {
         RectTransform rTrans = clothUI[playerIndex].GetComponent<RectTransform>();
-        float startPoint = rTrans.anchoredPosition.y;
-        rTrans.DOAnchorPosY(disablePos, 1f);
+        //rTrans.DOAnchorPosY(disablePos, 1f);
+        rTrans.anchoredPosition = new Vector2(rTrans.anchoredPosition.x, disablePos);
     }
 }
