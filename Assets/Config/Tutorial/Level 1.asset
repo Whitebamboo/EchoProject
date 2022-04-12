@@ -21,6 +21,9 @@ MonoBehaviour:
     sort the materials properly. '
   loseDescription: Without being able to read the label, how can you know what materials
     a garment is made of in order to properly recycle it?
+  lessonName: 'Lesson One: Labels'
+  command: 'Use joystick to rank the clothes. We need labels to figure out what materials
+    the clothing is made of in order to recycle them. '
   clothes:
   - image: {fileID: 21300000, guid: 294901be352c88d45b1ec92edbfadc44, type: 3}
     clothDescription: (No Description)

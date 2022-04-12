@@ -21,6 +21,8 @@ MonoBehaviour:
     so that you can extend the lifespan of those clothes.
   loseDescription: 'The life of clothing can be extended if they are able to go to
     thrift stores after using them. '
+  lessonName: 'Lesson Two: Durability'
+  command: Compare your clothes lifespan with others, rank the clothes based on durability.
   clothes:
   - image: {fileID: 21300000, guid: 545de0bb2c7619049860e8c98dcdfc40, type: 3}
     clothDescription: This shirt was owned for 3 months and was thrown away in the

@@ -171,6 +171,17 @@
     </div>
 
     <div id="ingame" class="view">
+      <div id="joystick_left" class="joystick">
+          <div class="joystick-relative">
+              <div class="joystick-relative-stick"></div>
+          </div>
+      </div>
+      <div class="interact fantasy-interact" ontouchstart="window.app.sendMessageToScreen('confirm')"> Comfirm </div>
+      <!--<div class="interact fantasy-check" ontouchstart="window.app.sendMessageToScreen('check')"> Check </div>-->
+    </div>
+
+    <!-- old tutorial phrase controller-->
+    <!--<div id="ingame" class="view">
         <div id="bg-image"></div>
         <div id="cloth-image"></div>
         <div id="lable-image"></div>
@@ -184,11 +195,11 @@
         <div id="show-hint-button" class="Tutorial-confirm-button button-hint" ontouchstart="window.app.changeToHint()"> Get Hint </div>
 		<div id="low-extent-text"> Low Text Here</div>
 		<div id="high-extent-text"> High Text Here</div>
-    </div>
+    </div>-->
 
     <div id="fantasy-intro" class="view">
       <div id="start-button" class="Start-button" ontouchstart="window.app.sendMessageToScreen('next')"> Next </div>
-  </div>
+    </div>
 
     <div id="fantasy" class="view">
         <div id="joystick_left" class="joystick">

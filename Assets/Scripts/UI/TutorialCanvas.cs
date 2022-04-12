@@ -5,19 +5,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
+
+public enum TutorialState
+{
+    Lesson,
+    Play,
+    Congrat
+}
 
 public class TutorialCanvas : UIScreenBase
 {
     [SerializeField] TextMeshProUGUI levelTitle;
-    [SerializeField] TextMeshProUGUI levelDescription;
+    [SerializeField] TextMeshProUGUI hintText;
     [SerializeField] TextMeshProUGUI lowExtentText;
     [SerializeField] TextMeshProUGUI highExtentText;
-    [SerializeField] Image[] displayImageHolder;
-    [SerializeField] Sprite[] colorSprites; //0 green 1 yellow 2 red 3 blue
-    [SerializeField] GameObject[] selectionComfirm;
+    [SerializeField] GameObject introPage;
+    [SerializeField] TextMeshProUGUI lessonTitle;
+    [SerializeField] TextMeshProUGUI lessonDesc;
+    [SerializeField] GameObject playPage;
     [SerializeField] GameObject progressPage;
     [SerializeField] TextMeshProUGUI progressTitle;
     [SerializeField] TextMeshProUGUI progressDescription;
+    [SerializeField] TutorialController[] players;
+    [SerializeField] Image[] displayImageHolder;
+    [SerializeField] Sprite[] colorSprites; //0 green 1 yellow 2 red 3 blue
+    [SerializeField] GameObject[] selectionComfirm;
+    [SerializeField] List<FantasyClothUI> clothUI;
+    [SerializeField] List<GameObject> lessonComfirm;
+    [SerializeField] List<GameObject> congratConfirm;
 
     List<TutorialLevel> m_leves;
 
@@ -31,6 +47,8 @@ public class TutorialCanvas : UIScreenBase
 
     bool inLevelTransition;
 
+    TutorialState State;
+
     private void Awake()
     {
         AirConsole.instance.onMessage += OnMessage;
@@ -41,115 +59,150 @@ public class TutorialCanvas : UIScreenBase
         m_leves = levels;
 
         LoadLevel(0);
+
+        for (int i = 0; i < players.Length; i++)
+        {
+            players[i].SetupPlayer(i, displayImageHolder[i].GetComponent<RectTransform>(), OnConfirm);
+        }
+
+        SwitchState(TutorialState.Lesson);
+    }
+
+    void SwitchState(TutorialState state)
+    {
+        State = state;
+
+        switch (state)
+        {
+            case TutorialState.Lesson:
+                ResetConfirmed(lessonComfirm);
+                ResetConfirmed(congratConfirm);
+                AssignColor(lessonComfirm);
+                introPage.SetActive(true);
+                playPage.SetActive(false);
+                lessonTitle.text = m_leves[m_currLevelIndex].lessonName;
+                lessonDesc.text = m_leves[m_currLevelIndex].levelDescription;
+                break;
+            case TutorialState.Play:
+                ResetConfirmed(lessonComfirm);
+                introPage.SetActive(false);
+                playPage.SetActive(true);
+                ResetPlayers();
+                break;
+            case TutorialState.Congrat:
+                ResetConfirmed(congratConfirm);
+                progressPage.SetActive(true);
+                progressTitle.text = "Congratulations!\nYou put the garments\nin the correct order!";
+                progressDescription.text = m_leves[m_currLevelIndex].winDescription;
+                AssignColor(congratConfirm);
+                break;
+        }
     }
 
     public void LoadLevel(int levelIndex)
     {
         Debug.Assert(levelIndex >= 0 && levelIndex < m_leves.Count);
 
+        SwitchState(TutorialState.Lesson);
+
         int playersNumber = GameManager.instance.GetActivePlayersNumber();
         m_selectList = new string[playersNumber];
         m_clothAssignment.Clear();
-        ClearSprite();
+
         ClearSelection();
         ResetPlayerRandom(playersNumber);
 
         m_currLevelIndex = levelIndex;
         TutorialLevel levelData = m_leves[m_currLevelIndex];
-        levelDescription.text = levelData.levelDescription;
+        hintText.text = m_leves[m_currLevelIndex].command;
         levelTitle.text = levelData.levelTitle;
         lowExtentText.text = levelData.lowExtentTitle;
         highExtentText.text = levelData.highExtentTitle;
         for (int i = 0; i < playersNumber; i++)
         {
-            int playerIndex = m_playerRandom.GetRandomEntry();
-            AirConsole.instance.Message(AirConsole.instance.ConvertPlayerNumberToDeviceId(playerIndex),
-                string.Format("Tutorial;Cloth;{0};{1};{2};{3};{4};{5}", levelIndex + 1, levelData.clothes[i].image.name, levelData.clothes[i].clothDescription, 
-                lowExtentText.text, highExtentText.text, levelData.levelTitle));
-            m_clothAssignment.Add(AirConsole.instance.ConvertPlayerNumberToDeviceId(playerIndex), levelData.clothes[i].image.name);
+            int clothIndex = m_playerRandom.GetRandomEntry();
+            //AirConsole.instance.Message(AirConsole.instance.ConvertPlayerNumberToDeviceId(playerIndex),
+            //    string.Format("Tutorial;Cloth;{0};{1};{2};{3};{4};{5}", levelIndex + 1, levelData.clothes[i].image.name, levelData.clothes[i].clothDescription, 
+            //    lowExtentText.text, highExtentText.text, levelData.levelTitle));
+            m_clothAssignment.Add(AirConsole.instance.ConvertPlayerNumberToDeviceId(i), levelData.clothes[clothIndex].image.name);
+            clothUI[i].SetDesc(GameManager.instance.GetPlayerColor(i), levelData.clothes[clothIndex].image, levelData.clothes[clothIndex].clothDescription);
+            displayImageHolder[i].color = GameManager.instance.GetPlayerColor(i);
+            displayImageHolder[i].transform.Find("Confirm").GetComponent<Image>().color = GameManager.instance.GetPlayerColor(i);
         }
+    }
+
+    void OnConfirm()
+    {
+        if (inLevelTransition)
+        {
+            return;
+        }
+
+        if (IsAllComfirmed())
+        {
+            if (!IsCorrect(m_leves[m_currLevelIndex]))
+            {
+                WrongSelection();
+            }
+            else
+            {
+                SwitchState(TutorialState.Congrat);
+            }
+        }
+
+        return;
     }
 
     void OnMessage(int fromDeviceID, JToken data)
     {
-        Debug.Log("message from " + fromDeviceID + ", data: " + data);
-
-        if(data["action"] != null && data["action"].ToString().Equals("confirm"))
+        if (data["action"] != null && data["action"].ToString().Equals("confirm"))
         {
-            if(inLevelTransition)
+            if(State == TutorialState.Lesson)
             {
-                return;
-            }
-
-            int index = GetSelectionIndex(fromDeviceID);
-            if(index == -1)
-            {
-                return;
-            }
-
-            selectionComfirm[index].SetActive(true);
-
-            if (IsFilled() && IsAllComfirmed())
-            {
-                if (IsCorrect(m_leves[m_currLevelIndex]))
+                SetLessonConfirmedPlayer(AirConsole.instance.ConvertDeviceIdToPlayerNumber(fromDeviceID));
+                if(AllConfirmed(lessonComfirm))
                 {
-                    StartCoroutine(CorrectSelection());
-                }
-                else
-                {
-                    StartCoroutine(WrongSelection());
+                    SwitchState(TutorialState.Play);
                 }
             }
-
-            return;
-        }
-
-        if (data["action"] != null)
-        {
-            int index = GetSelectionIndex(fromDeviceID);
-            int input = int.Parse(data["action"].ToString());
-
-            if (index != -1 && IsConfirmed(index))
+            else if(State == TutorialState.Congrat)
             {
-                return;
+                SetCongartConfirmedPlayer(AirConsole.instance.ConvertDeviceIdToPlayerNumber(fromDeviceID));
+                if (AllConfirmed(congratConfirm))
+                {
+                    CorrectSelection();
+                    SwitchState(TutorialState.Lesson);
+                }
             }
-
-            if (IsConfirmed(input-1))
-            {
-                return;
-            }
-
-            RemoveSprite(m_clothAssignment[fromDeviceID]);
-            m_selectList[input-1] = m_clothAssignment[fromDeviceID];
-            UpdateSprite();
         }
     }
 
-    IEnumerator WrongSelection()
+    public void SetLessonConfirmedPlayer(int playerId)
     {
-        ClearSprite();
+        lessonComfirm[playerId].transform.Find("Check").gameObject.SetActive(true);
+        Image check = lessonComfirm[playerId].transform.Find("Check").GetComponent<Image>();
+        check.color = GameManager.instance.GetPlayerColor(playerId);
+    }
+
+    public void SetCongartConfirmedPlayer(int playerId)
+    {
+        congratConfirm[playerId].transform.Find("Check").gameObject.SetActive(true);
+        Image check = congratConfirm[playerId].transform.Find("Check").GetComponent<Image>();
+        check.color = GameManager.instance.GetPlayerColor(playerId);
+    }
+
+    void WrongSelection()
+    {
+
         ClearSelection();
-        progressPage.SetActive(true);
-        progressTitle.text = "Try Again!";
-        progressDescription.text = m_leves[m_currLevelIndex].loseDescription;
-        inLevelTransition = true;
 
-        yield return new WaitForSeconds(5f);
+        ResetPlayers();
 
-        AirConsole.instance.Broadcast("Tutorial;Hint;"+ m_leves[m_currLevelIndex].loseDescription);
-
-        progressPage.SetActive(false);
-        inLevelTransition = false;
+        hintText.text = m_leves[m_currLevelIndex].levelDescription;
     }
 
-    IEnumerator CorrectSelection()
+    void CorrectSelection()
     {
-        progressPage.SetActive(true);
-        progressTitle.text = "Congratulations!\nYou put the garments\nin the correct order!";
-        progressDescription.text = m_leves[m_currLevelIndex].winDescription;
-        inLevelTransition = true;
-
-        yield return new WaitForSeconds(8f);
         m_currLevelIndex++;
         if (m_currLevelIndex == m_leves.Count)
         {
@@ -161,27 +214,7 @@ public class TutorialCanvas : UIScreenBase
             progressPage.SetActive(false);
             LoadLevel(m_currLevelIndex);
         }
-        inLevelTransition = false;
-    }
-
-    int GetSelectionIndex(int fromDeviceID)
-    {
-        string assignedCloth = m_clothAssignment[fromDeviceID];
-
-        for(int i = 0; i < m_selectList.Length; i++)
-        {
-            if(m_selectList[i] == assignedCloth)
-            {
-                return i;
-            }
-        }
-
-        return -1;
-    }
-
-    bool IsConfirmed(int index)
-    {
-        return selectionComfirm[index].activeSelf;
+        ResetPlayers();
     }
 
     void ResetPlayerRandom(int playerNum)
@@ -193,56 +226,6 @@ public class TutorialCanvas : UIScreenBase
         }
     }
 
-    void RemoveSprite(string name)
-    {
-        for (int i = 0; i < m_selectList.Length; i++)
-        {
-            if (m_selectList[i] == name)
-            {
-                m_selectList[i] = "";
-                displayImageHolder[i].sprite = null;
-            }
-        }
-    }
-
-    void UpdateSprite()
-    {
-        for(int i = 0; i < m_selectList.Length; i++)
-        {
-            displayImageHolder[i].gameObject.SetActive(true);
-            if (m_selectList[i].Contains("green"))
-            {
-                displayImageHolder[i].sprite = colorSprites[0];
-            }
-            else if(m_selectList[i].Contains("yellow"))
-            {
-                displayImageHolder[i].sprite = colorSprites[1];
-            }
-            else if (m_selectList[i].Contains("red"))
-            {
-                displayImageHolder[i].sprite = colorSprites[2];
-            }
-            else if (m_selectList[i].Contains("blue"))
-            {
-                displayImageHolder[i].sprite = colorSprites[3];
-            }
-            else
-            {
-                displayImageHolder[i].gameObject.SetActive(false);
-            }       
-        }
-    }
-
-    void ClearSprite()
-    {
-        for (int i = 0; i < m_selectList.Length; i++)
-        {
-            m_selectList[i] = "";
-            displayImageHolder[i].sprite = null;
-            displayImageHolder[i].gameObject.SetActive(false);
-        }
-    }
-
     void ClearSelection()
     {
         for(int i = 0; i < selectionComfirm.Length; i++)
@@ -251,18 +234,6 @@ public class TutorialCanvas : UIScreenBase
         }
     }
 
-    bool IsFilled()
-    {
-        for (int i = 0; i < m_selectList.Length; i++)
-        {
-            if (string.IsNullOrEmpty(m_selectList[i]))
-            {
-                return false;
-            }
-        }
-
-        return true;
-    }
 
     bool IsAllComfirmed()
     {
@@ -278,15 +249,56 @@ public class TutorialCanvas : UIScreenBase
 
     bool IsCorrect(TutorialLevel level)
     {
-        for (int i = 0; i < m_selectList.Length; i++)
+        List<TutorialController> display = new List<TutorialController>(players);
+        List<TutorialController> sortedList = display.OrderBy(x => x.GetXpos()).ToList();
+
+        for (int i = 0; i < sortedList.Count; i++)
         {
-            if (m_selectList[i] != level.clothes[i].image.name)
+            if (m_clothAssignment[sortedList[i].GetDeviceId()] != level.clothes[i].image.name)
             {
                 return false;
             }
         }
 
         return true;
+    }
+
+    void ResetPlayers()
+    {
+        for (int i = 0; i < players.Length; i++)
+        {
+            players[i].ResetPlayer();
+        }
+    }
+
+    void AssignColor(List<GameObject> players)
+    {
+        for(int i = 0; i < players.Count; i++)
+        {
+            Image check = players[i].GetComponent<Image>();
+            check.color = GameManager.instance.GetPlayerColor(i);
+        }
+    }
+
+    bool AllConfirmed(List<GameObject> players)
+    {
+        for (int i = 0; i < players.Count; i++)
+        {
+            if (!players[i].transform.Find("Check").gameObject.activeSelf)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    void ResetConfirmed(List<GameObject> players)
+    {
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[i].transform.Find("Check").gameObject.SetActive(false);
+        }
     }
 
     private void OnDestroy()

@@ -26,9 +26,6 @@ public class StartCanvas : UIScreenBase
 
     private void Awake()
     {
-        //SetConnectedPlayer(0);
-        //SetConfirmedPlayer(0);
-
         AirConsole.instance.onReady += OnReady;
         AirConsole.instance.onConnect += OnConnect;
         AirConsole.instance.onDisconnect += OnDisconnect;
@@ -108,7 +105,7 @@ public class StartCanvas : UIScreenBase
 
         if (currIndex >= pages.Length)
         {
-            GameManager.instance.SwitchState(GameState.Fantasy);
+            GameManager.instance.SwitchState(GameState.Tutorial);
             CloseScreen();
             return;
         }
