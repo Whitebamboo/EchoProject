@@ -126,7 +126,7 @@ public class TutorialCanvas : UIScreenBase
             //    lowExtentText.text, highExtentText.text, levelData.levelTitle));
             m_clothAssignment.Add(AirConsole.instance.ConvertPlayerNumberToDeviceId(i), levelData.clothes[clothIndex].image.name);
             clothUI[i].SetDesc(Color.white, levelData.clothes[clothIndex].image, levelData.clothes[clothIndex].clothDescription);
-            displayImageHolder[i].color = GameManager.instance.GetPlayerColor(i);
+            //displayImageHolder[i].color = GameManager.instance.GetPlayerColor(i);
             displayImageHolder[i].transform.Find("Confirm").GetComponent<Image>().color = GameManager.instance.GetPlayerColor(i);
         }
     }
