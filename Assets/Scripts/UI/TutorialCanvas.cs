@@ -125,7 +125,7 @@ public class TutorialCanvas : UIScreenBase
             //    string.Format("Tutorial;Cloth;{0};{1};{2};{3};{4};{5}", levelIndex + 1, levelData.clothes[i].image.name, levelData.clothes[i].clothDescription, 
             //    lowExtentText.text, highExtentText.text, levelData.levelTitle));
             m_clothAssignment.Add(AirConsole.instance.ConvertPlayerNumberToDeviceId(i), levelData.clothes[clothIndex].image.name);
-            clothUI[i].SetDesc(GameManager.instance.GetPlayerColor(i), levelData.clothes[clothIndex].image, levelData.clothes[clothIndex].clothDescription);
+            clothUI[i].SetDesc(Color.white, levelData.clothes[clothIndex].image, levelData.clothes[clothIndex].clothDescription);
             displayImageHolder[i].color = GameManager.instance.GetPlayerColor(i);
             displayImageHolder[i].transform.Find("Confirm").GetComponent<Image>().color = GameManager.instance.GetPlayerColor(i);
         }
