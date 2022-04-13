@@ -47,7 +47,7 @@ public class TutorialCanvas : UIScreenBase
 
     bool inLevelTransition;
 
-    TutorialState State;
+    public TutorialState State;
 
     private void Awake()
     {
@@ -91,6 +91,7 @@ public class TutorialCanvas : UIScreenBase
                 break;
             case TutorialState.Congrat:
                 ResetConfirmed(congratConfirm);
+                playPage.SetActive(false);
                 progressPage.SetActive(true);
                 progressTitle.text = "Congratulations!\nYou put the garments\nin the correct order!";
                 progressDescription.text = m_leves[m_currLevelIndex].winDescription;
@@ -121,12 +122,8 @@ public class TutorialCanvas : UIScreenBase
         for (int i = 0; i < playersNumber; i++)
         {
             int clothIndex = m_playerRandom.GetRandomEntry();
-            //AirConsole.instance.Message(AirConsole.instance.ConvertPlayerNumberToDeviceId(playerIndex),
-            //    string.Format("Tutorial;Cloth;{0};{1};{2};{3};{4};{5}", levelIndex + 1, levelData.clothes[i].image.name, levelData.clothes[i].clothDescription, 
-            //    lowExtentText.text, highExtentText.text, levelData.levelTitle));
             m_clothAssignment.Add(AirConsole.instance.ConvertPlayerNumberToDeviceId(i), levelData.clothes[clothIndex].image.name);
             clothUI[i].SetDesc(Color.white, levelData.clothes[clothIndex].image, levelData.clothes[clothIndex].clothDescription);
-            //displayImageHolder[i].color = GameManager.instance.GetPlayerColor(i);
             displayImageHolder[i].transform.Find("Confirm").GetComponent<Image>().color = GameManager.instance.GetPlayerColor(i);
         }
     }
@@ -162,7 +159,7 @@ public class TutorialCanvas : UIScreenBase
                 SetLessonConfirmedPlayer(AirConsole.instance.ConvertDeviceIdToPlayerNumber(fromDeviceID));
                 if(AllConfirmed(lessonComfirm))
                 {
-                    SwitchState(TutorialState.Play);
+                    StartCoroutine(ToPlay());
                 }
             }
             else if(State == TutorialState.Congrat)
@@ -171,10 +168,15 @@ public class TutorialCanvas : UIScreenBase
                 if (AllConfirmed(congratConfirm))
                 {
                     CorrectSelection();
-                    SwitchState(TutorialState.Lesson);
                 }
             }
         }
+    }
+
+    IEnumerator ToPlay()
+    {
+        yield return null;
+        SwitchState(TutorialState.Play);
     }
 
     public void SetLessonConfirmedPlayer(int playerId)
@@ -213,6 +215,7 @@ public class TutorialCanvas : UIScreenBase
         {
             progressPage.SetActive(false);
             LoadLevel(m_currLevelIndex);
+            SwitchState(TutorialState.Lesson);
         }
         ResetPlayers();
     }

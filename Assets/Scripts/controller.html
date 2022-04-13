@@ -96,6 +96,7 @@
             case "Tutorial":
               if(messages[1] == "Start"){
                   vm.controllersShow("ingame", true);
+                  document.getElementById("interact").classList.add("disabled");
               }
               else if (messages[1] == "Cloth") {
                   tutorialSelectionConfirmed = false;
@@ -118,7 +119,9 @@
                   vm.controllersShow("fantasy-intro", true);
               }
               else if(messages[1] == "Start"){
-                  vm.controllersShow("fantasy", true);
+                  vm.controllersShow("ingame", true);
+                  document.getElementById("confirm").classList.add("disabled");
+                  document.getElementById("interact").classList.remove("disabled");
               }
               else if(messages[1] == "Cloth"){
                   vm.controllersShow("checking", true);
@@ -176,11 +179,12 @@
               <div class="joystick-relative-stick"></div>
           </div>
       </div>
-      <div class="interact fantasy-interact" ontouchstart="window.app.sendMessageToScreen('confirm')"> Comfirm </div>
+      <div id="confirm" class="interact fantasy-interact" ontouchstart="window.app.sendMessageToScreen('confirm')"> Confirm </div>
+      <div id="interact" class="interact fantasy-interact disabled" ontouchstart="window.app.sendMessageToScreen('interact')"> Interact </div>
       <!--<div class="interact fantasy-check" ontouchstart="window.app.sendMessageToScreen('check')"> Check </div>-->
-    </div>
+  </div>
 
-    <!-- old tutorial phrase controller-->
+    <!-- old tutorial phrase -->
     <!--<div id="ingame" class="view">
         <div id="bg-image"></div>
         <div id="cloth-image"></div>
@@ -201,15 +205,15 @@
       <div id="start-button" class="Start-button" ontouchstart="window.app.sendMessageToScreen('next')"> Next </div>
     </div>
 
-    <div id="fantasy" class="view">
+    <!--<div id="fantasy" class="view">
         <div id="joystick_left" class="joystick">
             <div class="joystick-relative">
                 <div class="joystick-relative-stick"></div>
             </div>
         </div>
         <div class="interact fantasy-interact" ontouchstart="window.app.sendMessageToScreen('interact')"> Interact </div>
-        <!--<div class="interact fantasy-check" ontouchstart="window.app.sendMessageToScreen('check')"> Check </div>-->
-    </div>
+        <div class="interact fantasy-check" ontouchstart="window.app.sendMessageToScreen('check')"> Check </div>
+    </div>-->
 
 
     <div id="checking" class="view">
