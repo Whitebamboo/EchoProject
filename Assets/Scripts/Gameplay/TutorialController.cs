@@ -89,9 +89,13 @@ public class TutorialController : MonoBehaviour
 
         if (data["action"] != null && data["action"].ToString().Equals("confirm"))
         {
-            isComfirmed = !isComfirmed;
-            m_display.transform.Find("Confirm").gameObject.SetActive(isComfirmed);
-            onConfirmed.Invoke();
+            TutorialCanvas canvas = UIManager.instance.FindScreen<TutorialCanvas>();
+            if(canvas != null && canvas.State == TutorialState.Play)
+            {
+                isComfirmed = !isComfirmed;
+                m_display.transform.Find("Confirm").gameObject.SetActive(isComfirmed);
+                onConfirmed.Invoke();
+            }        
         }
     }
 
