@@ -12,17 +12,11 @@ public class StartCanvas : UIScreenBase
 {
     [SerializeField] GameObject connectPage;
     [SerializeField] GameObject introPage;
-    [SerializeField] TextMeshProUGUI connectedPlayerText;
-    [SerializeField] TextMeshProUGUI confirmedPlayerText;
-    [SerializeField] TextMeshProUGUI confirmedText;
     [SerializeField] GameObject[] pages;
     [SerializeField] GameObject[] playerReady;
     [SerializeField] GameObject[] playerNext;
 
     int currIndex;
-    int confirmed;
-
-    //Start state variable
     int confirmedPlayer;
 
     private void Awake()
@@ -54,6 +48,7 @@ public class StartCanvas : UIScreenBase
         playerReady[playerId-1].SetActive(true);
         TextMeshProUGUI nickName = playerReady[playerId-1].transform.Find("NickName").GetComponent<TextMeshProUGUI>();
         nickName.color = GameManager.instance.GetPlayerColor(playerId-1);
+        nickName.text = AirConsole.instance.GetNickname(AirConsole.instance.ConvertPlayerNumberToDeviceId(playerId - 1));
     }
 
     public void SetConfirmedPlayer(int playerId)
