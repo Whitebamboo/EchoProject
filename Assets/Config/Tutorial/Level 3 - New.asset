@@ -20,9 +20,9 @@ MonoBehaviour:
   winDescription: Remember that clothes made with different blends and contain elements
     like zippers and buttons require a more complex sorting process, making them
     less eco-friendly.
-  loseDescription: The more elements (blends, colors, zippers, buttons) that exist
-    in a garment, the more effort it takes to sort the garment when preparing it
-    for recycling.
+  loseDescription: Try again! The more elements (blends, colors, zippers, buttons)
+    that exist in a garment, the more effort it takes to sort the garment when preparing
+    it for recycling.
   lessonName: 'Lesson Three: Sorting'
   command: This level is a bit tricky. Use the fabric guide book and your best knowledge
     to rank these items.
