@@ -19,8 +19,8 @@ MonoBehaviour:
   winDescription: Instead of just throwing away your clothes when you are done with
     them, try taking your clothes to a fabric recycling facility or thrift store
     so that you can extend the lifespan of those clothes.
-  loseDescription: 'The life of clothing can be extended if they are able to go to
-    thrift stores after using them. '
+  loseDescription: 'Try again! The life of clothing can be extended if they are able
+    to go to thrift stores after using them. '
   lessonName: 'Lesson Two: Durability'
   command: Compare your clothes lifespan with others, rank the clothes based on durability.
   clothes:
