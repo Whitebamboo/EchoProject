@@ -122,11 +122,11 @@ MonoBehaviour:
   highExtentText: {fileID: 822316817883239265}
   introPage: {fileID: 5149581629906177802}
   lessonTitle: {fileID: 8372066663849425670}
-  lessonDesc: {fileID: 2139941776581120368}
+  lessonDesc: {fileID: 8392219807657671338}
   playPage: {fileID: 3549935269178781329}
   progressPage: {fileID: 749595356569202216}
   progressTitle: {fileID: 9026743555193137739}
-  progressDescription: {fileID: 2501592602519858901}
+  progressDescription: {fileID: 413240043444917662}
   players:
   - {fileID: 3511519186711489354}
   - {fileID: 7938330877329943552}
@@ -2394,14 +2394,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.18553454, g: 0.4650148, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 70b27e02f6b4e56469019514e59e5dac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bb06d22daad51c844b0e6e8e9f187b24, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2434,6 +2434,7 @@ GameObject:
   - component: {fileID: 7626181607572114311}
   - component: {fileID: 3673994195845526967}
   - component: {fileID: 2501592602519858901}
+  - component: {fileID: 413240043444917662}
   m_Layer: 5
   m_Name: LessonText
   m_TagString: Untagged
@@ -2558,6 +2559,28 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &413240043444917662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3006884930446517676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40868536fcc3c2c458788a1cd1298e8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeLibrary: {fileID: 11400000, guid: 9a6156b25fcccac4e97ef1c8d23def06, type: 2}
+  curveLibrary: {fileID: 11400000, guid: 1807857dbc33603469f5046b18ae0aae, type: 2}
+  useUnscaledTime: 0
+  autoPlay: 0
+  printCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  characterPrinted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3263599316531092159
 GameObject:
   m_ObjectHideFlags: 0
@@ -3790,6 +3813,7 @@ GameObject:
   - component: {fileID: 6713642140142702364}
   - component: {fileID: 4218258029532322786}
   - component: {fileID: 2139941776581120368}
+  - component: {fileID: 8392219807657671338}
   m_Layer: 5
   m_Name: LessonText
   m_TagString: Untagged
@@ -3914,6 +3938,28 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8392219807657671338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3979388397050289315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40868536fcc3c2c458788a1cd1298e8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeLibrary: {fileID: 11400000, guid: 9a6156b25fcccac4e97ef1c8d23def06, type: 2}
+  curveLibrary: {fileID: 11400000, guid: 1807857dbc33603469f5046b18ae0aae, type: 2}
+  useUnscaledTime: 0
+  autoPlay: 0
+  printCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  characterPrinted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4102566407128515422
 GameObject:
   m_ObjectHideFlags: 0
@@ -5455,14 +5501,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.18553454, g: 0.4650148, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 70b27e02f6b4e56469019514e59e5dac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2ff1a27beb2073e4bb16a24283333172, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
