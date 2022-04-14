@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using RedBlueGames.Tools.TextTyper;
 
 public enum TutorialState
 {
@@ -22,11 +23,11 @@ public class TutorialCanvas : UIScreenBase
     [SerializeField] TextMeshProUGUI highExtentText;
     [SerializeField] GameObject introPage;
     [SerializeField] TextMeshProUGUI lessonTitle;
-    [SerializeField] TextMeshProUGUI lessonDesc;
+    [SerializeField] TextTyper lessonDesc;
     [SerializeField] GameObject playPage;
     [SerializeField] GameObject progressPage;
     [SerializeField] TextMeshProUGUI progressTitle;
-    [SerializeField] TextMeshProUGUI progressDescription;
+    [SerializeField] TextTyper progressDescription;
     [SerializeField] TutorialController[] players;
     [SerializeField] Image[] displayImageHolder;
     [SerializeField] Sprite[] colorSprites; //0 green 1 yellow 2 red 3 blue
@@ -81,7 +82,7 @@ public class TutorialCanvas : UIScreenBase
                 introPage.SetActive(true);
                 playPage.SetActive(false);
                 lessonTitle.text = m_leves[m_currLevelIndex].lessonName;
-                lessonDesc.text = m_leves[m_currLevelIndex].levelDescription;
+                lessonDesc.TypeText(m_leves[m_currLevelIndex].levelDescription);
                 break;
             case TutorialState.Play:
                 ResetConfirmed(lessonComfirm);
@@ -93,7 +94,7 @@ public class TutorialCanvas : UIScreenBase
                 ResetConfirmed(congratConfirm);
                 playPage.SetActive(false);
                 progressPage.SetActive(true);
-                progressDescription.text = m_leves[m_currLevelIndex].winDescription;
+                progressDescription.TypeText(m_leves[m_currLevelIndex].winDescription);
                 AssignColor(congratConfirm);
                 break;
         }

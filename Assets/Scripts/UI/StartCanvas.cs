@@ -16,6 +16,8 @@ public class StartCanvas : UIScreenBase
     [SerializeField] GameObject[] playerReady;
     [SerializeField] GameObject[] playerNext;
 
+    [SerializeField] AnimationClip bubbleAnimation;
+
     int currIndex;
     int confirmedPlayer;
 
@@ -63,6 +65,14 @@ public class StartCanvas : UIScreenBase
         AirConsole.instance.Broadcast("Fantasy;Intro");
         connectPage.SetActive(false);
         introPage.SetActive(true);
+        StartCoroutine(ShowText());
+    }
+
+    IEnumerator ShowText()
+    {
+        yield return new WaitForSeconds(bubbleAnimation.length);
+
+        pages[0].gameObject.SetActive(true);
     }
 
     void OnMessage(int fromDeviceID, JToken data)

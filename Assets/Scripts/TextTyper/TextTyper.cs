@@ -16,7 +16,7 @@
         /// <summary>
         /// The print delay setting. Could make this an option some day, for fast readers.
         /// </summary>
-        private const float PrintDelaySetting = 0.02f;
+        private const float PrintDelaySetting = 0.03f;
 
         /// <summary>
         /// Default delay setting will be multiplied by this when the character is a punctuation mark
@@ -46,6 +46,9 @@
         [Tooltip("If set, the typer will type text even if the game is paused (Time.timeScale = 0)")]
         private bool useUnscaledTime;
 #pragma warning restore 0649
+
+        [SerializeField]
+        private bool autoPlay = false;
 
         [SerializeField]
         [Tooltip("Event that's called when the text has finished printing.")]
@@ -107,6 +110,15 @@
                 }
 
                 return this.textComponent;
+            }
+        }
+
+        void Start()
+        {
+            if(autoPlay)
+            {
+                string text = GetComponent<TextMeshProUGUI>().text;
+                TypeText(text);
             }
         }
 
