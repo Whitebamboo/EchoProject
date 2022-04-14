@@ -540,6 +540,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6492174707969900015}
+  - component: {fileID: 1653909372248402855}
+  - component: {fileID: 6963758680312218405}
   m_Layer: 5
   m_Name: Congratulations
   m_TagString: Untagged
@@ -571,6 +573,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1653909372248402855
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749595356569202216}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af3ab878a65d7654ebd0d7da823f5c3a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!225 &6963758680312218405
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749595356569202216}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1230241629898984074
 GameObject:
   m_ObjectHideFlags: 0
@@ -2313,6 +2346,7 @@ GameObject:
   - component: {fileID: 1350902279804895631}
   - component: {fileID: 2920644649372340575}
   - component: {fileID: 8097305903642073708}
+  - component: {fileID: 1172937798865641178}
   m_Layer: 5
   m_Name: BgRight
   m_TagString: Untagged
@@ -2377,6 +2411,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &1172937798865641178
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2669489014201573674}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 1
 --- !u!1 &3006884930446517676
 GameObject:
   m_ObjectHideFlags: 0
@@ -5361,6 +5407,7 @@ GameObject:
   - component: {fileID: 4103146376373051991}
   - component: {fileID: 7474749092926493683}
   - component: {fileID: 5161783663316792157}
+  - component: {fileID: 3499090319503387497}
   m_Layer: 5
   m_Name: BgLeft
   m_TagString: Untagged
@@ -5425,6 +5472,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &3499090319503387497
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5390699855683701802}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 1
 --- !u!1 &5465784852503645009
 GameObject:
   m_ObjectHideFlags: 0
