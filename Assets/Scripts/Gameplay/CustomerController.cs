@@ -5,11 +5,14 @@ using DG.Tweening;
 
 public class CustomerController : MonoBehaviour, IIteractable
 {
-    public GameObject holderRoot;
+    [SerializeField] GameObject holderRoot;
+    [SerializeField] List<GameObject> models;
 
     CustomerData m_data;
 
     CustomerPopup m_popup;
+
+    Animator animator;
 
     public void SetupData(CustomerData data)
     {
@@ -19,6 +22,7 @@ public class CustomerController : MonoBehaviour, IIteractable
 
     void GotoEnterPoint()
     {
+        animator.SetBool("Walking", true);
         transform.DOMove(CustomerManager.instance.EnterPoint, 2f).OnComplete(()=> {
             GotoWaitPoint();
         });
@@ -31,11 +35,13 @@ public class CustomerController : MonoBehaviour, IIteractable
             transform.DORotate(Vector3.zero, 0.5f);
             FollowUICanvas canvas = UIManager.instance.FindScreen<FollowUICanvas>();
             m_popup = canvas.GenerateCustomerPopup(transform);
+            animator.SetBool("Walking", false);
         });
     }
 
     void GotExitPoint()
     {
+        animator.SetBool("Walking", true);
         if (m_popup != null)
         {
             Destroy(m_popup.gameObject);
@@ -105,6 +111,13 @@ public class CustomerController : MonoBehaviour, IIteractable
     {
         item.transform.parent = holderRoot.transform;
         item.transform.localPosition = Vector3.zero;
+    }
+
+    public void GenerateModel(int index)
+    {
+        GameObject modelView = Instantiate(models[index], transform);
+        modelView.transform.localPosition = new Vector3(0, -0.936f, 0);
+        animator = modelView.GetComponent<Animator>();
     }
 
     public void OnShowHint()

@@ -93,7 +93,6 @@ public class TutorialCanvas : UIScreenBase
                 ResetConfirmed(congratConfirm);
                 playPage.SetActive(false);
                 progressPage.SetActive(true);
-                progressTitle.text = "Congratulations!\nYou put the garments\nin the correct order!";
                 progressDescription.text = m_leves[m_currLevelIndex].winDescription;
                 AssignColor(congratConfirm);
                 break;
@@ -276,11 +275,7 @@ public class TutorialCanvas : UIScreenBase
 
     void AssignColor(List<GameObject> players)
     {
-        for(int i = 0; i < players.Count; i++)
-        {
-            Image check = players[i].GetComponent<Image>();
-            check.color = GameManager.instance.GetPlayerColor(i);
-        }
+
     }
 
     bool AllConfirmed(List<GameObject> players)

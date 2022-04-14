@@ -21,6 +21,7 @@ public class CustomerManager : CSingletonMono<CustomerManager>
     Queue<CustomerData> customerQuene = new Queue<CustomerData>();
 
     int currLevel;
+    int currCustomerIndex;
 
     public void AddHolders(ItemHolder holder)
     {
@@ -66,10 +67,12 @@ public class CustomerManager : CSingletonMono<CustomerManager>
     {
         if(customerQuene.Count == 0)
         {
-            SetupLevel(++currLevel);
+            currLevel += 1;
+            SetupLevel(currLevel);
             return;
         }
 
+        currCustomerIndex += 1;
         CustomerData customer = customerQuene.Dequeue();
         GenerateCustomer(customer);
     }
@@ -78,6 +81,7 @@ public class CustomerManager : CSingletonMono<CustomerManager>
     {
         CustomerController newCustomer = Instantiate(customerPrefab);
         newCustomer.transform.position = spawnPoint;
+        newCustomer.GenerateModel(currCustomerIndex);
         newCustomer.SetupData(data);
     }
 

@@ -17,6 +17,7 @@ public class StartCanvas : UIScreenBase
     [SerializeField] TextMeshProUGUI confirmedText;
     [SerializeField] GameObject[] pages;
     [SerializeField] GameObject[] playerReady;
+    [SerializeField] GameObject[] playerNext;
 
     int currIndex;
     int confirmed;
@@ -51,15 +52,15 @@ public class StartCanvas : UIScreenBase
     public void SetConnectedPlayer(int playerId)
     {
         playerReady[playerId-1].SetActive(true);
-        Image icon = playerReady[playerId-1].transform.Find("Icon").GetComponent<Image>();
-        icon.color = GameManager.instance.GetPlayerColor(playerId - 1);
+        TextMeshProUGUI nickName = playerReady[playerId-1].transform.Find("NickName").GetComponent<TextMeshProUGUI>();
+        nickName.color = GameManager.instance.GetPlayerColor(playerId-1);
     }
 
     public void SetConfirmedPlayer(int playerId)
     {
         playerReady[playerId].transform.Find("Check").gameObject.SetActive(true);
         Image check = playerReady[playerId].transform.Find("Check").GetComponent<Image>();
-        check.color = GameManager.instance.GetPlayerColor(playerId);
+        check.color = GameManager.instance.GetPlayerColor(playerId); 
     }
 
     public void StartGame()
@@ -75,14 +76,11 @@ public class StartCanvas : UIScreenBase
 
         if (data["action"] != null && data["action"].ToString().Equals("next"))
         {
-            confirmed++;
-            confirmedText.text = "Confirmed: " + confirmed + "/" + GameManager.instance.GetActivePlayersNumber().ToString();
-
-            if (confirmed == GameManager.instance.GetActivePlayersNumber())
+            SetNext(AirConsole.instance.ConvertDeviceIdToPlayerNumber(fromDeviceID));
+            if (IsAllComfirmed())
             {
+                ClearSelection();
                 NextPage();
-                confirmed = 0;
-                confirmedText.text = "Confirmed: " + confirmed + "/" + GameManager.instance.GetActivePlayersNumber().ToString();
             }
         }
 
@@ -97,6 +95,35 @@ public class StartCanvas : UIScreenBase
                 StartGame();
             }
         }
+    }
+
+
+    public void SetNext(int playerId)
+    {
+        playerNext[playerId].transform.Find("Check").gameObject.SetActive(true);
+        Image check = playerNext[playerId].transform.Find("Check").GetComponent<Image>();
+        check.color = GameManager.instance.GetPlayerColor(playerId);
+    }
+
+    void ClearSelection()
+    {
+        for (int i = 0; i < playerNext.Length; i++)
+        {
+            playerNext[i].transform.Find("Check").gameObject.SetActive(false);
+        }
+    }
+
+
+    bool IsAllComfirmed()
+    {
+        for (int i = 0; i < playerNext.Length; i++)
+        {
+            if (!playerNext[i].transform.Find("Check").gameObject.activeSelf)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void NextPage()

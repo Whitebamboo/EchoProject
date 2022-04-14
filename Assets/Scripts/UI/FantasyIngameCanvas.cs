@@ -22,7 +22,7 @@ public class FantasyIngameCanvas : UIScreenBase
 
     public void ShowClothDesc(int playerIndex, ItemData data)
     {
-        clothUI[playerIndex].SetDesc(GameManager.instance.GetPlayerColor(playerIndex), data.clothImage, data.ToString());
+        clothUI[playerIndex].SetDesc(Color.white, data.clothImage, data.ToString());
 
         RectTransform rTrans = clothUI[playerIndex].GetComponent<RectTransform>();
         rTrans.anchoredPosition = new Vector2(rTrans.anchoredPosition.x, showPos);
