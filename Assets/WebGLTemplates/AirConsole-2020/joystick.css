@@ -5,7 +5,7 @@
   height: 90%;
   border-radius: 100%;
   background-color: black;
-  background: url(joystick-bg.png) no-repeat center center;
+  background: url(joystick-bg-1.png) no-repeat center center;
   background-size: contain;
 }
 
@@ -25,7 +25,7 @@
   margin-left: -60%;
   margin-top: -60%;
   border-radius: 100%;
-  background: url(joystick-stick.png);
+  background: url(joystick-stick-1.png);
   /*background-color: #000000;
   border: 3px solid #ADDE00;*/
 }

@@ -111,6 +111,11 @@
                   console.log("Show Hint Button");
                   document.getElementById("show-hint-button").classList.remove("disabled");
                   document.getElementById("hint-text").innerHTML = messages[2];
+              } 
+              else if (messages[1] == "Controller") {
+                  console.log("Show Controller");
+                  document.getElementById("joystick_left").style.backgroundImage = "url(joystick-bg-" + messages[2] + ".png)";
+                  document.getElementById("joystick_image").style.backgroundImage = "url(joystick-stick-" + messages[2] + ".png)";
               }
 
               break;
@@ -176,7 +181,7 @@
     <div id="ingame" class="view">
       <div id="joystick_left" class="joystick">
           <div class="joystick-relative">
-              <div class="joystick-relative-stick"></div>
+              <div id = "joystick_image" class="joystick-relative-stick"></div>
           </div>
       </div>
       <div id="confirm" class="interact fantasy-interact" ontouchstart="window.app.sendMessageToScreen('confirm')"> Confirm </div>
