@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9fed890952e3a408e5973a23b517a1, type: 3}
   m_Name: Level 1
   m_EditorClassIdentifier: 
-  levelTitle: 'Level1: How recyclable are your clothes?'
+  levelTitle: 'Level 1: How recyclable are your clothes?'
   levelDescription: 'We need labels to figure out what materials the clothing is
     made of in order to recycle them. '
   lowExtentTitle: Not Recyclable
