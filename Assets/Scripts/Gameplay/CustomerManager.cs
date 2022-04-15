@@ -48,6 +48,17 @@ public class CustomerManager : CSingletonMono<CustomerManager>
             Debug.Log("Game finished");
             UIManager.instance.CreateScreen<EndCanvas>();
             AirConsole.instance.Broadcast("Fantasy;Intro");
+
+            DialogueCanvas dialog = UIManager.instance.FindScreen<DialogueCanvas>();
+            if (dialog != null)
+                dialog.CloseScreen();
+            FantasyIngameCanvas ingame = UIManager.instance.FindScreen<FantasyIngameCanvas>();
+            if (ingame != null)
+                ingame.CloseScreen();
+            FollowUICanvas follow = UIManager.instance.FindScreen<FollowUICanvas>();
+            if (dialog != null)
+                follow.CloseScreen();
+
             return;
         }
 

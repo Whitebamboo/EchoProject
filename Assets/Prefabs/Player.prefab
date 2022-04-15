@@ -230,8 +230,8 @@ MonoBehaviour:
   turnSpeed: 15
   itemRoot: {fileID: 3740616712811502086}
   models:
-  - {fileID: 8508932825152773220, guid: 9fc0f4b8ccb172c42b2fc22c17f8cd70, type: 3}
   - {fileID: 2565129383907014028, guid: 89b950bec40cf954fbf1253007692dce, type: 3}
+  - {fileID: 8508932825152773220, guid: 9fc0f4b8ccb172c42b2fc22c17f8cd70, type: 3}
   - {fileID: 1123864266500537254, guid: a7dc9837420533b40a14376d5723ba56, type: 3}
   - {fileID: 3991507671120824723, guid: e4abc431c351ff548b15e7a906c143f4, type: 3}
 --- !u!54 &417956228444665441

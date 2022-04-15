@@ -7,6 +7,8 @@ using System;
 
 public class DialogueCanvas : UIScreenBase
 {
+    [SerializeField] GameObject bg;
+    [SerializeField] GameObject hint;
     [SerializeField] TextTyper typer;
     [SerializeField] float printSpeed = 0.1f;
 
@@ -16,6 +18,8 @@ public class DialogueCanvas : UIScreenBase
     private void Start()
     {
         typer.PrintCompleted.AddListener(OnPrintingComplete);
+        hint.SetActive(true);
+        bg.SetActive(false);
     }
 
     void OnPrintingComplete()
@@ -33,6 +37,8 @@ public class DialogueCanvas : UIScreenBase
             return;
         }
 
+        bg.SetActive(true);
+        hint.SetActive(false);
         this.action = action;
         currText = text;
         typer.TypeText(text, printSpeed);

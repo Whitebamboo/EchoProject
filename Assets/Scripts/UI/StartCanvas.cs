@@ -37,6 +37,7 @@ public class StartCanvas : UIScreenBase
     {
         AirConsole.instance.SetActivePlayers();
         SetConnectedPlayer(AirConsole.instance.GetActivePlayerDeviceIds.Count);
+        CheckStatus();
     }
 
     void OnDisconnect(int device_id)
@@ -58,6 +59,20 @@ public class StartCanvas : UIScreenBase
         playerReady[playerId].transform.Find("Check").gameObject.SetActive(true);
         Image check = playerReady[playerId].transform.Find("Check").GetComponent<Image>();
         check.color = GameManager.instance.GetPlayerColor(playerId); 
+    }
+
+    void CheckStatus()
+    {
+        for(int i = 0; i < playerReady.Length; i++)
+        {
+            if(!playerReady[i].activeSelf && i < AirConsole.instance.GetActivePlayerDeviceIds.Count - 1)
+            {
+                playerReady[i].SetActive(true);
+                TextMeshProUGUI nickName = playerReady[i].transform.Find("NickName").GetComponent<TextMeshProUGUI>();
+                nickName.color = GameManager.instance.GetPlayerColor(i);
+                nickName.text = AirConsole.instance.GetNickname(AirConsole.instance.ConvertPlayerNumberToDeviceId(i));
+            }
+        }
     }
 
     public void StartGame()

@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class TutorialController : MonoBehaviour
 {
-    [SerializeField] float playerSpeed = 1f;
+    float playerSpeed = 3f;
 
     bool isMoving;
     Vector2 movement;
@@ -44,7 +44,7 @@ public class TutorialController : MonoBehaviour
     {
         if (horizontal != 0 && !isComfirmed)
         {
-            movement = new Vector2(horizontal, 0);
+            movement = new Vector2(horizontal * playerSpeed, 0);
             m_display.anchoredPosition += movement;
             float x = Mathf.Clamp(m_display.anchoredPosition.x, minPosition, maxPosition);
             m_display.anchoredPosition = new Vector2(x, m_display.anchoredPosition.y);

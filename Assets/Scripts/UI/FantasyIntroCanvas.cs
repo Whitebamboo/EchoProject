@@ -4,10 +4,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class FantasyIntroCanvas : UIScreenBase
 {
     [SerializeField] GameObject[] pages;
+    [SerializeField] GameObject[] playerNext;
     [SerializeField] TextMeshProUGUI confirmedText;
 
     int currIndex;
@@ -21,18 +23,13 @@ public class FantasyIntroCanvas : UIScreenBase
 
     void OnMessage(int fromDeviceID, JToken data)
     {
-        Debug.Log("message from " + fromDeviceID + ", data: " + data);
-
         if (data["action"] != null && data["action"].ToString().Equals("next"))
         {
-            confirmed++;
-            confirmedText.text = "Confirmed: " + confirmed + "/" + GameManager.instance.GetActivePlayersNumber().ToString();
-
-            if(confirmed == GameManager.instance.GetActivePlayersNumber())
+            SetNext(AirConsole.instance.ConvertDeviceIdToPlayerNumber(fromDeviceID));
+            if (IsAllComfirmed())
             {
+                ClearSelection();
                 NextPage();
-                confirmed = 0;
-                confirmedText.text = "Confirmed: " + confirmed + "/" + GameManager.instance.GetActivePlayersNumber().ToString();
             }    
         }
     }
@@ -54,6 +51,33 @@ public class FantasyIntroCanvas : UIScreenBase
         }
 
         pages[currIndex].SetActive(true);
+    }
+
+    public void SetNext(int playerId)
+    {
+        playerNext[playerId].transform.Find("Check").gameObject.SetActive(true);
+        Image check = playerNext[playerId].transform.Find("Check").GetComponent<Image>();
+        check.color = GameManager.instance.GetPlayerColor(playerId);
+    }
+
+    void ClearSelection()
+    {
+        for (int i = 0; i < playerNext.Length; i++)
+        {
+            playerNext[i].transform.Find("Check").gameObject.SetActive(false);
+        }
+    }
+
+    bool IsAllComfirmed()
+    {
+        for (int i = 0; i < playerNext.Length; i++)
+        {
+            if (!playerNext[i].transform.Find("Check").gameObject.activeSelf)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     void OnDestroy()
