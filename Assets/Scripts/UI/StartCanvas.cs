@@ -152,7 +152,7 @@ public class StartCanvas : UIScreenBase
 
         if (currIndex >= pages.Length)
         {
-            GameManager.instance.SwitchState(GameState.Tutorial);
+            GameManager.instance.SwitchState(GameState.Fantasy);
             CloseScreen();
             return;
         }
