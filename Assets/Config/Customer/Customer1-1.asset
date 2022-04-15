@@ -34,5 +34,9 @@ MonoBehaviour:
     score: 0
     matchResponse: "This color is nice but\u2026 is there anything that isn\u2019t
       made with blended synthetics? "
+  - data: {fileID: 11400000, guid: 1b1df71c03125e94ab2502a1723fc0dd, type: 2}
+    score: 0
+    matchResponse: This is close to what I'm looking for, but do you have anything
+      that is solid yellow?
   notMatchResponse: "This isn\u2019t quite the color I wanted\u2026 Can you find
     something else? "
