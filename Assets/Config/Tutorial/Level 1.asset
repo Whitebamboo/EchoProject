@@ -15,8 +15,8 @@ MonoBehaviour:
   levelTitle: 'Level 1: How recyclable are your clothes?'
   levelDescription: 'We need labels to figure out what materials the clothing is
     made of in order to recycle them. '
-  lowExtentTitle: Not Recyclable
-  highExtentTitle: 'Very Recyclable '
+  lowExtentTitle: Less Recyclable
+  highExtentTitle: 'More Recyclable '
   winDescription: 'In order to begin the recycling process, we need the labels to
     sort the materials properly. '
   loseDescription: Try again! Without being able to read the label, how can you know

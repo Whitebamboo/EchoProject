@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelTitle: 'Level 2: How durable are your clothes?'
   levelDescription: Which clothing is long-lasting and durable?
-  lowExtentTitle: Not Durable
-  highExtentTitle: Very Durable
+  lowExtentTitle: Less Durable
+  highExtentTitle: More Durable
   winDescription: Instead of just throwing away your clothes when you are done with
     them, try taking your clothes to a fabric recycling facility or thrift store
     so that you can extend the lifespan of those clothes.
