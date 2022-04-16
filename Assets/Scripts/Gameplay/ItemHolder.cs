@@ -11,7 +11,7 @@ public class ItemHolder : MonoBehaviour, IIteractable
 
     public bool IsHoldingTtem => m_item != null;
 
-    private ClothPopup popupHint;
+    private GameObject popupHint;
 
     void Start()
     {
@@ -39,25 +39,23 @@ public class ItemHolder : MonoBehaviour, IIteractable
         }
     }
 
-    public void OnShowHint()
+    public void OnShowHint(GameObject hintObj)
     {
-        //if(m_item == null || popupHint != null)
-        //{
-        //    return;
-        //}
+        if (m_item == null || popupHint != null)
+        {
+            return;
+        }
 
-        //FollowUICanvas canvas = UIManager.instance.FindScreen<FollowUICanvas>();
-        //popupHint = canvas.GenerateClothPopup(holderRoot.transform);
-        //popupHint.SetImage(m_item.data.clothImage);
-        // popupHint.SetText(m_item.data.GetPopupDescription());
+        popupHint = Instantiate(hintObj, transform);
+        popupHint.transform.position = transform.position + new Vector3(0, -0.7f, 0);
     }
 
-    public void OnHideHint()
+    public void OnHideHint(GameObject hintObj)
     {
-        //if(popupHint != null)
-        //{
-        //    Destroy(popupHint.gameObject);
-        //}
+        if (hintObj != null)
+        {
+            Destroy(popupHint);
+        }
     }
 
     public void AddItemData(ItemData data)

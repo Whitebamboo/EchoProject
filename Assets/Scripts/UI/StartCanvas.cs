@@ -38,6 +38,7 @@ public class StartCanvas : UIScreenBase
         AirConsole.instance.SetActivePlayers();
         SetConnectedPlayer(AirConsole.instance.GetActivePlayerDeviceIds.Count);
         CheckStatus();
+        AirConsole.instance.Message(device_id, "Start;Controller;" + (AirConsole.instance.ConvertDeviceIdToPlayerNumber(device_id) + 1));
     }
 
     void OnDisconnect(int device_id)

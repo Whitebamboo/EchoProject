@@ -23,7 +23,7 @@
 
       airconsole.onReady = function(code) {
         vm = new AirConsoleViewManager(airconsole);
-        vm.controllersShow('Start', true);
+        vm.controllersShow('start', true);
       };
 
       airconsole.onMessage = function(from, data) {
@@ -79,6 +79,20 @@
           }
       }
 
+      App.prototype.onConfirmTouchStart = function (){
+         document.getElementById("confirm").classList.add("deactive");
+         document.getElementById("next-button").classList.add("deactive");
+      }
+
+      App.prototype.onConfirmTouchEnd = function (msg){
+         document.getElementById("confirm").classList.remove("deactive");
+         document.getElementById("next-button").classList.remove("deactive");
+         console.log("button press");
+          airconsole.message(AirConsole.SCREEN, { "action": msg });
+          airconsole.vibrate(100);
+      }
+
+
       App.prototype.changeToFantasy = function () {
           vm.controllersShow('fantasy', true);
       }
@@ -93,6 +107,26 @@
           var messages = string.split(";");
 
           switch(messages[0]){
+            case "Start":
+              if (messages[1] == "Controller") {
+                  console.log("Show Controller");
+                  document.getElementById("start-button").style.backgroundImage = "url(UI/confirm-button-" + messages[2] + ".png)";
+                  document.getElementById("next-button").style.backgroundImage = "url(UI/confirm-button-" + messages[2] + ".png)";
+
+                  if(messages[2] == 1){
+                    document.body.style.background = "#FFC1B9";
+                  }
+                  else if(messages[2] == 2){
+                    document.body.style.background = "#FFEC8C";
+                  }
+                  else if(messages[2] == 3){
+                    document.body.style.background = "#C3E4A1";
+                  }
+                  else if(messages[2] == 4){
+                    document.body.style.background = "#A0E9FF";
+                  }              
+              }
+            break;
             case "Tutorial":
               if(messages[1] == "Start"){
                   vm.controllersShow("ingame", true);
@@ -116,6 +150,8 @@
                   console.log("Show Controller");
                   document.getElementById("joystick_left").style.backgroundImage = "url(Joystick/joystick-bg-" + messages[2] + ".PNG)";
                   document.getElementById("joystick_image").style.backgroundImage = "url(Joystick/joystick-stick-" + messages[2] + ".PNG)";
+                  document.getElementById("confirm").style.backgroundImage = "url(UI/confirm-button-" + messages[2] + ".png)";
+                  document.getElementById("interact").style.backgroundImage = "url(UI/confirm-button-" + messages[2] + ".png)";
               }
 
               break;
@@ -184,8 +220,8 @@
               <div id = "joystick_image" class="joystick-relative-stick"></div>
           </div>
       </div>
-      <div id="confirm" class="interact fantasy-interact" ontouchstart="window.app.sendMessageToScreen('confirm')"> Confirm </div>
-      <div id="interact" class="interact fantasy-interact disabled" ontouchstart="window.app.sendMessageToScreen('interact')"> Interact </div>
+      <div id="confirm" class="interact" ontouchstart="window.app.onConfirmTouchStart()" ontouchend="window.app.onConfirmTouchEnd('confirm')"> Confirm </div>
+      <div id="interact" class="interact disabled" ontouchstart="window.app.sendMessageToScreen('interact')"> Interact </div>
       <!--<div class="interact fantasy-check" ontouchstart="window.app.sendMessageToScreen('check')"> Check </div>-->
   </div>
 
@@ -207,7 +243,7 @@
     </div>-->
 
     <div id="fantasy-intro" class="view">
-      <div id="start-button" class="Start-button" ontouchstart="window.app.sendMessageToScreen('next')"> Confirm </div>
+      <div id="next-button" class="Start-button" ontouchstart="window.app.onConfirmTouchStart()" ontouchend="window.app.onConfirmTouchEnd('next')"> Confirm </div>
     </div>
 
     <!--<div id="fantasy" class="view">

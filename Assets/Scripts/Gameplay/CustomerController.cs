@@ -117,12 +117,12 @@ public class CustomerController : MonoBehaviour, IIteractable
         animator = modelView.GetComponent<Animator>();
     }
 
-    public void OnShowHint()
+    public void OnShowHint(GameObject hintObj)
     {
 
     }
 
-    public void OnHideHint()
+    public void OnHideHint(GameObject hintObj)
     {
 
     }

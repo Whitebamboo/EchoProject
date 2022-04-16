@@ -6,7 +6,7 @@ public interface IIteractable
 {
     void OnInteract(PlayerController player, Item item = null);
 
-    void OnShowHint();
+    void OnShowHint(GameObject hintObj);
 
-    void OnHideHint();
+    void OnHideHint(GameObject hintObj);
 }

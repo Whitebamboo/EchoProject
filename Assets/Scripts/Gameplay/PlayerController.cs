@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float turnSpeed = 15f;
     [SerializeField] Transform itemRoot;
     [SerializeField] GameObject[] models;
+    [SerializeField] GameObject hintArrow;
       
     CharacterController controller;
     Animator animator;
@@ -197,14 +198,14 @@ public class PlayerController : MonoBehaviour
         {
             if(currInteractable != null)
             {
-                currInteractable.OnHideHint();
+                currInteractable.OnHideHint(hintArrow);
             }
 
             currInteractable = obj;
 
             if (currInteractable != null)
             {
-                currInteractable.OnShowHint();
+                currInteractable.OnShowHint(hintArrow);
             }
         }
     }
