@@ -296,6 +296,18 @@ namespace NDream.AirConsole {
 			wsListener.Message (msg);
 		}
 
+		public void SetPlayerIdBydeviceID(int playerId, int deviceId)
+		{
+			if (!IsAirConsoleUnityPluginReady())
+			{
+
+				throw new NotReadyException();
+
+			}
+
+			_players[playerId] = deviceId;
+		}
+
 		/// <summary>
 		/// Returns an array of device_ids of the active players previously set by the
 		/// screen by calling setActivePlayers. The first device_id in the array is the

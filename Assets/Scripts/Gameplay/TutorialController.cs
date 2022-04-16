@@ -35,9 +35,27 @@ public class TutorialController : MonoBehaviour
     private void Awake()
     {
         AirConsole.instance.onMessage += OnMessage;
+        AirConsole.instance.onConnect += OnConnect;
+        AirConsole.instance.onDisconnect += OnDisconnect;
 
         minPosition = 0;
         maxPosition = transform.parent.GetComponent<RectTransform>().rect.width;
+    }
+
+    void OnConnect(int device_id)
+    {
+        if(deviceId == -1)
+        {
+            deviceId = device_id;
+        }
+    }
+
+    void OnDisconnect(int device_id)
+    {
+        if(deviceId == device_id)
+        {
+            deviceId = -1;
+        }
     }
 
     void Update()
@@ -112,6 +130,8 @@ public class TutorialController : MonoBehaviour
         if (AirConsole.instance != null)
         {
             AirConsole.instance.onMessage -= OnMessage;
+            AirConsole.instance.onConnect -= OnConnect;
+            AirConsole.instance.onDisconnect -= OnDisconnect;
         }
     }
 }

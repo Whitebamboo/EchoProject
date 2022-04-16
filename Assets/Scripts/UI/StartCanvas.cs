@@ -172,6 +172,8 @@ public class StartCanvas : UIScreenBase
         if (AirConsole.instance != null)
         {
             AirConsole.instance.onMessage -= OnMessage;
+            AirConsole.instance.onConnect -= OnConnect;
+            AirConsole.instance.onDisconnect -= OnDisconnect;
         }
     }
 }

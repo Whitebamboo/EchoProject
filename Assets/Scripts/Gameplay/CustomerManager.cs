@@ -55,6 +55,9 @@ public class CustomerManager : CSingletonMono<CustomerManager>
             FantasyIngameCanvas ingame = UIManager.instance.FindScreen<FantasyIngameCanvas>();
             if (ingame != null)
                 ingame.CloseScreen();
+            FantasyIntroCanvas intro = UIManager.instance.FindScreen<FantasyIntroCanvas>();
+            if (intro != null)
+                intro.CloseScreen();
             FollowUICanvas follow = UIManager.instance.FindScreen<FollowUICanvas>();
             if (dialog != null)
                 follow.CloseScreen();

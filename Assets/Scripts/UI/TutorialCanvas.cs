@@ -53,9 +53,34 @@ public class TutorialCanvas : UIScreenBase
 
     public TutorialState State;
 
+    int missingPlayerId = -1;
+
     private void Awake()
     {
         AirConsole.instance.onMessage += OnMessage;
+        AirConsole.instance.onConnect += OnConnect;
+        AirConsole.instance.onDisconnect += OnDisconnect;
+    }
+
+    private void OnConnect(int deviceId)
+    {
+        if(missingPlayerId != -1)
+        {
+            Debug.Log("connect: " + missingPlayerId + ":" + deviceId);
+            AirConsole.instance.SetPlayerIdBydeviceID(missingPlayerId, deviceId);
+            AirConsole.instance.Message(deviceId, "Start;Controller;" + (AirConsole.instance.ConvertDeviceIdToPlayerNumber(deviceId) + 1));
+            AirConsole.instance.Message(deviceId, "Tutorial;Controller;" + (AirConsole.instance.ConvertDeviceIdToPlayerNumber(deviceId) + 1));
+            AirConsole.instance.Message(deviceId, "Tutorial;Start");
+            players[missingPlayerId].SetupPlayer(missingPlayerId, displayImageHolder[missingPlayerId].GetComponent<RectTransform>(), OnConfirm);
+
+            missingPlayerId = -1;
+        }        
+    }
+
+    private void OnDisconnect(int deviceId)
+    {
+        Debug.Log("disconnt: " + missingPlayerId + ":" + deviceId);
+        missingPlayerId = AirConsole.instance.ConvertDeviceIdToPlayerNumber(deviceId);
     }
 
     public void Setup(List<TutorialLevel> levels)
@@ -155,6 +180,8 @@ public class TutorialCanvas : UIScreenBase
 
     void OnMessage(int fromDeviceID, JToken data)
     {
+        Debug.Log("message from " + fromDeviceID + ", data: " + data);
+
         if (data["action"] != null && data["action"].ToString().Equals("confirm"))
         {
             if(State == TutorialState.Lesson)
@@ -202,7 +229,7 @@ public class TutorialCanvas : UIScreenBase
 
         ResetPlayers();
 
-        hintText.text = m_leves[m_currLevelIndex].levelDescription;
+        hintText.text = m_leves[m_currLevelIndex].loseDescription;
     }
 
     void CorrectSelection()
