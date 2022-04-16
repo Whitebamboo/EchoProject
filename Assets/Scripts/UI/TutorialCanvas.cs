@@ -261,7 +261,6 @@ public class TutorialCanvas : UIScreenBase
 
     bool IsCorrect(TutorialLevel level)
     {
-        return true;
         List<TutorialController> display = new List<TutorialController>(players);
         List<TutorialController> sortedList = display.OrderBy(x => x.GetXpos()).ToList();
 
