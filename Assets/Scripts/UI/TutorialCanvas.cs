@@ -35,6 +35,9 @@ public class TutorialCanvas : UIScreenBase
     [SerializeField] List<FantasyClothUI> clothUI;
     [SerializeField] List<GameObject> lessonComfirm;
     [SerializeField] List<GameObject> congratConfirm;
+    [SerializeField] Animator congratAnimator;
+    [SerializeField] GameObject clothAnimation;
+    [SerializeField] AnimationClip clothIn;
 
     List<TutorialLevel> m_leves;
 
@@ -93,7 +96,7 @@ public class TutorialCanvas : UIScreenBase
             case TutorialState.Congrat:
                 ResetConfirmed(congratConfirm);
                 playPage.SetActive(false);
-                progressPage.SetActive(true);
+                congratAnimator.Play("In");
                 progressDescription.TypeText(m_leves[m_currLevelIndex].winDescription);
                 AssignColor(congratConfirm);
                 break;
@@ -195,7 +198,6 @@ public class TutorialCanvas : UIScreenBase
 
     void WrongSelection()
     {
-
         ClearSelection();
 
         ResetPlayers();
@@ -208,16 +210,23 @@ public class TutorialCanvas : UIScreenBase
         m_currLevelIndex++;
         if (m_currLevelIndex == m_leves.Count)
         {
-            GameManager.instance.FinishTutorial();
-            CloseScreen();
+            clothAnimation.SetActive(true);
+            StartCoroutine(FinishTutorial());
         }
         else
         {
-            progressPage.SetActive(false);
+            congratAnimator.Play("Out");
             LoadLevel(m_currLevelIndex);
             SwitchState(TutorialState.Lesson);
         }
         ResetPlayers();
+    }
+
+    IEnumerator FinishTutorial()
+    {
+        yield return new WaitForSeconds(clothIn.length);
+        GameManager.instance.FinishTutorial();
+        CloseScreen();
     }
 
     void ResetPlayerRandom(int playerNum)
@@ -252,6 +261,7 @@ public class TutorialCanvas : UIScreenBase
 
     bool IsCorrect(TutorialLevel level)
     {
+        return true;
         List<TutorialController> display = new List<TutorialController>(players);
         List<TutorialController> sortedList = display.OrderBy(x => x.GetXpos()).ToList();
 

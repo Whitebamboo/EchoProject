@@ -11,6 +11,7 @@ public class FantasyIntroCanvas : UIScreenBase
     [SerializeField] GameObject[] pages;
     [SerializeField] GameObject[] playerNext;
     [SerializeField] TextMeshProUGUI confirmedText;
+    [SerializeField] Animator clothAnimation;
 
     int currIndex;
 
@@ -40,7 +41,8 @@ public class FantasyIntroCanvas : UIScreenBase
 
         if(currIndex >= pages.Length)
         {
-            CloseScreen();
+            clothAnimation.Play("Out");
+            pages[0].transform.parent.gameObject.SetActive(false);
             AirConsole.instance.Broadcast("Fantasy;Start");
             return;
         }
