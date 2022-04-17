@@ -110,6 +110,14 @@ public class TutorialController : MonoBehaviour
             TutorialCanvas canvas = UIManager.instance.FindScreen<TutorialCanvas>();
             if(canvas != null && canvas.State == TutorialState.Play)
             {
+                if (isComfirmed)
+                {
+                    MusicManager.instance.Play_unconfirm_put_back();
+                }
+                else
+                {
+                    MusicManager.instance.Play_confirm_pick_up();
+                }
                 isComfirmed = !isComfirmed;
                 m_display.transform.Find("Confirm").gameObject.SetActive(isComfirmed);
                 onConfirmed.Invoke();

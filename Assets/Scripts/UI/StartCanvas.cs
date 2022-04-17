@@ -57,9 +57,14 @@ public class StartCanvas : UIScreenBase
 
     public void SetConfirmedPlayer(int playerId)
     {
+        if (!playerReady[playerId].transform.Find("Check").gameObject.activeSelf)
+        {
+            MusicManager.instance.Play_confirm_pick_up();
+        }
+
         playerReady[playerId].transform.Find("Check").gameObject.SetActive(true);
         Image check = playerReady[playerId].transform.Find("Check").GetComponent<Image>();
-        check.color = GameManager.instance.GetPlayerColor(playerId); 
+        check.color = GameManager.instance.GetPlayerColor(playerId);
     }
 
     void CheckStatus()
@@ -125,6 +130,10 @@ public class StartCanvas : UIScreenBase
 
     public void SetNext(int playerId)
     {
+        if (!playerNext[playerId].transform.Find("Check").gameObject.activeSelf)
+        {
+            MusicManager.instance.Play_confirm_pick_up();
+        }
         playerNext[playerId].transform.Find("Check").gameObject.SetActive(true);
         Image check = playerNext[playerId].transform.Find("Check").GetComponent<Image>();
         check.color = GameManager.instance.GetPlayerColor(playerId);
