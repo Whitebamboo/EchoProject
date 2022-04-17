@@ -142,15 +142,16 @@ body {
     background-repeat: no-repeat;
 }
 
-#cloth-image{
-    background-image: url("Tutorial/Cloth1.png");
+.avatar-image{
+    background-image: url("UI/avatar-1.png");
     position: absolute;
     top: 2%;
-    left: 15%;
-    width: 60%;
-    height: 60%;
+    right: -5;
+    width: 20%;
+    height: 20%;
     background-size: contain;
     background-repeat: no-repeat;
+    transform: translate(20%, 0);
 }
 
 
