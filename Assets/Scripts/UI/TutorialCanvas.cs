@@ -113,6 +113,10 @@ public class TutorialCanvas : UIScreenBase
                 lessonDesc.TypeText(m_leves[m_currLevelIndex].levelDescription);
                 break;
             case TutorialState.Play:
+                if(m_currLevelIndex == 0)
+                {
+                    AirConsole.instance.Broadcast("Tutorial;Start");
+                }
                 ResetConfirmed(lessonComfirm);
                 introPage.SetActive(false);
                 playPage.SetActive(true);
@@ -182,7 +186,8 @@ public class TutorialCanvas : UIScreenBase
     {
         Debug.Log("message from " + fromDeviceID + ", data: " + data);
 
-        if (data["action"] != null && data["action"].ToString().Equals("confirm"))
+        if (data["action"] != null && data["action"].ToString().Equals("confirm") ||
+            data["action"] != null && data["action"].ToString().Equals("next"))
         {
             if(State == TutorialState.Lesson)
             {
@@ -229,7 +234,7 @@ public class TutorialCanvas : UIScreenBase
 
         ResetPlayers();
 
-        hintText.text = m_leves[m_currLevelIndex].loseDescription;
+        hintText.GetComponent<TextTyper>().TypeText(m_leves[m_currLevelIndex].loseDescription);
     }
 
     void CorrectSelection()

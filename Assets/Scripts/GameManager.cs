@@ -86,7 +86,7 @@ public class GameManager : CSingletonMono<GameManager>
                 UIManager.instance.CreateScreen<StartCanvas>();
                 break;
             case GameState.Tutorial:
-                AirConsole.instance.Broadcast("Tutorial;Start");
+
                 TutorialCanvas canvas = UIManager.instance.CreateScreen<TutorialCanvas>();
                 canvas.Setup(tutorialLevels);
                 for(int i = 0; i < GetActivePlayersNumber(); i++)
