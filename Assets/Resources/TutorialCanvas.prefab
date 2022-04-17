@@ -4783,6 +4783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7288401384091129444}
   - component: {fileID: 7165419674963548798}
+  - component: {fileID: 5127159527614001320}
   m_Layer: 5
   m_Name: ImageHolder
   m_TagString: Untagged
@@ -4839,6 +4840,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!225 &5127159527614001320
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085452898498915876}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2090460389875178504
 GameObject:
   m_ObjectHideFlags: 0
@@ -5573,6 +5586,7 @@ MonoBehaviour:
   curveLibrary: {fileID: 11400000, guid: 1807857dbc33603469f5046b18ae0aae, type: 2}
   useUnscaledTime: 0
   autoPlay: 0
+  playOnEnable: 0
   printCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -5741,6 +5755,7 @@ GameObject:
   - component: {fileID: 1033159056077236162}
   - component: {fileID: 4506959618219600054}
   - component: {fileID: 8055538555511371694}
+  - component: {fileID: 4745082682860864576}
   m_Layer: 5
   m_Name: content
   m_TagString: Untagged
@@ -5805,6 +5820,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!225 &4745082682860864576
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3328932629326461681}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &3351366950355185680
 GameObject:
   m_ObjectHideFlags: 0
@@ -6316,6 +6343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8660569336632016088}
+  - component: {fileID: 1670435599550887125}
   m_Layer: 5
   m_Name: SelectPage
   m_TagString: Untagged
@@ -6350,6 +6378,25 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1670435599550887125
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3549935269178781329}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 03e1b78ba9106d84aa05a7bcf7ecb081, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3599467938701956584
 GameObject:
   m_ObjectHideFlags: 0
@@ -6951,6 +6998,7 @@ MonoBehaviour:
   curveLibrary: {fileID: 11400000, guid: 1807857dbc33603469f5046b18ae0aae, type: 2}
   useUnscaledTime: 0
   autoPlay: 0
+  playOnEnable: 0
   printCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -10132,6 +10180,7 @@ GameObject:
   - component: {fileID: 2961799434654578866}
   - component: {fileID: 4856926453627849020}
   - component: {fileID: 1920983711161357070}
+  - component: {fileID: 2023299959569975070}
   m_Layer: 5
   m_Name: LessonText
   m_TagString: Untagged
@@ -10256,6 +10305,29 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &2023299959569975070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7931507703982055070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40868536fcc3c2c458788a1cd1298e8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeLibrary: {fileID: 11400000, guid: 9a6156b25fcccac4e97ef1c8d23def06, type: 2}
+  curveLibrary: {fileID: 11400000, guid: 1807857dbc33603469f5046b18ae0aae, type: 2}
+  useUnscaledTime: 0
+  autoPlay: 0
+  playOnEnable: 1
+  printCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  characterPrinted:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7952392710306213253
 GameObject:
   m_ObjectHideFlags: 0

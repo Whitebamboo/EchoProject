@@ -51,6 +51,9 @@
         private bool autoPlay = false;
 
         [SerializeField]
+        private bool playOnEnable = false;
+
+        [SerializeField]
         [Tooltip("Event that's called when the text has finished printing.")]
         private UnityEvent printCompleted = new UnityEvent();
 
@@ -116,6 +119,15 @@
         void Start()
         {
             if(autoPlay)
+            {
+                string text = GetComponent<TextMeshProUGUI>().text;
+                TypeText(text);
+            }
+        }
+
+        void OnEnable()
+        {
+            if (playOnEnable)
             {
                 string text = GetComponent<TextMeshProUGUI>().text;
                 TypeText(text);
