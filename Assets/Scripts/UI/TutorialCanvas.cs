@@ -176,6 +176,7 @@ public class TutorialCanvas : UIScreenBase
             else
             {
                 SwitchState(TutorialState.Congrat);
+                MusicManager.instance.Play_congrats();
             }
         }
 
@@ -216,6 +217,10 @@ public class TutorialCanvas : UIScreenBase
 
     public void SetLessonConfirmedPlayer(int playerId)
     {
+        if (!lessonComfirm[playerId].transform.Find("Check").gameObject.activeSelf)
+        {
+            MusicManager.instance.Play_confirm_pick_up();
+        }
         lessonComfirm[playerId].transform.Find("Check").gameObject.SetActive(true);
         Image check = lessonComfirm[playerId].transform.Find("Check").GetComponent<Image>();
         check.color = GameManager.instance.GetPlayerColor(playerId);
@@ -223,6 +228,10 @@ public class TutorialCanvas : UIScreenBase
 
     public void SetCongartConfirmedPlayer(int playerId)
     {
+        if (!congratConfirm[playerId].transform.Find("Check").gameObject.activeSelf)
+        {
+            MusicManager.instance.Play_confirm_pick_up();
+        }
         congratConfirm[playerId].transform.Find("Check").gameObject.SetActive(true);
         Image check = congratConfirm[playerId].transform.Find("Check").GetComponent<Image>();
         check.color = GameManager.instance.GetPlayerColor(playerId);
