@@ -112,6 +112,9 @@
                   console.log("Show Controller");
                   document.getElementById("start-button").style.backgroundImage = "url(UI/confirm-button-" + messages[2] + ".png)";
                   document.getElementById("next-button").style.backgroundImage = "url(UI/confirm-button-" + messages[2] + ".png)";
+                  document.getElementById("avatar-image-start").style.backgroundImage = "url(UI/avatar-" + messages[2] + ".png)";
+                  document.getElementById("avatar-image-ingame").style.backgroundImage = "url(UI/avatar-" + messages[2] + ".png)";
+                  document.getElementById("avatar-image-intro").style.backgroundImage = "url(UI/avatar-" + messages[2] + ".png)";
 
                   if(messages[2] == 1){
                     document.body.style.background = "#FFC1B9";
@@ -208,18 +211,21 @@
     <!-- Add your HTML elements here -->
     <!--<div id="interact-button" ontouchstart="window.app.sendMessageToScreen('interact')"></div>-->
 
+
     <div id="start" class="view default-view">
-        <div id="start-button" class="Start-button" ontouchstart="window.app.startGameConfirm('confirm')"> I'm Ready </div>
+        <div id="start-button" class="Start-button" ontouchstart="window.app.startGameConfirm('confirm')"> I'm Ready </div>  
+        <div id="avatar-image-start" class="avatar-image"></div>    
         <!--<div id="Start-title">  Gen-Z Eco Shop Staff Training! </div>
         <div id="Start-text"> Before you officially begin working at the Gen-Z Eco-Shop, we have a training program you need to complete. Each of you will receive a different clothing item. Share the information about your item to your team members and then rank the clothing items based on how sustainable they are. </div>-->
     </div>
-
+    
     <div id="ingame" class="view">
       <div id="joystick_left" class="joystick">
           <div class="joystick-relative">
               <div id = "joystick_image" class="joystick-relative-stick"></div>
           </div>
       </div>
+      <div id="avatar-image-ingame" class="avatar-image"></div>
       <div id="confirm" class="interact" ontouchstart="window.app.onConfirmTouchStart()" ontouchend="window.app.onConfirmTouchEnd('confirm')"> Confirm </div>
       <div id="interact" class="interact disabled" ontouchstart="window.app.sendMessageToScreen('interact')"> Interact </div>
       <!--<div class="interact fantasy-check" ontouchstart="window.app.sendMessageToScreen('check')"> Check </div>-->
@@ -243,6 +249,7 @@
     </div>-->
 
     <div id="fantasy-intro" class="view">
+      <div id="avatar-image-intro" class="avatar-image"></div>
       <div id="next-button" class="Start-button" ontouchstart="window.app.onConfirmTouchStart()" ontouchend="window.app.onConfirmTouchEnd('next')"> Confirm </div>
     </div>
 
