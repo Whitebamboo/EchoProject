@@ -78,14 +78,18 @@ public class StartCanvas : UIScreenBase
 
     public void StartGame()
     {
-        AirConsole.instance.Broadcast("Fantasy;Intro");
-        connectPage.SetActive(false);
-        introPage.SetActive(true);
+        
+        
         StartCoroutine(ShowText());
     }
 
     IEnumerator ShowText()
     {
+        yield return new WaitForSeconds(1);
+        connectPage.SetActive(false);
+        AirConsole.instance.Broadcast("Fantasy;Intro");
+        introPage.SetActive(true);
+
         yield return new WaitForSeconds(bubbleAnimation.length);
 
         pages[0].gameObject.SetActive(true);
