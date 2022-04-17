@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level 3 - New
   m_EditorClassIdentifier: 
   levelTitle: 'Level 3: How easy are these items to sort before the recycling process? '
-  levelDescription: This level is a bit tricky. Use the fabric guide book and your
+  levelDescription: This level is a bit tricky. Use the Material Guidebook and your
     best knowledge to rank these items.
   lowExtentTitle: Hard to Sort
   highExtentTitle: Easy to Sort
@@ -24,7 +24,7 @@ MonoBehaviour:
     that exist in a garment, the more effort it takes to sort the garment when preparing
     it for recycling.
   lessonName: 'Lesson Three: Sorting'
-  command: This level is a bit tricky. Use the fabric guide book and your best knowledge
+  command: This level is a bit tricky. Use the Material Guidebook and your best knowledge
     to rank these items.
   clothes:
   - image: {fileID: 21300000, guid: 4ad4a39329005c64088df10a9c45baa2, type: 3}
