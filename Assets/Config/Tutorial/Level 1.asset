@@ -12,24 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9fed890952e3a408e5973a23b517a1, type: 3}
   m_Name: Level 1
   m_EditorClassIdentifier: 
-  levelTitle: 'Level 1: How recyclable are your clothes?'
-  levelDescription: 'We need labels to figure out what materials the clothing is
-    made of in order to recycle them. '
+  levelTitle: 'Level 1: How recyclable are these clothes based on their labels?'
+  levelDescription: Labels can provide information about the materials in a garment.
+    By being knowledge of the composition of a garment, you can make more informed
+    decisions about recycling.
   lowExtentTitle: Less Recyclable
   highExtentTitle: 'More Recyclable '
-  winDescription: 'In order to begin the recycling process, we need the labels to
-    sort the materials properly. '
-  loseDescription: Try again! Without being able to read the label, how can you know
-    what materials a garment is made of in order to properly recycle it?
+  winDescription: One of the best places to start when recycling a garment is to
+    check its label. Let the information you gain from the label help you make decisions.
+  loseDescription: Try again! How does the amount of information on the label influence
+    how easily something can be recycled?
   lessonName: 'Lesson One: Labels'
-  command: 'Use joystick to rank the clothes. We need labels to figure out what materials
-    the clothing is made of in order to recycle them. '
+  command: Use the joystick on your phone to rank these clothes. Clothing labels
+    can give instructions and information on how to care for and recycle individual
+    garments.
   clothes:
   - image: {fileID: 21300000, guid: 294901be352c88d45b1ec92edbfadc44, type: 3}
     clothDescription: (No Description)
   - image: {fileID: 21300000, guid: 7bd49a9ce879f0943836d82d20023b3d, type: 3}
-    clothDescription: This shirt has <b>one label</b> but gives <b>vague details</b>
-      about the exact material content.
+    clothDescription: This shirt has <b>one label</b> but is <b>vague</b> about the
+      material content.
   - image: {fileID: 21300000, guid: 7bdc0f558785edd4089450095b3297fc, type: 3}
     clothDescription: This shirt has <b>a label</b> that describes the <b>material
       content</b> and how to wash and care for it.

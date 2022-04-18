@@ -467,10 +467,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "It\u2019s not easy to choose your item based on what is written in the
-    clothing labels. \r\n\r\nThe purpose of our game was to spread awareness about
-    what these materials mean to the environment and about how often we think about
-    these when we are out shopping for our clothes.\r\n"
+  m_text: 'The purpose of our game is to spread awareness about some of the important
+    aspects of fabric sustainability. By getting information from the label, you
+    can make more knowledgeable decisions about how to care for your garments.
+
+    Thrift
+    stores and fabric recycling are ways that we as individuals can keep clothes
+    in a wearable condition, passing them on to people who may be able to use them.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1508,7 +1511,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "It\u2019s 5 o\u2019clock!\r\n"
+  m_text: "It\u2019s Closing Time!\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2007,9 +2010,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "We believe we have planted something in your heart a small piece of conscious
-    mind that will help you live an impactful life!\r\n\r\nThank you for your participation
-    in our game. \r\n\n"
+  m_text: "We hope this game got you curious about the different ways you can consume
+    fabric more sustainably.\nWe have compiled some resources on our website that
+    make wonderful next steps on your sustainability journey.\n\r\nThank you for
+    your participation in our game. \r\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2357,7 +2361,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "That was the end of the day! \r\nWe want to say thank you for your hard
-    work.\r\n\r\nHow did that feel for you?\r\n\n"
+    work.\r\n\r\nHow did assisting these customers make you feel?\r\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

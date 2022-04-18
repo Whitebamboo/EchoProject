@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9fed890952e3a408e5973a23b517a1, type: 3}
   m_Name: Level 2
   m_EditorClassIdentifier: 
-  levelTitle: 'Level 2: How durable are your clothes?'
-  levelDescription: Which clothing is long-lasting and durable?
+  levelTitle: 'Level 2: How durable are these clothes?'
+  levelDescription: Which garments will be wearable for the longest amount of time?
   lowExtentTitle: Less Durable
   highExtentTitle: More Durable
   winDescription: Instead of just throwing away your clothes when you are done with
     them, try taking your clothes to a fabric recycling facility or thrift store
     so that you can extend the lifespan of those clothes.
-  loseDescription: 'Try again! The life of clothing can be extended if they are able
-    to go to thrift stores after using them. '
+  loseDescription: Try again! Think about the full lifespan of these garments. How
+    long are they wearable?
   lessonName: 'Lesson Two: Durability'
-  command: Compare your clothes lifespan with others, rank the clothes based on durability.
+  command: Compare the expected lifespans of these garments. The more durable they
+    are, the longer they will last.
   clothes:
   - image: {fileID: 21300000, guid: 7bd49a9ce879f0943836d82d20023b3d, type: 3}
     clothDescription: This shirt was owned for <b>3 months</b> and was thrown away
