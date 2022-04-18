@@ -14,6 +14,7 @@ public class MusicManager : CSingletonMono<MusicManager>
     [SerializeField] AudioSource sfxAudioSource;
     [SerializeField] AudioClip phrase1;
     [SerializeField] AudioClip phrase2;
+    [SerializeField] AudioClip phrase3;
     [SerializeField] AudioClip confirm_pick_up;
     [SerializeField] AudioClip unconfirm_put_back;
     [SerializeField] AudioClip all_confirm;
@@ -39,6 +40,12 @@ public class MusicManager : CSingletonMono<MusicManager>
     public void PlayPhrase2()
     {
         source.clip = phrase2;
+        source.Play();
+    }
+
+    public void PlayPhrase3()
+    {
+        source.clip = phrase3;
         source.Play();
     }
 

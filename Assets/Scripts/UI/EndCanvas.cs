@@ -21,6 +21,12 @@ public class EndCanvas : UIScreenBase
         AirConsole.instance.onMessage += OnMessage;
     }
 
+    private void Start()
+    {
+        MusicManager.instance.Play_fiveClock();
+        MusicManager.instance.PlayPhrase3();
+    }
+
     void OnMessage(int fromDeviceID, JToken data)
     {
         if (data["action"] != null && data["action"].ToString().Equals("next"))
