@@ -3986,8 +3986,8 @@ MonoBehaviour:
   m_text: This shirt has a label that describes the material content and how to wash
     and care for it.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
+  m_sharedMaterial: {fileID: -5426364734166366874, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4345,8 +4345,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Question: How recyclable are your clothes based on the label?'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
+  m_sharedMaterial: {fileID: -5426364734166366874, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4936,8 +4936,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'More Recyclable '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
+  m_sharedMaterial: {fileID: -5426364734166366874, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5160,8 +5160,8 @@ MonoBehaviour:
   m_text: Without being able to read the label, how can you know what materials a
     garment is made of in order to properly recycle it?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
+  m_sharedMaterial: {fileID: -5426364734166366874, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5317,8 +5317,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Description
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
+  m_sharedMaterial: {fileID: -5426364734166366874, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6286,8 +6286,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press confirm on your phone to continue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
+  m_sharedMaterial: {fileID: -5426364734166366874, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6422,7 +6422,7 @@ MonoBehaviour:
   m_text: 'First, we need to know about labels in order to figure out what materials
     the clothings are made of in order to recycle them. '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6486,7 +6486,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &8392219807657671338
@@ -6580,8 +6580,8 @@ MonoBehaviour:
   m_text: This shirt has a label that describes the material content and how to wash
     and care for it.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
+  m_sharedMaterial: {fileID: -5426364734166366874, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6921,7 +6921,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Press confirm on your phone to continue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6985,7 +6985,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &4472798366837040841
@@ -7241,8 +7241,8 @@ MonoBehaviour:
   m_text: This shirt has a label that describes the material content and how to wash
     and care for it.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
+  m_sharedMaterial: {fileID: -5426364734166366874, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7600,7 +7600,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Lesson 1: Labels'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -7664,7 +7664,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &5123720443676145328
@@ -7848,8 +7848,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Description
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
+  m_sharedMaterial: {fileID: -5426364734166366874, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8058,8 +8058,8 @@ MonoBehaviour:
   m_text: This shirt has a label that describes the material content and how to wash
     and care for it.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
+  m_sharedMaterial: {fileID: -5426364734166366874, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8280,8 +8280,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Description
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
+  m_sharedMaterial: {fileID: -5426364734166366874, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8626,8 +8626,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: You Got It Right!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
+  m_sharedMaterial: {fileID: -5426364734166366874, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8914,8 +8914,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Less Recyclable
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
+  m_sharedMaterial: {fileID: -5426364734166366874, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9934,8 +9934,8 @@ MonoBehaviour:
   m_text: ' We need labels to figure out what materials the clothing is made of in
     order to recycle them. '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
+  m_sharedMaterial: {fileID: -5426364734166366874, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10694,8 +10694,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Description
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
+  m_sharedMaterial: {fileID: -5426364734166366874, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
