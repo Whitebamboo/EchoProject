@@ -818,7 +818,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5dccf4d447028ce4bbea024bbfe52348, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -937,6 +937,7 @@ MonoBehaviour:
   unconfirm_put_back: {fileID: 8300000, guid: f98dd96e32f958d42a764d8c4f250afe, type: 3}
   all_confirm: {fileID: 8300000, guid: ddb15e8d18b68ef4da7776c9b029d7ac, type: 3}
   congrats: {fileID: 8300000, guid: e2b40901b82bc6c419ccd83906839750, type: 3}
+  exclamation: {fileID: 8300000, guid: d30f35a84cc4eeb47ba04cc22ea8858f, type: 3}
   Incorrect: {fileID: 8300000, guid: 7dee5198ff3639a4c91a9eea127fc710, type: 3}
   fiveClock: {fileID: 8300000, guid: 7adf021471a557343b4b4afa1e8e69c0, type: 3}
   bufferTime: 0.1

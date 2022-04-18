@@ -239,6 +239,7 @@ public class TutorialCanvas : UIScreenBase
 
     void WrongSelection()
     {
+        MusicManager.instance.Play_Incorrect();
         ClearSelection();
 
         ResetPlayers();

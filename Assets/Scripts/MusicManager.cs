@@ -18,6 +18,7 @@ public class MusicManager : CSingletonMono<MusicManager>
     [SerializeField] AudioClip unconfirm_put_back;
     [SerializeField] AudioClip all_confirm;
     [SerializeField] AudioClip congrats;
+    [SerializeField] AudioClip exclamation;
     [SerializeField] AudioClip Incorrect;
     [SerializeField] AudioClip fiveClock;
 
@@ -59,6 +60,11 @@ public class MusicManager : CSingletonMono<MusicManager>
     public void Play_congrats()
     {
         PlayClip(congrats);
+    }
+
+    public void Play_exclamation()
+    {
+        PlayClip(exclamation);
     }
 
     public void Play_Incorrect()

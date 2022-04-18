@@ -31,11 +31,13 @@ public class ItemHolder : MonoBehaviour, IIteractable
         {
             AssignItem(item);
             player.SetItem(null);
+            MusicManager.instance.Play_unconfirm_put_back();
         }
         else
         {
             player.SetItem(m_item);
             m_item = null;
+            MusicManager.instance.Play_confirm_pick_up();
         }
     }
 

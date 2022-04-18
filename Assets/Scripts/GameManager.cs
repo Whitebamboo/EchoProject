@@ -113,8 +113,6 @@ public class GameManager : CSingletonMono<GameManager>
             player.SetupPlayerData(i);
             player.transform.position = playerPositions[i];
         }
-
-        CustomerManager.instance.StartLevel();
     }
 
     protected override void OnDestroy()

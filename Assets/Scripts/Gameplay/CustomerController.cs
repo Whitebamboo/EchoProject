@@ -33,10 +33,9 @@ public class CustomerController : MonoBehaviour, IIteractable
         transform.DOLookAt(CustomerManager.instance.WaitPoint, 0.5f);
         transform.DOMove(CustomerManager.instance.WaitPoint, 5f).OnComplete(()=> {
             transform.DORotate(Vector3.zero, 0.5f);
-            //FollowUICanvas canvas = UIManager.instance.FindScreen<FollowUICanvas>();
-            //m_popup = canvas.GenerateCustomerPopup(transform);
             DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
             animator.SetBool("Walking", false);
+            MusicManager.instance.Play_exclamation();
         });
     }
 
@@ -59,6 +58,7 @@ public class CustomerController : MonoBehaviour, IIteractable
         {
             if(fulfillItem.data == item)
             {
+                MusicManager.instance.Play_congrats();
                 matchedItem = fulfillItem;
                 return true;
             }
@@ -95,6 +95,10 @@ public class CustomerController : MonoBehaviour, IIteractable
                 DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
                 canvas.SetUp(matchedItem.matchResponse, GotExitPoint);
                 AssignItem(item);
+            }
+            else
+            {
+                MusicManager.instance.Play_Incorrect();
             }
         }else
         {
