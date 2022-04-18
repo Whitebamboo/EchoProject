@@ -1708,7 +1708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Waiting for four players to connect and confirm...
+  m_text: Waiting for four players to connect and ready up...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
   m_sharedMaterial: {fileID: -5426364734166366874, guid: fb0d21f6086b77e49b8154cebfcec8a3, type: 2}
