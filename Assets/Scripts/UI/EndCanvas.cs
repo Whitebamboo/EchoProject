@@ -21,6 +21,12 @@ public class EndCanvas : UIScreenBase
         AirConsole.instance.onMessage += OnMessage;
     }
 
+    private void Start()
+    {
+        MusicManager.instance.Play_fiveClock();
+        MusicManager.instance.PlayPhrase3();
+    }
+
     void OnMessage(int fromDeviceID, JToken data)
     {
         if (data["action"] != null && data["action"].ToString().Equals("next"))
@@ -55,6 +61,10 @@ public class EndCanvas : UIScreenBase
 
     public void SetNext(int playerId)
     {
+        if (!playerNext[playerId].transform.Find("Check").gameObject.activeSelf)
+        {
+            MusicManager.instance.Play_confirm_pick_up();
+        }
         playerNext[playerId].transform.Find("Check").gameObject.SetActive(true);
         Image check = playerNext[playerId].transform.Find("Check").GetComponent<Image>();
         check.color = GameManager.instance.GetPlayerColor(playerId);

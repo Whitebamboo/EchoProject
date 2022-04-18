@@ -44,6 +44,7 @@ public class FantasyIntroCanvas : UIScreenBase
             clothAnimation.Play("Out");
             pages[0].transform.parent.gameObject.SetActive(false);
             AirConsole.instance.Broadcast("Fantasy;Start");
+            CustomerManager.instance.StartLevel();
             return;
         }
 
@@ -57,6 +58,10 @@ public class FantasyIntroCanvas : UIScreenBase
 
     public void SetNext(int playerId)
     {
+        if (!playerNext[playerId].transform.Find("Check").gameObject.activeSelf)
+        {
+            MusicManager.instance.Play_confirm_pick_up();
+        }
         playerNext[playerId].transform.Find("Check").gameObject.SetActive(true);
         Image check = playerNext[playerId].transform.Find("Check").GetComponent<Image>();
         check.color = GameManager.instance.GetPlayerColor(playerId);
