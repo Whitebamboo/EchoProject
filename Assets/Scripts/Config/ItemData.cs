@@ -34,6 +34,7 @@ public enum ClothMaterial
     Polyester,
     Recycled_Polyester,
     Spandex,
+    Elastane,
     Nylon,
     Silk,
     Linen,
