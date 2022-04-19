@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: Customer1-1
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  request: "Hi! I\u2019m looking for a yellow top today. Any design is fine, just
-    make sure it\u2019s solid yellow! Oh, and I\u2019ve also been trying to shop
-    more eco-friendly lately, so please keep that in mind!"
+  request: "Hi! I\u2019m looking for a solid yellow t-shirt today that I can easily
+    recycle later on. "
   items:
   - data: {fileID: 11400000, guid: 3eb660f070a35594f99731a7ba1dcdd0, type: 2}
     score: 10
@@ -38,5 +37,5 @@ MonoBehaviour:
     score: 0
     matchResponse: This is close to what I'm looking for, but do you have anything
       that is solid yellow?
-  notMatchResponse: "This isn\u2019t quite the color I wanted\u2026 Can you find
-    something else? "
+  notMatchResponse: "I was hoping for a yellow t-shirt \u2026 Can you find something
+    else? "

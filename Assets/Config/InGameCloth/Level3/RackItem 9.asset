@@ -16,10 +16,10 @@ MonoBehaviour:
   clothImage: {fileID: 21300000, guid: 532e076c80f782046bdb9d016686e108, type: 3}
   color: 0900000008000000
   description: '*This clothing item has buttons'
-  year: 4
+  year: 2
   month: 0
   properties:
-  - material: 11
-    percentage: 80
   - material: 6
+    percentage: 80
+  - material: 8
     percentage: 20

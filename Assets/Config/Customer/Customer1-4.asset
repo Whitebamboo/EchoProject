@@ -13,21 +13,24 @@ MonoBehaviour:
   m_Name: Customer1-4
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  request: "Hello! I need a red button down shirt, but am also trying to be more
-    environmentally conscious\u2026 Do you have any eco-friendly options?"
+  request: "Hi, I\u2019m looking for a top that I can wear for exercising. Something
+    durable and stretchy would be nice. I want to reuse and give a second life to
+    an item! Do you guys have anything? "
   items:
-  - data: {fileID: 11400000, guid: 2ab28b42d9119234ca785d2406464287, type: 2}
-    score: 10
-    matchResponse: 'This red button down is just what I was looking for! And the
-      materials make it easily recyclable too. Thanks a lot! '
+  - data: {fileID: 11400000, guid: 32feddd7b74b5434781b32d0c4b8b2a9, type: 2}
+    score: 11
+    matchResponse: "This solid colored shirt made with spandex will be great for
+      exercising! And it\u2019s quite durable too. Thanks so much! "
   closeItems:
-  - data: {fileID: 11400000, guid: 80135db7653b7f044ae6bbda2ea5b4da, type: 2}
+  - data: {fileID: 11400000, guid: 1e492db226df09a428b3311191825e3e, type: 2}
     score: 0
-    matchResponse: "I\u2019m happy it\u2019s a button down and it does have red but\u2026
-      maybe a solid color would be easier to recycle than two colors? "
-  - data: {fileID: 11400000, guid: 5aeb5d2abb48bfc4997882cb6b7a6d04, type: 2}
+    matchResponse: "This shirt is great but\u2026 do you have any options that can
+      stretch a bit more? And maybe something solid instead of multicolor so it\u2019s
+      easier to sort later. "
+  - data: {fileID: 11400000, guid: c8fdf50cf0d41df479ee6a0ac7d902f0, type: 2}
     score: 0
-    matchResponse: "I would really prefer a button down\u2026 Can you please check
-      for those?"
-  notMatchResponse: "I would really prefer the color be red\u2026 Can you please
-    check for something in that color?"
+    matchResponse: "This shirt is great but\u2026 do you have any options that can
+      stretch a bit more? And maybe something solid instead of multicolor so it\u2019s
+      easier to sort later. "
+  notMatchResponse: " I was hoping for something stretchy to exercise in\u2026 can
+    you look for something else? "

@@ -16,8 +16,8 @@ MonoBehaviour:
   clothImage: {fileID: 21300000, guid: 93fd5d0d8ce07f0499221e171bda6a4b, type: 3}
   color: 0400000008000000
   description: 
-  year: 1
+  year: 8
   month: 0
   properties:
-  - material: 5
+  - material: 13
     percentage: 100

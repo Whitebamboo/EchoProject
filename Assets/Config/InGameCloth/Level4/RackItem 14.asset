@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780fa66faccbfd641986162e282e5f89, type: 3}
   m_Name: RackItem 14
   m_EditorClassIdentifier: 
-  prefab: {fileID: 919132149155446097, guid: e7cdefbd8ad4dd4409a1a97673500959, type: 3}
-  clothImage: {fileID: 21300000, guid: 9eeed8cc4c30b5147ac0ecd406a819db, type: 3}
-  color: 1
-  description: Something
-  year: 4
-  month: 0
+  prefab: {fileID: 919132149155446097, guid: 4a1660505a6292a41abda871b46ad5f6, type: 3}
+  clothImage: {fileID: 21300000, guid: 211bfde2a83d18a42a5d27464658a2f5, type: 3}
+  color: 
+  description: 
+  year: 0
+  month: 5
   properties:
-  - material: 1
-    percentage: 77
+  - material: 9
+    percentage: 42
   - material: 5
-    percentage: 23
+    percentage: 48
+  - material: 1
+    percentage: 10

@@ -13,21 +13,21 @@ MonoBehaviour:
   m_Name: Customer1-2
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  request: "Hey! I\u2019d like something with some pops of color today. If it could
-    be an eco-friendly option too, that\u2019s a plus!"
+  request: "Hey! I\u2019d like a sweater today, but I\u2019m allergic to wool. Please
+    avoid any options with it!  "
   items:
   - data: {fileID: 11400000, guid: 1b1df71c03125e94ab2502a1723fc0dd, type: 2}
     score: 10
-    matchResponse: 'This two-toned yellow and white shirt is great! Thank you for
-      finding it for me! '
+    matchResponse: 'This sweater made with polyester and cotton is great! Thank you
+      for finding it for me! '
   closeItems:
   - data: {fileID: 11400000, guid: b043cd81ff50292498d30f77439cc1a9, type: 2}
     score: 0
-    matchResponse: "This has a lot of great colors but\u2026 is there an option made
-      with natural materials?"
+    matchResponse: "This is a nice sweater but\u2026 I\u2019m allergic to wool so
+      I need to avoid anything made with it.  "
   - data: {fileID: 11400000, guid: c3f6de624b0c1fb41ac3b2e16365f013, type: 2}
     score: 0
-    matchResponse: "I love that this is made with natural materials but\u2026 maybe
-      two colors is more eco-friendly and easier to sort than three colors?"
-  notMatchResponse: I was hoping for something multicolored, not solid. Can you look
-    again?
+    matchResponse: "This is a nice sweater but\u2026 I\u2019m allergic to wool so
+      I need to avoid anything made with it.  "
+  notMatchResponse: 'I was hoping for a sweater, not a t-shirt or jacket. Can you
+    look again? '
