@@ -941,6 +941,8 @@ MonoBehaviour:
   exclamation: {fileID: 8300000, guid: d30f35a84cc4eeb47ba04cc22ea8858f, type: 3}
   Incorrect: {fileID: 8300000, guid: 7dee5198ff3639a4c91a9eea127fc710, type: 3}
   fiveClock: {fileID: 8300000, guid: 7adf021471a557343b4b4afa1e8e69c0, type: 3}
+  manager_talk: {fileID: 8300000, guid: 5f204a0cf259c15408902a089a6a5b7f, type: 3}
+  manager_lesson: {fileID: 8300000, guid: a5fde133a1073ba469a1746ef5f74671, type: 3}
   bufferTime: 0.1
 --- !u!82 &309671001
 AudioSource:

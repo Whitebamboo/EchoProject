@@ -104,6 +104,7 @@ public class TutorialCanvas : UIScreenBase
         switch (state)
         {
             case TutorialState.Lesson:
+                MusicManager.instance.Play_manager_lesson();
                 ResetConfirmed(lessonComfirm);
                 ResetConfirmed(congratConfirm);
                 AssignColor(lessonComfirm);
