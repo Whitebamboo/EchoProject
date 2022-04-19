@@ -56,12 +56,12 @@ public class ItemData : ScriptableObject
     {
         StringBuilder sb = new StringBuilder();
 
-        sb.Append("Color: ");
-        foreach(ClothColor c in color)
-        {
-            sb.Append(c.ToString().Replace("_", " ") + ", ");
-        }      
-        sb.Append("<br>");
+        //sb.Append("Color: ");
+        //foreach(ClothColor c in color)
+        //{
+        //    sb.Append(c.ToString().Replace("_", " ") + ", ");
+        //}      
+        //sb.Append("<br>");
 
         if(properties.Count == 0)
         {
