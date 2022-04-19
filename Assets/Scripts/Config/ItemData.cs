@@ -38,7 +38,8 @@ public enum ClothMaterial
     Silk,
     Linen,
     Acrylic,
-    Wool
+    Wool,
+    Viscose_Rayon
 }
 
 [CreateAssetMenu(fileName = "Item", menuName = "Config/In game cloth")]
