@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelTitle: 'Level 3: How easy are these items to sort before the recycling process? '
   levelDescription: Material blends and accessories on garments make sorting before
-    recycling a more difficult process.
+    recycling a more difficult process. Use the Material Guidebook and your best
+    knowledge to rank these items.
   lowExtentTitle: Hard to Sort
   highExtentTitle: Easy to Sort
   winDescription: Remember that clothes made with different blends and with elements
@@ -29,13 +30,13 @@ MonoBehaviour:
   clothes:
   - image: {fileID: 21300000, guid: 4ad4a39329005c64088df10a9c45baa2, type: 3}
     clothDescription: This is a <b>multicolored</b> jacket with <b>buttons and zippers</b>.
-      The jacket blend is <b>80% cotton, 20% polyester</b>.
+      The jacket blend is <b>80%conventional cotton, 20% polyester</b>.
   - image: {fileID: 21300000, guid: a3a5eeee43d315947afc76afc0914167, type: 3}
     clothDescription: This is a <b>solid colored</b> jacket with <b>buttons and zippers</b>.
-      The jacket blend is <b>80% cotton and 20% polyester</b>.
+      The jacket blend is <b>80%conventional cotton and 20% polyester</b>.
   - image: {fileID: 21300000, guid: fe35e512c505b7448829e21f51079761, type: 3}
-    clothDescription: This is a <b>solid</b> green t-shirt. The blend is <b>100%
-      organic cotton</b>.
+    clothDescription: This is a <b>solid</b> green t-shirt. The blend is <b>80% organic
+      cotton and 20% polyester</b>.
   - image: {fileID: 21300000, guid: 7de082dbdaeb696459713a994a85b044, type: 3}
     clothDescription: This is a <b>plain</b> white long sleeve shirt. The blend is
       <b>80% recycled cotton and 20% organic cotton</b>.
