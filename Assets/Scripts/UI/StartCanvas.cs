@@ -33,6 +33,14 @@ public class StartCanvas : UIScreenBase
         video.prepareCompleted += OnPrepareVideo;
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            video.frame = (long)video.frameCount - 10;
+        }
+    }
+
     void OnFinishVideo(VideoPlayer vp)
     {
         isPlayingVideo = false;
@@ -123,6 +131,7 @@ public class StartCanvas : UIScreenBase
     {
         yield return new WaitForSeconds(bubbleAnimation.length);
         pages[0].gameObject.SetActive(true);
+        MusicManager.instance.Play_manager_talk();
     }
 
     void OnMessage(int fromDeviceID, JToken data)

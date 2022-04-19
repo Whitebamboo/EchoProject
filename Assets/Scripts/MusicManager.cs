@@ -22,6 +22,8 @@ public class MusicManager : CSingletonMono<MusicManager>
     [SerializeField] AudioClip exclamation;
     [SerializeField] AudioClip Incorrect;
     [SerializeField] AudioClip fiveClock;
+    [SerializeField] AudioClip manager_talk;
+    [SerializeField] AudioClip manager_lesson;
 
     public float bufferTime;
     public List<AudioBuffer> audioBuffers = new List<AudioBuffer>();
@@ -82,8 +84,17 @@ public class MusicManager : CSingletonMono<MusicManager>
     public void Play_fiveClock()
     {
         PlayClip(fiveClock);
+    }    
+    
+    public void Play_manager_talk()
+    {
+        PlayClip(manager_talk);
+    }    
+    
+    public void Play_manager_lesson()
+    {
+        PlayClip(manager_lesson);
     }
-
 
     public void PlayClip(AudioClip clip, float delay = 0)
     {
