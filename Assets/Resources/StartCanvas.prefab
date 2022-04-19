@@ -457,9 +457,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Before we open up the shop today, you all must be trained to become experienced
-    members in order to assist our customers with the right item that they are looking
-    for.
+  m_text: 'Before we open up the shop today, we need to go over some eco-awareness
+    training. This will ensure you can assist our customers in finding something
+    they want while being environmentally conscious.
 
 '
   m_isRightToLeft: 0
@@ -660,8 +660,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: As for the training, I have prepared three lessons. These lessons will
-    help you learn about the general fabric materials and the level of recyclability
-    for different types of clothings.
+    help you learn about some general fabric materials and the level of recyclability
+    for different types of clothing.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

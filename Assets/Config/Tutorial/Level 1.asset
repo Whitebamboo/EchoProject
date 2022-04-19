@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelTitle: 'Level 1: How recyclable are these clothes based on their labels?'
   levelDescription: Labels can provide information about the materials in a garment.
-    By being knowledge of the composition of a garment, you can make more informed
-    decisions about recycling.
+    By being knowledgeable about the composition of a garment, you can make more
+    informed decisions about recycling.
   lowExtentTitle: Less Recyclable
   highExtentTitle: 'More Recyclable '
   winDescription: One of the best places to start when recycling a garment is to

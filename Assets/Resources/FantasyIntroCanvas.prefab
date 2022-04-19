@@ -4654,8 +4654,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Your job is to help choose the best piece of item for your customers upon
-    their request. \r\n"
+  m_text: "Your job is to help choose the best item of clothing for your customers
+    based upon their request. \r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4789,11 +4789,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Each clothing on the table are pieces that are available for the customers
-    for the day. \r\n\r\nUsing the knowledge learned from the tutorial and the fabric
-    guide book, your team will divide and conquer to find the best pieces of clothing
-    for the customers that will be visiting our store!\r\n\r\nWe as the shop owners
-    have full trust in you. Good luck! \r\n\r"
+  m_text: "Each garment on the tables are available for the customers for the day.
+    \r\n\r\nUsing the knowledge you learned from the tutorial and the material guidebook,
+    your team will divide and conquer to find the best pieces of clothing for the
+    customers that will be visiting our store!\r\n\r\nNow get out there and put your
+    training to use. Good luck! \r\n\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
