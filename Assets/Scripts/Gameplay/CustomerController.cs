@@ -14,6 +14,8 @@ public class CustomerController : MonoBehaviour, IIteractable
 
     Animator animator;
 
+    bool interacble;
+
     public void SetupData(CustomerData data)
     {
         m_data = data;
@@ -36,6 +38,7 @@ public class CustomerController : MonoBehaviour, IIteractable
             DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
             animator.SetBool("Walking", false);
             MusicManager.instance.Play_exclamation();
+            interacble = true;
         });
     }
 
@@ -85,6 +88,11 @@ public class CustomerController : MonoBehaviour, IIteractable
 
     public void OnInteract(PlayerController player, Item item = null)
     {
+        if(!interacble)
+        {
+            return;
+        }
+
         Debug.Log("Interact");
         if (item != null)
         {
@@ -95,6 +103,7 @@ public class CustomerController : MonoBehaviour, IIteractable
                 DialogueCanvas canvas = UIManager.instance.CreateScreen<DialogueCanvas>();
                 canvas.SetUp(matchedItem.matchResponse, GotExitPoint);
                 AssignItem(item);
+                interacble = false;
             }
             else
             {

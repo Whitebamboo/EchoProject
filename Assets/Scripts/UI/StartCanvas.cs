@@ -7,6 +7,7 @@ using DG.Tweening;
 using System;
 using NDream.AirConsole;
 using Newtonsoft.Json.Linq;
+using UnityEngine.Video;
 
 public class StartCanvas : UIScreenBase
 {
@@ -15,6 +16,7 @@ public class StartCanvas : UIScreenBase
     [SerializeField] GameObject[] pages;
     [SerializeField] GameObject[] playerReady;
     [SerializeField] GameObject[] playerNext;
+    [SerializeField] VideoPlayer video;
 
     [SerializeField] AnimationClip bubbleAnimation;
 
@@ -26,6 +28,13 @@ public class StartCanvas : UIScreenBase
         AirConsole.instance.onReady += OnReady;
         AirConsole.instance.onConnect += OnConnect;
         AirConsole.instance.onDisconnect += OnDisconnect;
+        video.loopPointReached += OnFinishVideo;
+    }
+
+    void OnFinishVideo(VideoPlayer vp)
+    {
+        GameManager.instance.SwitchState(GameState.Fantasy);
+        CloseScreen();
     }
 
     void OnReady(string code)
@@ -83,8 +92,6 @@ public class StartCanvas : UIScreenBase
 
     public void StartGame()
     {
-        
-        
         StartCoroutine(ShowText());
     }
 
@@ -166,8 +173,8 @@ public class StartCanvas : UIScreenBase
 
         if (currIndex >= pages.Length)
         {
-            GameManager.instance.SwitchState(GameState.Tutorial);
-            CloseScreen();
+            //GameManager.instance.SwitchState(GameState.Tutorial);
+            //CloseScreen();
             return;
         }
 
