@@ -87,8 +87,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6481575432288551697}
   - component: {fileID: 189510700236930435}
-  - component: {fileID: 1190716318904218340}
   - component: {fileID: 8653082403744988157}
+  - component: {fileID: 1190716318904218340}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -123,41 +123,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97153559044270500}
   m_CullTransparentMesh: 1
---- !u!328 &1190716318904218340
-VideoPlayer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 97153559044270500}
-  m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: ee330838bda732d42bba79b30c0882bf, type: 3}
-  m_TargetCameraAlpha: 1
-  m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 00d99bbc9b498f743b6052f2125b83b2, type: 2}
-  m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
-  m_TargetMaterialProperty: _MainTex
-  m_RenderMode: 2
-  m_AspectRatio: 2
-  m_DataSource: 0
-  m_PlaybackSpeed: 1
-  m_AudioOutputMode: 0
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 0
-  m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
-  m_SkipOnDrop: 1
-  m_Looping: 0
-  m_WaitForFirstFrame: 1
-  m_FrameReadyEventEnabled: 0
-  m_VideoShaders: []
 --- !u!114 &8653082403744988157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,6 +150,41 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!328 &1190716318904218340
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97153559044270500}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 32900000, guid: ee330838bda732d42bba79b30c0882bf, type: 3}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: 00d99bbc9b498f743b6052f2125b83b2, type: 2}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: _MainTex
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 1
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 0
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 0
+  m_Url: file://C:/GitProjects/EchoProject/Assets/StreamingAssets/Final_videoGuide.mp4
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
 --- !u!1 &298500681563071181
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,7 +411,6 @@ RectTransform:
   - {fileID: 5848856584960274513}
   - {fileID: 5806563217794033254}
   - {fileID: 6784686635082293184}
-  - {fileID: 2971223606795406303}
   m_Father: {fileID: 6765878948820334360}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -672,7 +671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2971223606795406303}
   m_Layer: 5
-  m_Name: Page4
+  m_Name: video
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -687,16 +686,16 @@ RectTransform:
   m_GameObject: {fileID: 1201281280071766307}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5687499, y: 0.5687499, z: 0.5687499}
   m_Children:
   - {fileID: 6481575432288551697}
-  m_Father: {fileID: 4299517022168789890}
-  m_RootOrder: 5
+  m_Father: {fileID: 3792483819621247002}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 18.410461, y: -64.185}
-  m_SizeDelta: {x: 304.8208, y: 649.6299}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0.00012207031}
+  m_SizeDelta: {x: 828.0001, y: 465.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1358814762786506266
 GameObject:
@@ -1614,6 +1613,7 @@ RectTransform:
   m_Children:
   - {fileID: 3792483820177029102}
   - {fileID: 1710405552413392139}
+  - {fileID: 2971223606795406303}
   - {fileID: 6765878948820334360}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -1702,7 +1702,6 @@ MonoBehaviour:
   - {fileID: 9016618249420262998}
   - {fileID: 3601481712725748925}
   - {fileID: 4409741869501882388}
-  - {fileID: 1201281280071766307}
   playerReady:
   - {fileID: 298500681563071181}
   - {fileID: 931176474964428909}
@@ -3619,8 +3618,8 @@ MonoBehaviour:
   shakeLibrary: {fileID: 11400000, guid: 9a6156b25fcccac4e97ef1c8d23def06, type: 2}
   curveLibrary: {fileID: 11400000, guid: 1807857dbc33603469f5046b18ae0aae, type: 2}
   useUnscaledTime: 0
-  autoPlay: 1
-  playOnEnable: 0
+  autoPlay: 0
+  playOnEnable: 1
   printCompleted:
     m_PersistentCalls:
       m_Calls: []
@@ -3935,7 +3934,7 @@ Transform:
   - {fileID: 2469474162358521553}
   - {fileID: 4299517022168789890}
   m_Father: {fileID: 3792483819621247002}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6404683229289184609
 Animator:
