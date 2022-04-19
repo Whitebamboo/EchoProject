@@ -22,6 +22,7 @@ public class StartCanvas : UIScreenBase
 
     int currIndex;
     int confirmedPlayer;
+    bool isPlayingVideo;
 
     private void Awake()
     {
@@ -29,12 +30,22 @@ public class StartCanvas : UIScreenBase
         AirConsole.instance.onConnect += OnConnect;
         AirConsole.instance.onDisconnect += OnDisconnect;
         video.loopPointReached += OnFinishVideo;
+        video.prepareCompleted += OnPrepareVideo;
     }
 
     void OnFinishVideo(VideoPlayer vp)
     {
-        GameManager.instance.SwitchState(GameState.Fantasy);
-        CloseScreen();
+        isPlayingVideo = false;
+        AirConsole.instance.Broadcast("Fantasy;Intro");
+        introPage.SetActive(true);
+        video.transform.parent.gameObject.SetActive(false);
+        StartCoroutine(Showtext());
+    }
+
+    void OnPrepareVideo(VideoPlayer vp)
+    {
+        isPlayingVideo = true;
+        video.Play();
     }
 
     void OnReady(string code)
@@ -92,24 +103,36 @@ public class StartCanvas : UIScreenBase
 
     public void StartGame()
     {
-        StartCoroutine(ShowText());
+        StartCoroutine(ShowVideo());
     }
 
-    IEnumerator ShowText()
+    IEnumerator ShowVideo()
     {
         yield return new WaitForSeconds(1);
         connectPage.SetActive(false);
-        AirConsole.instance.Broadcast("Fantasy;Intro");
-        introPage.SetActive(true);
+        video.transform.parent.gameObject.SetActive(true);
 
+        if (currIndex == 0)
+        {
+            video.url = System.IO.Path.Combine(Application.streamingAssetsPath, "Final_videoGuide.mp4");
+            video.Prepare();
+        }
+    }
+
+    IEnumerator Showtext()
+    {
         yield return new WaitForSeconds(bubbleAnimation.length);
-
         pages[0].gameObject.SetActive(true);
     }
 
     void OnMessage(int fromDeviceID, JToken data)
     {
         Debug.Log("message from " + fromDeviceID + ", data: " + data);
+
+        if(isPlayingVideo)
+        {
+            return;
+        }
 
         if (data["action"] != null && data["action"].ToString().Equals("next"))
         {
@@ -173,8 +196,8 @@ public class StartCanvas : UIScreenBase
 
         if (currIndex >= pages.Length)
         {
-            //GameManager.instance.SwitchState(GameState.Tutorial);
-            //CloseScreen();
+            GameManager.instance.SwitchState(GameState.Tutorial);
+            CloseScreen();
             return;
         }
 
