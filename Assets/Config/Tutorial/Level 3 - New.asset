@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: Level 3 - New
   m_EditorClassIdentifier: 
   levelTitle: 'Level 3: How easy are these items to sort before the recycling process? '
-  levelDescription: This level is a bit tricky. Use the Material Guidebook and your
-    best knowledge to rank these items.
+  levelDescription: Material blends and accessories on garments make sorting before
+    recycling a more difficult process.
   lowExtentTitle: Hard to Sort
   highExtentTitle: Easy to Sort
-  winDescription: Remember that clothes made with different blends and contain elements
+  winDescription: Remember that clothes made with different blends and with elements
     like zippers and buttons require a more complex sorting process, making them
-    less eco-friendly.
+    less eco-friendly than their plain counterparts.
   loseDescription: Try again! The more elements (blends, colors, zippers, buttons)
     that exist in a garment, the more effort it takes to sort the garment when preparing
     it for recycling.
   lessonName: 'Lesson Three: Sorting'
-  command: This level is a bit tricky. Use the Material Guidebook and your best knowledge
-    to rank these items.
+  command: This lesson introduces both materials and accessories as a way to look
+    at garments being sorted before recycling
   clothes:
   - image: {fileID: 21300000, guid: 4ad4a39329005c64088df10a9c45baa2, type: 3}
     clothDescription: This is a <b>multicolored</b> jacket with <b>buttons and zippers</b>.
