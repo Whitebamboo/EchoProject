@@ -16,6 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e8ab723317a965a4e82d49cae82e572f, type: 2}
   - {fileID: 11400000, guid: 54fabb2e98695524fad4a46e507561d0, type: 2}
   - {fileID: 11400000, guid: ead11f52c46c4dc46a16569ed2db129c, type: 2}
+  - {fileID: 11400000, guid: 341a015a139a3214e9cb67791b3625c6, type: 2}
   cloths:
   - {fileID: 11400000, guid: 3eb660f070a35594f99731a7ba1dcdd0, type: 2}
   - {fileID: 11400000, guid: 545f6121e082fb7448f439c7d584bd6c, type: 2}
@@ -27,6 +28,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 80135db7653b7f044ae6bbda2ea5b4da, type: 2}
   - {fileID: 11400000, guid: 5aeb5d2abb48bfc4997882cb6b7a6d04, type: 2}
   - {fileID: 11400000, guid: 2ab28b42d9119234ca785d2406464287, type: 2}
+  - {fileID: 11400000, guid: 32feddd7b74b5434781b32d0c4b8b2a9, type: 2}
+  - {fileID: 11400000, guid: 5984db55204c9dd4a856ade205d594b1, type: 2}
+  - {fileID: 11400000, guid: c8fdf50cf0d41df479ee6a0ac7d902f0, type: 2}
+  - {fileID: 11400000, guid: 1e492db226df09a428b3311191825e3e, type: 2}
   - {fileID: 11400000, guid: ffb0f61ce5bfa854d9a1568893737f4a, type: 2}
   - {fileID: 11400000, guid: 8307a2aa6aaebfa498311c9171aaa941, type: 2}
   - {fileID: 11400000, guid: 6a647a798ea747248a47f7e08589469e, type: 2}
