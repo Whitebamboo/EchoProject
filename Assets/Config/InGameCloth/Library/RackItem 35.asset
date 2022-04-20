@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RackItem 35
   m_EditorClassIdentifier: 
   prefab: {fileID: 919132149155446097, guid: 7e89d67b419f61148b889120c5c7ce86, type: 3}
-  clothImage: {fileID: 21300000, guid: 99dc5def65df9434eb9badfd5067171a, type: 3}
+  clothImage: {fileID: 21300000, guid: 410c1f48132c4ff4383be895dbeb248c, type: 3}
   color: 0f0000001000000009000000
   description: 
   year: 10
