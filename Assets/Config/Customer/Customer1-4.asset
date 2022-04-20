@@ -15,7 +15,7 @@ MonoBehaviour:
   image: {fileID: 0}
   request: "Hi, I\u2019m looking for a top that I can wear for exercising. Something
     durable and stretchy would be nice. I want to reuse and give a second life to
-    an item! Do you guys have anything? "
+    an item! "
   items:
   - data: {fileID: 11400000, guid: 32feddd7b74b5434781b32d0c4b8b2a9, type: 2}
     score: 11
