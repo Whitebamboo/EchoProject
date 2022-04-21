@@ -15,7 +15,7 @@ MonoBehaviour:
   prefab: {fileID: 919132149155446097, guid: fd286096ed684fc478c4909f99115d66, type: 3}
   clothImage: {fileID: 21300000, guid: 501bf97cbda1fad489b1bff20d70907d, type: 3}
   color: 10000000
-  description: 
+  description: '*Long sleeve'
   year: 10
   month: 0
   properties:

@@ -15,7 +15,7 @@ MonoBehaviour:
   prefab: {fileID: 919132149155446097, guid: 87eb8b3a8cf12bd4facc1ea4f8d2a379, type: 3}
   clothImage: {fileID: 21300000, guid: 6a0403a83c8ff0449a59c983e2d63320, type: 3}
   color: 
-  description: 
+  description: '*Short sleeve'
   year: 4
   month: 0
   properties:
