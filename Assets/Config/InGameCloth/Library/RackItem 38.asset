@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 919132149155446097, guid: 4e68f278601454942981be3295fc60ab, type: 3}
   clothImage: {fileID: 21300000, guid: e79d152a8badc4540ad4b2ca22c9198d, type: 3}
-  color: 0f0000001000000009000000
-  description: 
+  color: 10000000
+  description: '*This clothing item has zippers and buttons'
   year: 10
   month: 0
   properties:
   - material: 5
     percentage: 75
-  - material: 8
+  - material: 6
     percentage: 15
-  - material: 7
+  - material: 9
     percentage: 10

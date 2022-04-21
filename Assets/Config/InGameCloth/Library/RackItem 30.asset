@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 919132149155446097, guid: 4081e77cfceecd0428387104b63641d3, type: 3}
   clothImage: {fileID: 21300000, guid: 811b2ed8341158f499d2a73dab7c85ad, type: 3}
-  color: 0f0000001000000009000000
+  color: 10000000
   description: 
   year: 10
   month: 0
   properties:
   - material: 6
-    percentage: 15
-  - material: 5
-    percentage: 85
+    percentage: 18
+  - material: 13
+    percentage: 82

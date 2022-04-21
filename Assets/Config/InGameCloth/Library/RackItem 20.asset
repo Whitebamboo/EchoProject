@@ -19,7 +19,7 @@ MonoBehaviour:
   year: 3
   month: 0
   properties:
-  - material: 7
+  - material: 14
     percentage: 66
-  - material: 13
+  - material: 5
     percentage: 34
