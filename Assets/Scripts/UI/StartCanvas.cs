@@ -54,6 +54,7 @@ public class StartCanvas : UIScreenBase
     {
         isPlayingVideo = true;
         video.Play();
+        AirConsole.instance.Broadcast("Video;Start");
     }
 
     void OnReady(string code)

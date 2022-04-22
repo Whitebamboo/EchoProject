@@ -130,6 +130,11 @@
                   }              
               }
             break;
+            case "Video":
+              if(messages[1] == "Start"){
+                  vm.controllersShow("video", true);
+              }
+              break;
             case "Tutorial":
               if(messages[1] == "Start"){
                   vm.controllersShow("ingame", true);
@@ -218,6 +223,10 @@
         <!--<div id="Start-title">  Gen-Z Eco Shop Staff Training! </div>
         <div id="Start-text"> Before you officially begin working at the Gen-Z Eco-Shop, we have a training program you need to complete. Each of you will receive a different clothing item. Share the information about your item to your team members and then rank the clothing items based on how sustainable they are. </div>-->
     </div>
+
+    <div id="video" class="view">
+      <div id="hint-text"> Please look at screen and watch tutorial video</div>
+  </div>
     
     <div id="ingame" class="view">
       <div id="joystick_left" class="joystick">
