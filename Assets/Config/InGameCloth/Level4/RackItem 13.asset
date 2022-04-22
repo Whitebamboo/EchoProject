@@ -20,6 +20,6 @@ MonoBehaviour:
   month: 0
   properties:
   - material: 9
-    percentage: 82
-  - material: 14
     percentage: 18
+  - material: 14
+    percentage: 82

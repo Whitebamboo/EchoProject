@@ -30,9 +30,9 @@ MonoBehaviour:
       of multicolor so it\u2019s easier to sort later."
   - data: {fileID: 11400000, guid: c8fdf50cf0d41df479ee6a0ac7d902f0, type: 2}
     score: 0
-    matchResponse: "This shirt is great but\u2026 do you have any options that blend
-      spandex with more eco-friendly materials? And maybe something solid instead
-      of multicolor so it\u2019s easier to sort later."
+    matchResponse: "This shirt has nylon which is stretchy\u2026 but do you have
+      something that is blended with more eco-friendly materials? And I'd like something
+      solid colored so it\u2019s easier to be sorted when I'm recycling it later."
   - data: {fileID: 11400000, guid: f57fbeffbd5da9048aeebcc7c797c1c1, type: 2}
     score: 0
     matchResponse: I was looking for a short-sleeve t-shirt. Do you guys have something
