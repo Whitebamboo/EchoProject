@@ -13,21 +13,25 @@ MonoBehaviour:
   m_Name: Customer1-3
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  request: 'Hello! I need a button down shirt today! Do you have any eco-friendly
-    options? '
+  request: 'Hello! I need a button down shirt today! Do you have any options made
+    with natural materials and avoid extra elements like zippers and snaps? Having
+    the extra elements will make it harder to recycle later. '
   items:
   - data: {fileID: 11400000, guid: 2ab28b42d9119234ca785d2406464287, type: 2}
     score: 10
-    matchResponse: 'This button down is just what I was looking for! Thanks for avoiding
-      any extra elements like zippers! '
+    matchResponse: "This button down made with natural materials is just what I was
+      looking for! Thanks for avoiding any extra elements like zippers so there isn\u2019t
+      any extra work needed to remove additional elements!"
   closeItems:
   - data: {fileID: 11400000, guid: 80135db7653b7f044ae6bbda2ea5b4da, type: 2}
     score: 0
     matchResponse: "I\u2019m happy it\u2019s a button down but\u2026 do you have
-      anything with natural materials? "
+      anything with natural materials or no additional elements like zippers? The
+      less elements, the easier it will be to recycle later. "
   - data: {fileID: 11400000, guid: 5aeb5d2abb48bfc4997882cb6b7a6d04, type: 2}
     score: 0
     matchResponse: "I\u2019m happy it\u2019s a button down but\u2026 do you have
-      anything with natural materials? "
+      anything with natural materials or no additional elements like zippers? The
+      less elements, the easier it will be to recycle later. "
   notMatchResponse: "I would really prefer a button down\u2026 Can you please check
     for those? "

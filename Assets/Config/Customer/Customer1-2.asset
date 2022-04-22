@@ -13,21 +13,27 @@ MonoBehaviour:
   m_Name: Customer1-2
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  request: "Hey! I\u2019d like a sweater today, but I\u2019m allergic to wool. Please
-    avoid any options with it!  "
+  request: "Hey! I\u2019d like a sweater today, but I\u2019m allergic to wool. Synthetic
+    materials usually work better for me, but I\u2019m hoping there\u2019s an option
+    made with some eco-friendly materials as well. Do you have anything like that?"
   items:
   - data: {fileID: 11400000, guid: 1b1df71c03125e94ab2502a1723fc0dd, type: 2}
     score: 10
-    matchResponse: 'This sweater made with polyester and cotton is great! Thank you
-      for finding it for me! '
+    matchResponse: "This sweater made with recycled polyester and organic cotton
+      is great! Recycled polyester is better than normal polyester, and I don\u2019t
+      need to worry about any wool. Thank you for finding it for me!"
   closeItems:
   - data: {fileID: 11400000, guid: b043cd81ff50292498d30f77439cc1a9, type: 2}
     score: 0
     matchResponse: "This is a nice sweater but\u2026 I\u2019m allergic to wool so
-      I need to avoid anything made with it.  "
+      I need to avoid anything made with it. Synthetics usually work better for me,
+      but I\u2019m hoping for an option made with eco-friendly materials as well.
+      Can you look for something else?"
   - data: {fileID: 11400000, guid: c3f6de624b0c1fb41ac3b2e16365f013, type: 2}
     score: 0
     matchResponse: "This is a nice sweater but\u2026 I\u2019m allergic to wool so
-      I need to avoid anything made with it.  "
+      I need to avoid anything made with it. Synthetics usually work better for me,
+      but I\u2019m hoping for an option made with eco-friendly materials as well.
+      Can you look for something else?"
   notMatchResponse: 'I was hoping for a sweater, not a t-shirt or jacket. Can you
     look again? '

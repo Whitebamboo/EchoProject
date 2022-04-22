@@ -13,24 +13,34 @@ MonoBehaviour:
   m_Name: Customer1-4
   m_EditorClassIdentifier: 
   image: {fileID: 0}
-  request: "Hi, I\u2019m looking for a top that I can wear for exercising. Something
-    durable and stretchy would be nice. I want to reuse and give a second life to
-    an item! "
+  request: "Hi, I\u2019m looking for a short sleeve t-shirt that I can wear for exercising.
+    Something durable and stretchy would be nice\u2026 But I would still like it
+    to include some eco-friendly materials. Do you guys have anything?"
   items:
   - data: {fileID: 11400000, guid: 32feddd7b74b5434781b32d0c4b8b2a9, type: 2}
     score: 11
-    matchResponse: "This solid colored shirt made with spandex will be great for
-      exercising! And it\u2019s quite durable too. Thanks so much! "
+    matchResponse: "This solid colored shirt made with recycled polyester and spandex
+      will be great for exercising! And even after being worn for so many years it\u2019s
+      still in great shape, so its durability holds up. Thanks so much!"
   closeItems:
   - data: {fileID: 11400000, guid: 1e492db226df09a428b3311191825e3e, type: 2}
     score: 0
-    matchResponse: "This shirt is great but\u2026 do you have any options that can
-      stretch a bit more? And maybe something solid instead of multicolor so it\u2019s
-      easier to sort later. "
+    matchResponse: "This shirt is great but\u2026 do you have any options that blend
+      spandex with more eco-friendly materials? And maybe something solid instead
+      of multicolor so it\u2019s easier to sort later."
   - data: {fileID: 11400000, guid: c8fdf50cf0d41df479ee6a0ac7d902f0, type: 2}
     score: 0
-    matchResponse: "This shirt is great but\u2026 do you have any options that can
-      stretch a bit more? And maybe something solid instead of multicolor so it\u2019s
-      easier to sort later. "
-  notMatchResponse: " I was hoping for something stretchy to exercise in\u2026 can
-    you look for something else? "
+    matchResponse: "This shirt is great but\u2026 do you have any options that blend
+      spandex with more eco-friendly materials? And maybe something solid instead
+      of multicolor so it\u2019s easier to sort later."
+  - data: {fileID: 11400000, guid: f57fbeffbd5da9048aeebcc7c797c1c1, type: 2}
+    score: 0
+    matchResponse: I was looking for a short-sleeve t-shirt. Do you guys have something
+      similar to this blend but that is short-sleeved?
+  - data: {fileID: 11400000, guid: 52a95a1be36dbca4e9aca765e644feae, type: 2}
+    score: 0
+    matchResponse: I was looking for a short-sleeve t-shirt. Do you guys have something
+      similar to this blend but that is short-sleeved?
+  notMatchResponse: "I was hoping for something stretchy to exercise in\u2026 this
+    material is natural which is great, but it can\u2019t stretch very well like
+    spandex can. Can you look for something else that\u2019s blended with spandex?"

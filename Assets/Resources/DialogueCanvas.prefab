@@ -96,9 +96,9 @@ MonoBehaviour:
   m_fontSize: 25
   m_fontSizeBase: 25
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 25
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -151,6 +151,7 @@ MonoBehaviour:
   curveLibrary: {fileID: 11400000, guid: 1807857dbc33603469f5046b18ae0aae, type: 2}
   useUnscaledTime: 0
   autoPlay: 0
+  playOnEnable: 0
   printCompleted:
     m_PersistentCalls:
       m_Calls: []

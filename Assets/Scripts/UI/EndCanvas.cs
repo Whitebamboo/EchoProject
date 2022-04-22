@@ -46,7 +46,7 @@ public class EndCanvas : UIScreenBase
 
         if (currIndex >= pages.Length)
         {
-            CloseScreen();
+            //CloseScreen();
             AirConsole.instance.Broadcast("Fantasy;Start");
             return;
         }
